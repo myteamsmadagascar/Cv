@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MadaWork – Postuler</title>
+
+  <style>
+    :root{
+      --blue:#1f4fd8;
+      --red:#ff2d55;
+      --bg:#f5f7ff;
+      --text:#0b1220;
+      --muted:#5b667a;
+      --radius:20px;
+      --shadow:0 16px 40px rgba(0,0,0,.12);
+    }
+    *{box-sizing:border-box;font-family:system-ui,Segoe UI,Arial}
+    body{margin:0;background:var(--bg);color:var(--text)}
+    header{background:#fff;padding:14px;text-align:center;border-bottom:3px solid var(--blue)}
+    header img{height:44px}
+
+    .wrap{max-width:900px;margin:18px auto;padding:14px}
+    .hero{
+      background:linear-gradient(135deg,var(--blue),var(--red));
+      color:#fff;border-radius:26px;padding:18px;
+      box-shadow:var(--shadow)
+    }
+    .hero h1{margin:0;font-size:22px}
+    .hero p{margin:8px 0 0;opacity:.9}
+
+    .card{
+      margin-top:14px;background:#fff;border-radius:26px;
+      padding:18px;box-shadow:var(--shadow)
+    }
+    .grid{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:12px
+    }
+    @media(max-width:820px){.grid{grid-template-columns:1fr}}
+    label{font-weight:800;font-size:13px}
+    input,select,textarea{
+      width:100%;padding:12px;border-radius:14px;
+      border:1.5px solid #ccd3ff;font-size:14px;margin-top:6px
+    }
+    textarea{min-height:120px;resize:vertical}
+    .req{color:var(--red);font-weight:900}
+
+    .btn{
+      width:100%;margin-top:14px;
+      padding:13px;border-radius:22px;
+      border:none;cursor:pointer;
+      font-weight:900;font-size:15px;
+      background:var(--blue);color:#fff
+    }
+    .back{
+      display:inline-block;margin-top:10px;
+      color:var(--blue);font-weight:900;text-decoration:none
+    }
+    .note{color:var(--muted);font-size:12px;margin-top:8px}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" style="display:inline-block">
+    <img src="images/logo.png" alt="MadaWork">
+  </a>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <h1>✅ Postuler à une offre</h1>
+    <p>Veuillez remplir ce formulaire. CV et lettre de motivation obligatoires.</p>
+  </div>
+
+  <div class="card">
+
+    <!-- ✅ FORM SUBMIT -->
+    <form action="https://formsubmit.co/madawork.plateforme@gmail.com" method="POST" enctype="multipart/form-data">
+
+      <!-- réglages -->
+      <input type="hidden" name="_subject" value="MadaWork – Nouvelle candidature">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://portail.madawork.com/mercicandidature.html">
+
+      <div class="grid">
+        <div>
+          <label>Nom <span class="req">*</span></label>
+          <input type="text" name="Nom" required>
+        </div>
+        <div>
+          <label>Prénom <span class="req">*</span></label>
+          <input type="text" name="Prénom" required>
+        </div>
+
+        <div>
+          <label>Email <span class="req">*</span></label>
+          <input type="email" name="Email" required>
+        </div>
+        <div>
+          <label>Téléphone / WhatsApp <span class="req">*</span></label>
+          <input type="text" name="Téléphone" required>
+        </div>
+
+        <div>
+          <label>Entreprise concernée <span class="req">*</span></label>
+          <input type="text" name="Entreprise" placeholder="Ex : MadaWork, Client, ONG..." required>
+        </div>
+
+        <!-- ✅ Poste demandé ajouté -->
+        <div>
+          <label>Poste demandé <span class="req">*</span></label>
+          <input type="text" name="Poste demandé" placeholder="Ex : Vidéaste junior" required>
+        </div>
+
+        <!-- ✅ Prétention salariale obligatoire -->
+        <div>
+          <label>Prétention salariale (Ar) <span class="req">*</span></label>
+          <input type="number" name="Prétention salariale" placeholder="Ex : Entre à ...ar" required>
+        </div>
+
+        <div>
+          <label>À plein temps ou à mi-temps <span class="req">*</span></label>
+          <select name="Temps de travail" required>
+            <option value="">— Choisir —</option>
+            <option>Plein temps</option>
+            <option>Mi-temps</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Ville <span class="req">*</span></label>
+          <input type="text" name="Ville" required>
+        </div>
+
+        <div>
+          <label>Disponibilité <span class="req">*</span></label>
+          <select name="Disponibilité" required>
+            <option value="">— Choisir —</option>
+            <option>Disponible immédiatement</option>
+            <option>Sous 7 jours</option>
+            <option>Sous 15 jours</option>
+            <option>Autre</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="margin-top:12px">
+        <label>Votre message / Ajouter votre WhatsApp svp</label>
+        <textarea name="Message" placeholder="Votre expérience, compétences, horaires disponibles..."></textarea>
+      </div>
+
+      <!-- ✅ 2 PJ -->
+      <div class="grid" style="margin-top:12px">
+        <div>
+          <label>CV <span class="req">*</span></label>
+          <input type="file" name="CV" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required>
+        </div>
+        <div>
+          <label>Lettre de motivation</label>
+          <input type="file" name="Lettre de motivation" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+        </div>
+      </div>
+
+      <button class="btn" type="submit">Envoyer ma candidature</button>
+
+      <div class="note">
+        📌 Conseil : envoyez CV + Lettre en PDF pour éviter les bugs.
+      </div>
+    </form>
+
+    <a href="index.html" class="back">← Retour au site</a>
+
+  </div>
+</div>
+
+<!-- ✅ Script à la fin du body (optionnel) -->
+<script>
+function getParam(name){
+  const url=new URL(window.location.href);
+  return url.searchParams.get(name) || "";
+}
+window.addEventListener("DOMContentLoaded",()=>{
+  const ent=getParam("entreprise");
+  const poste=getParam("poste");
+  if(ent) document.querySelector('input[name="Entreprise"]').value = ent;
+  if(poste) document.querySelector('input[name="Poste demandé"]').value = poste;
+});
+</script>
+
+<script src="retour.js"></script>
+</body>
+</html>

@@ -1,0 +1,1528 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>cv.madawork.com — Agents & Cadres Chinophones (freelance4)</title>
+
+  <meta name="description" content="Profils Madawork — Nos agents et cadres chinophones (parlant chinois). Identités masquées. Références disponibles." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="images/logomadawork.png" />
+  <meta name="theme-color" content="#1f4fd8" />
+
+  <style>
+    :root{
+      --bg:#f5f7ff;
+      --card:rgba(255,255,255,.92);
+      --stroke:rgba(15,23,42,.12);
+      --text:#0b1220;
+      --muted:rgba(11,18,32,.70);
+
+      --blue:#1f4fd8;
+      --red:#ff2d55;
+      --gold:#d4af37;
+
+      --shadow:0 16px 45px rgba(0,0,0,.12);
+      --r:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:var(--text);
+      background:
+        radial-gradient(900px 460px at 10% 0%, rgba(31,79,216,.14), transparent 60%),
+        radial-gradient(900px 460px at 90% 0%, rgba(255,45,85,.10), transparent 60%),
+        var(--bg);
+    }
+    a{color:inherit}
+    .wrap{max-width:1180px;margin:0 auto;padding:18px 14px 50px}
+
+    /* TOPBAR */
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:12px 14px;
+      background:rgba(255,255,255,.75);
+      border:1px solid var(--stroke);
+      border-radius:26px;
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(10px);
+      position:sticky; top:10px; z-index:50;
+    }
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand img{height:46px;width:auto}
+    .brand .txt{min-width:0}
+    .brand .txt .t{font-weight:950;letter-spacing:.2px}
+    .brand .txt .s{
+      font-size:13px;color:var(--muted);margin-top:2px;
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:52vw
+    }
+
+    .navbtns{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .btn{
+      appearance:none;border:1px solid var(--stroke);
+      padding:10px 14px;border-radius:14px;
+      background:#fff;color:var(--text);
+      font-weight:900;text-decoration:none;
+      display:inline-flex;align-items:center;gap:8px;
+      box-shadow:0 10px 24px rgba(0,0,0,.08);
+      transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 16px 28px rgba(0,0,0,.10);border-color:rgba(31,79,216,.25)}
+    .btn.primary{
+      border-color:rgba(212,175,55,.55);
+      background:linear-gradient(135deg, rgba(212,175,55,.22), #fff);
+    }
+    .btn.dark{
+      border-color:rgba(15,23,42,.22);
+      background:linear-gradient(135deg, rgba(11,18,32,.95), rgba(31,79,216,.75));
+      color:#fff;
+    }
+    .btn.red{
+      border-color:rgba(255,45,85,.35);
+      background:linear-gradient(135deg, rgba(255,45,85,.10), #fff);
+    }
+    .btn.ghost{background:rgba(255,255,255,.70)}
+    .btn.select{
+      border-color:rgba(212,175,55,.78);
+      background:linear-gradient(135deg, rgba(212,175,55,.30), rgba(0,0,0,.02));
+    }
+
+    /* HERO */
+    .hero{
+      margin-top:16px;padding:18px;
+      border-radius:26px;border:1px solid var(--stroke);
+      background:var(--card);box-shadow:var(--shadow)
+    }
+    .hero h1{margin:0;font-size:20px;font-weight:1000}
+    .hero p{margin:8px 0 0;color:var(--muted);line-height:1.45}
+
+    /* Search */
+    .search{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap:10px;
+      align-items:center;
+    }
+    .search input{
+      width:100%;
+      padding:12px 14px;border-radius:16px;
+      border:1px solid rgba(15,23,42,.14);
+      background:rgba(255,255,255,.80);
+      outline:none;
+      font-weight:800;
+      box-shadow:0 10px 26px rgba(0,0,0,.06);
+    }
+    .hint{
+      margin:10px 0 0;
+      font-size:12px;
+      color:rgba(11,18,32,.66)
+    }
+
+    /* GRID / CARDS */
+    .grid{margin-top:16px;display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .card{
+      grid-column:span 6;
+      background:var(--card);
+      border:1px solid var(--stroke);
+      border-radius:26px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      display:flex;flex-direction:column;
+      min-height:260px;
+      position:relative;
+    }
+    .card .head{
+      padding:14px 14px 12px;
+      border-bottom:1px solid rgba(15,23,42,.08);
+      background:linear-gradient(135deg, rgba(31,79,216,.10), rgba(255,45,85,.06), rgba(212,175,55,.08));
+    }
+    .badge{
+      display:inline-flex;gap:8px;align-items:center;
+      font-weight:1000;font-size:12px;
+      padding:6px 10px;border-radius:999px;
+      border:1px solid rgba(212,175,55,.45);
+      background:rgba(212,175,55,.10);
+    }
+    .role{margin:10px 0 0;font-size:16px;font-weight:1000;line-height:1.25}
+    .meta{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+    .kv{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .tag{
+      display:inline-flex;align-items:center;gap:6px;
+      font-weight:900;font-size:12px;
+      padding:7px 10px;border-radius:999px;
+      border:1px solid rgba(15,23,42,.14);
+      background:rgba(255,255,255,.75);
+    }
+    .tag.gold{border-color:rgba(212,175,55,.55);background:rgba(212,175,55,.12)}
+    .tag.blue{border-color:rgba(31,79,216,.35);background:rgba(31,79,216,.08)}
+    .tag.red{border-color:rgba(255,45,85,.35);background:rgba(255,45,85,.06)}
+    .tag.cn{border-color:rgba(34,197,94,.35);background:rgba(34,197,94,.08)} /* ✅ langue mise en évidence */
+
+    .card .body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:10px;flex:1}
+    .details{
+      margin-top:2px;
+      padding:10px 12px;border-radius:16px;
+      border:1px solid rgba(15,23,42,.12);
+      background:rgba(255,255,255,.70);
+    }
+    .details ul{margin:10px 0 0;padding-left:18px}
+    .details li{margin:6px 0;color:rgba(11,18,32,.86);line-height:1.35}
+
+    .actions{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+    .small{padding:9px 12px;border-radius:12px;font-weight:1000}
+
+    /* Modal */
+    .modal{
+      position:fixed;inset:0;background:rgba(2,6,23,.62);
+      display:none;align-items:center;justify-content:center;
+      padding:18px;z-index:9999;
+    }
+    .modal.active{display:flex}
+    .modalBox{
+      width:min(1040px, 100%);
+      max-height:88vh;overflow:auto;
+      border-radius:26px;
+      background:rgba(255,255,255,.96);
+      border:1px solid rgba(255,255,255,.5);
+      box-shadow:0 30px 100px rgba(0,0,0,.35);
+    }
+    .modalHead{
+      padding:16px 18px;
+      display:flex;align-items:flex-start;justify-content:space-between;gap:14px;
+      border-bottom:1px solid rgba(15,23,42,.10);
+      background:linear-gradient(135deg, rgba(31,79,216,.12), rgba(255,45,85,.08), rgba(212,175,55,.10));
+    }
+    .modalTitle{margin:0;font-size:18px;font-weight:1000}
+    .modalSub{margin:6px 0 0;color:rgba(11,18,32,.70);font-size:13px}
+    .modalClose{
+      border:1px solid rgba(15,23,42,.15);
+      background:#fff;border-radius:14px;
+      padding:10px 12px;font-weight:1000;
+      cursor:pointer;
+    }
+    .modalBody{padding:14px 18px 18px}
+
+    .cvShell{
+      border-radius:22px;
+      border:1px solid rgba(15,23,42,.12);
+      overflow:hidden;
+      background:#fff;
+      box-shadow:0 12px 38px rgba(0,0,0,.08);
+    }
+    .cvTop{
+      padding:14px 16px;
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      background:linear-gradient(135deg, rgba(31,79,216,.12), rgba(212,175,55,.10), rgba(255,45,85,.06));
+      border-bottom:1px solid rgba(15,23,42,.10);
+    }
+    .cvTop .left strong{display:block;font-size:14px}
+    .cvTop .left span{display:block;margin-top:4px;color:rgba(11,18,32,.70);font-size:12px}
+    .cvTop .right{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+
+    .cvGrid{
+      display:grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      min-height:420px;
+    }
+    .cvSide{
+      padding:14px 14px;
+      border-right:1px solid rgba(15,23,42,.10);
+      background:rgba(245,247,255,.55);
+    }
+    .cvMain{padding:14px 16px;background:#fff}
+
+    .cvBlock{
+      margin-bottom:12px;
+      padding:11px 12px;
+      border:1px solid rgba(15,23,42,.10);
+      border-radius:16px;
+      background:rgba(255,255,255,.84);
+    }
+    .cvBlock h3{margin:0 0 8px;font-size:13px;font-weight:1000}
+    .cvBlock p{margin:0;color:rgba(11,18,32,.74);font-size:12.8px;line-height:1.4}
+    .cvBlock ul{margin:8px 0 0;padding-left:18px}
+    .cvBlock li{margin:6px 0;color:rgba(11,18,32,.86);font-size:12.8px;line-height:1.35}
+
+    .cvStamp{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap}
+    .stamp{
+      font-weight:1000;font-size:12px;
+      padding:7px 10px;border-radius:999px;
+      border:1px solid rgba(15,23,42,.14);
+      background:rgba(255,255,255,.75);
+    }
+    .stamp.gold{border-color:rgba(212,175,55,.55);background:rgba(212,175,55,.12)}
+    .stamp.cn{border-color:rgba(34,197,94,.35);background:rgba(34,197,94,.10)}
+
+    /* Footer nav */
+    .footerNav{
+      margin-top:18px;
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      padding:14px;border-radius:26px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.72);
+      box-shadow:0 12px 34px rgba(0,0,0,.10);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Floating WA */
+    .waFloat{
+      position:fixed;right:16px;bottom:16px;z-index:99999;
+      display:flex;flex-direction:column;gap:10px;
+    }
+    .waFloat a{
+      width:56px;height:56px;border-radius:18px;
+      display:grid;place-items:center;
+      text-decoration:none;
+      box-shadow:0 18px 44px rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.35);
+      backdrop-filter: blur(8px);
+      transition:transform .12s ease;
+    }
+    .waFloat a:hover{transform:translateY(-2px)}
+    .wa{background:linear-gradient(135deg, #22c55e, #16a34a); color:#fff}
+    .ct{background:linear-gradient(135deg, rgba(11,18,32,.96), rgba(31,79,216,.70)); color:#fff}
+
+    @media (max-width:900px){
+      .card{grid-column:span 12}
+      .cvGrid{grid-template-columns:1fr}
+      .cvSide{border-right:none;border-bottom:1px solid rgba(15,23,42,.10)}
+    }
+    @media (max-width:640px){
+      .brand img{height:42px}
+      .btn{width:100%;justify-content:center}
+      .navbtns{width:100%}
+      .footerNav .btn{width:100%}
+      .brand .txt .s{max-width:88vw}
+      .search{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- TOP -->
+    <div class="topbar">
+      <div class="brand">
+        <img src="images/logomadawork.png" alt="Madawork">
+        <div class="txt">
+          <div class="t">cv.madawork.com</div>
+          <div class="s">Agents & Cadres Chinophones — Page 4 (freelance4)</div>
+        </div>
+      </div>
+
+      <div class="navbtns">
+        <a class="btn" href="freelancer3.html" rel="noopener">← Précédent</a>
+        <a class="btn primary" href="https://cv.madawork.com" rel="noopener">Accueil</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Nos agents & cadres chinophones — Profils parlant chinois</h1>
+
+      <p>
+        <b>Cette page contient des profils du Centre de traitement Madawork.</b><br>
+        Sélection de profils disponibles. Les identités sont volontairement masquées.
+        <b>Utilisez la référence</b> pour demander le CV complet.
+      </p>
+
+      <!-- search -->
+      <div class="search">
+        <input id="q" type="search" placeholder="Rechercher : ref, poste, compétences… (ex: CHN04, Mandarin, support, assistant, translator)" />
+        <button class="btn dark" onclick="applySearch()">Rechercher</button>
+      </div>
+      <div class="hint">Astuce : vous pouvez taper "Chinese", "Mandarin", "interpreter", "assistant", "support", "telemarketing", etc.</div>
+    </section>
+<!-- ===== MODALS CHINOPHONES ===== -->
+<div class="modal" id="modal-CHN01" onclick="if(event.target.id==='modal-CHN01') closeModal('modal-CHN01')">
+  <div class="modalBox">
+    <div class="modalHead">
+      <div>
+        <h3 class="modalTitle">CHN01 — Support client / SAV Chinophone</h3>
+        <div class="modalSub">Chinois / Mandarin • Multicanal • CRM • Scripts</div>
+      </div>
+      <button class="modalClose" onclick="closeModal('modal-CHN01')">Fermer ✕</button>
+    </div>
+    <div class="modalBody">
+      <div class="cvShell">
+        <div class="cvTop">
+          <div class="left">
+            <strong>Profil masqué — Référence : CHN01</strong>
+            <span>Disponible : ASAP • Niveau : Confirmé</span>
+          </div>
+          <div class="right">
+            <button class="btn small ghost" onclick="copyRef('CHN01')">Copier référence</button>
+            <button class="btn small select" onclick="selectProfile('CHN01')">Sélectionner</button>
+          </div>
+        </div>
+        <div class="cvGrid">
+          <div class="cvSide">
+            <div class="cvBlock">
+              <h3>Compétences clés</h3>
+              <ul>
+                <li>Service client CN (Mandarin)</li>
+                <li>Email / Chat / Téléphone</li>
+                <li>SAV, litiges, réclamations</li>
+                <li>Utilisation CRM / scripts</li>
+                <li>Reporting et KPI</li>
+              </ul>
+            </div>
+            <div class="cvBlock">
+              <h3>Langues</h3>
+              <div class="cvStamp">
+                <span class="stamp cn">Mandarin (CN)</span>
+                <span class="stamp">Français</span>
+                <span class="stamp">Anglais (selon mission)</span>
+              </div>
+            </div>
+          </div>
+          <div class="cvMain">
+            <div class="cvBlock">
+              <h3>Résumé professionnel</h3>
+              <p>
+                Profil orienté satisfaction client, structuré, rapide, très à l’aise avec les procédures SAV,
+                l’analyse des demandes et la résolution efficace des tickets.
+              </p>
+            </div>
+            <div class="cvBlock">
+              <h3>Types de missions possibles</h3>
+              <ul>
+                <li>Support client CN / e-commerce</li>
+                <li>Hotline / SAV produits & services</li>
+                <li>Gestion réclamations & tickets</li>
+                <li>Back-office SAV + reporting</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-CHN02" onclick="if(event.target.id==='modal-CHN02') closeModal('modal-CHN02')">
+  <div class="modalBox">
+    <div class="modalHead">
+      <div>
+        <h3 class="modalTitle">CHN02 — Assistante Administrative / Virtuelle</h3>
+        <div class="modalSub">Planning • Email • Dossiers • Excel/Google</div>
+      </div>
+      <button class="modalClose" onclick="closeModal('modal-CHN02')">Fermer ✕</button>
+    </div>
+    <div class="modalBody">
+      <div class="cvShell">
+        <div class="cvTop">
+          <div class="left">
+            <strong>Profil masqué — Référence : CHN02</strong>
+            <span>Disponible : ASAP • Niveau : Polyvalent</span>
+          </div>
+          <div class="right">
+            <button class="btn small ghost" onclick="copyRef('CHN02')">Copier référence</button>
+            <button class="btn small select" onclick="selectProfile('CHN02')">Sélectionner</button>
+          </div>
+        </div>
+        <div class="cvGrid">
+          <div class="cvSide">
+            <div class="cvBlock">
+              <h3>Compétences clés</h3>
+              <ul>
+                <li>Assistanat / secrétariat</li>
+                <li>Gestion agenda, RDV</li>
+                <li>Emails, tri, relances</li>
+                <li>Suivi factures / docs</li>
+                <li>Excel + Google Workspace</li>
+              </ul>
+            </div>
+            <div class="cvBlock">
+              <h3>Langues</h3>
+              <div class="cvStamp">
+                <span class="stamp cn">Chinois / Mandarin</span>
+                <span class="stamp">Français</span>
+              </div>
+            </div>
+          </div>
+          <div class="cvMain">
+            <div class="cvBlock">
+              <h3>Profil</h3>
+              <p>
+                Assistante structurée et autonome, capable de gérer des tâches administratives variées,
+                prioriser et respecter des consignes strictes.
+              </p>
+            </div>
+            <div class="cvBlock">
+              <h3>Exemples de missions</h3>
+              <ul>
+                <li>Assistant(e) commercial(e) CN</li>
+                <li>Gestion RDV + suivi dossiers</li>
+                <li>Préparation documents et tableaux</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-CHN03" onclick="if(event.target.id==='modal-CHN03') closeModal('modal-CHN03')">
+  <div class="modalBox">
+    <div class="modalHead">
+      <div>
+        <h3 class="modalTitle">CHN03 — Interprète / Traducteur Chinois ⇄ FR/EN</h3>
+        <div class="modalSub">Traduction • Terrain • Tourisme • Docs</div>
+      </div>
+      <button class="modalClose" onclick="closeModal('modal-CHN03')">Fermer ✕</button>
+    </div>
+    <div class="modalBody">
+      <div class="cvShell">
+        <div class="cvTop">
+          <div class="left">
+            <strong>Profil masqué — Référence : CHN03</strong>
+            <span>Disponible : Sur mission • Niveau : Confirmé</span>
+          </div>
+          <div class="right">
+            <button class="btn small ghost" onclick="copyRef('CHN03')">Copier référence</button>
+            <button class="btn small select" onclick="selectProfile('CHN03')">Sélectionner</button>
+          </div>
+        </div>
+        <div class="cvGrid">
+          <div class="cvSide">
+            <div class="cvBlock">
+              <h3>Spécialités</h3>
+              <ul>
+                <li>Interprétation business / terrain</li>
+                <li>Traduction documents</li>
+                <li>Relation client / guide</li>
+                <li>Rédaction / Copywriting</li>
+              </ul>
+            </div>
+            <div class="cvBlock">
+              <h3>Langues</h3>
+              <div class="cvStamp">
+                <span class="stamp cn">Chinois</span>
+                <span class="stamp">Français</span>
+                <span class="stamp">Anglais</span>
+              </div>
+            </div>
+          </div>
+          <div class="cvMain">
+            <div class="cvBlock">
+              <h3>Résumé</h3>
+              <p>
+                Profil idéal pour entreprises ou investisseurs CN à Madagascar : communication fluide,
+                traduction précise, excellent sens du service.
+              </p>
+            </div>
+            <div class="cvBlock">
+              <h3>Types de missions</h3>
+              <ul>
+                <li>Interprète visite terrain / réunion</li>
+                <li>Traduction contrats, emails</li>
+                <li>Coordination clientèle CN</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-CHN04" onclick="if(event.target.id==='modal-CHN04') closeModal('modal-CHN04')">
+  <div class="modalBox">
+    <div class="modalHead">
+      <div>
+        <h3 class="modalTitle">CHN04 — Téléopérateur / Prise de RDV (B2B)</h3>
+        <div class="modalSub">Prospection • Qualification • CRM • Pipeline</div>
+      </div>
+      <button class="modalClose" onclick="closeModal('modal-CHN04')">Fermer ✕</button>
+    </div>
+    <div class="modalBody">
+      <div class="cvShell">
+        <div class="cvTop">
+          <div class="left">
+            <strong>Profil masqué — Référence : CHN04</strong>
+            <span>Disponible : ASAP • Niveau : Performance</span>
+          </div>
+          <div class="right">
+            <button class="btn small ghost" onclick="copyRef('CHN04')">Copier référence</button>
+            <button class="btn small select" onclick="selectProfile('CHN04')">Sélectionner</button>
+          </div>
+        </div>
+        <div class="cvGrid">
+          <div class="cvSide">
+            <div class="cvBlock">
+              <h3>Compétences</h3>
+              <ul>
+                <li>Prospection / script</li>
+                <li>Qualification leads</li>
+                <li>RDV B2B</li>
+                <li>CRM, suivi pipeline</li>
+                <li>Objectifs & closing</li>
+              </ul>
+            </div>
+            <div class="cvBlock">
+              <h3>Langues</h3>
+              <div class="cvStamp">
+                <span class="stamp cn">Chinois</span>
+                <span class="stamp">Français</span>
+              </div>
+            </div>
+          </div>
+          <div class="cvMain">
+            <div class="cvBlock">
+              <h3>Profil</h3>
+              <p>
+                Profil orienté résultats, à l’aise avec objections, suivi rigoureux et reporting.
+              </p>
+            </div>
+            <div class="cvBlock">
+              <h3>Missions</h3>
+              <ul>
+                <li>Appointment Setting CN</li>
+                <li>Qualification B2B</li>
+                <li>Relances & suivi CRM</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-CHN05" onclick="if(event.target.id==='modal-CHN05') closeModal('modal-CHN05')">
+  <div class="modalBox">
+    <div class="modalHead">
+      <div>
+        <h3 class="modalTitle">CHN05 — Back-office / Saisie / Reporting</h3>
+        <div class="modalSub">Excel • Contrôle • Data • Qualité</div>
+      </div>
+      <button class="modalClose" onclick="closeModal('modal-CHN05')">Fermer ✕</button>
+    </div>
+    <div class="modalBody">
+      <div class="cvShell">
+        <div class="cvTop">
+          <div class="left">
+            <strong>Profil masqué — Référence : CHN05</strong>
+            <span>Disponible : ASAP • Niveau : Rigoureux</span>
+          </div>
+          <div class="right">
+            <button class="btn small ghost" onclick="copyRef('CHN05')">Copier référence</button>
+            <button class="btn small select" onclick="selectProfile('CHN05')">Sélectionner</button>
+          </div>
+        </div>
+        <div class="cvGrid">
+          <div class="cvSide">
+            <div class="cvBlock">
+              <h3>Compétences</h3>
+              <ul>
+                <li>Saisie et nettoyage data</li>
+                <li>Excel / tableaux</li>
+                <li>Contrôle qualité</li>
+                <li>Reporting</li>
+              </ul>
+            </div>
+            <div class="cvBlock">
+              <h3>Langues</h3>
+              <div class="cvStamp">
+                <span class="stamp cn">Chinois</span>
+                <span class="stamp">Français</span>
+              </div>
+            </div>
+          </div>
+          <div class="cvMain">
+            <div class="cvBlock">
+              <h3>Profil</h3>
+              <p>
+                Très rigoureux(se), rapide, autonome. Idéal pour projets volumineux et tâches administratives.
+              </p>
+            </div>
+            <div class="cvBlock">
+              <h3>Types de missions</h3>
+              <ul>
+                <li>Back-office CN</li>
+                <li>Data entry / Excel</li>
+                <li>Contrôle qualité fiches</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-CHN06" onclick="if(event.target.id==='modal-CHN06') closeModal('modal-CHN06')">
+  <div class="modalBox">
+    <div class="modalHead">
+      <div>
+        <h3 class="modalTitle">CHN06 — Commercial / Achats Import-Export</h3>
+        <div class="modalSub">Sourcing • Négociation • Fournisseurs • Logistique</div>
+      </div>
+      <button class="modalClose" onclick="closeModal('modal-CHN06')">Fermer ✕</button>
+    </div>
+    <div class="modalBody">
+      <div class="cvShell">
+        <div class="cvTop">
+          <div class="left">
+            <strong>Profil masqué — Référence : CHN06</strong>
+            <span>Disponible : Sur mission • Niveau : Confirmé</span>
+          </div>
+          <div class="right">
+            <button class="btn small ghost" onclick="copyRef('CHN06')">Copier référence</button>
+            <button class="btn small select" onclick="selectProfile('CHN06')">Sélectionner</button>
+          </div>
+        </div>
+        <div class="cvGrid">
+          <div class="cvSide">
+            <div class="cvBlock">
+              <h3>Compétences</h3>
+              <ul>
+                <li>Sourcing & fournisseurs</li>
+                <li>Négociation</li>
+                <li>Suivi achats / import</li>
+                <li>Coordination logistique</li>
+              </ul>
+            </div>
+            <div class="cvBlock">
+              <h3>Langues</h3>
+              <div class="cvStamp">
+                <span class="stamp cn">Chinois</span>
+                <span class="stamp">Français</span>
+                <span class="stamp gold">Business</span>
+              </div>
+            </div>
+          </div>
+          <div class="cvMain">
+            <div class="cvBlock">
+              <h3>Profil</h3>
+              <p>
+                Profil orienté business : achats, sourcing, relations fournisseurs et optimisation coûts.
+              </p>
+            </div>
+            <div class="cvBlock">
+              <h3>Missions</h3>
+              <ul>
+                <li>Import-export CN</li>
+                <li>Recherche fournisseurs / devis</li>
+                <li>Négociation et coordination</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===== END MODALS ===== -->
+    <!-- GRID -->
+    <section class="grid" aria-label="Liste des profils" id="grid">
+
+      <!-- CHN01 -->
+      <article class="card profile" data-search="CHN01 chinois mandarin customer support sav service client teleconseiller telemarketing" id="CHN01">
+        <div class="head">
+          <span class="badge">Réf : CHN01</span>
+          <div class="role">Conseiller Client / Support SAV — Chinophone (Chinois)</div>
+          <div class="meta">Support • SAV • Service client • Téléconseil • Multicanal</div>
+          <div class="kv">
+            <span class="tag cn">Chinois / Mandarin</span>
+            <span class="tag gold">Support</span>
+            <span class="tag blue">SAV</span>
+            <span class="tag">Email/Chat</span>
+            <span class="tag red">Téléphone</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="details">
+            <b>Résumé :</b>
+            <ul>
+              <li>Support client (chat, mail, téléphone) + suivi des demandes.</li>
+              <li>Très à l’aise avec scripts, CRM, procédures qualité.</li>
+              <li>Excellent niveau d’organisation et de reporting.</li>
+            </ul>
+          </div>
+          <div class="actions">
+            <button class="btn small select" onclick="selectProfile('CHN01')">Sélectionner ce profil</button>
+            <button class="btn small" onclick="openModal('modal-CHN01')">Voir plus</button>
+            <button class="btn small ghost" onclick="copyRef('CHN01')">Copier référence</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- CHN02 -->
+      <article class="card profile" data-search="CHN02 chinois mandarin assistant administratif assistant virtuelle planning rdv excel google" id="CHN02">
+        <div class="head">
+          <span class="badge">Réf : CHN02</span>
+          <div class="role">Assistante Administrative / Virtuelle — Chinophone (Chinois)</div>
+          <div class="meta">Administration • Planning • RDV • Factures • Suivi dossiers</div>
+          <div class="kv">
+            <span class="tag cn">Chinois / Mandarin</span>
+            <span class="tag gold">Assistante</span>
+            <span class="tag blue">Excel</span>
+            <span class="tag">Suite Google</span>
+            <span class="tag red">Organisation</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="details">
+            <b>Résumé :</b>
+            <ul>
+              <li>Gestion administrative complète + organisation quotidienne.</li>
+              <li>Prise de RDV, gestion emails, classement dossiers.</li>
+              <li>Polyvalente, rapide et fiable.</li>
+            </ul>
+          </div>
+          <div class="actions">
+            <button class="btn small select" onclick="selectProfile('CHN02')">Sélectionner ce profil</button>
+            <button class="btn small" onclick="openModal('modal-CHN02')">Voir plus</button>
+            <button class="btn small ghost" onclick="copyRef('CHN02')">Copier référence</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- CHN03 -->
+      <article class="card profile" data-search="CHN03 chinois mandarin interpreter traducteur translator tourisme guide copywriter seo content" id="CHN03">
+        <div class="head">
+          <span class="badge">Réf : CHN03</span>
+          <div class="role">Interprète / Traducteur — Chinois ⇄ Français / Anglais</div>
+          <div class="meta">Traduction • Interprétariat • Tourisme • Copywriting • SEO</div>
+          <div class="kv">
+            <span class="tag cn">Chinois</span>
+            <span class="tag gold">Interprète</span>
+            <span class="tag blue">Traduction</span>
+            <span class="tag">Tourisme</span>
+            <span class="tag red">Copywriting</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="details">
+            <b>Résumé :</b>
+            <ul>
+              <li>Interprétation terrain (tourisme / business / visites).</li>
+              <li>Traduction documents + emails + communications.</li>
+              <li>Très bon niveau rédactionnel & sens du service.</li>
+            </ul>
+          </div>
+          <div class="actions">
+            <button class="btn small select" onclick="selectProfile('CHN03')">Sélectionner ce profil</button>
+            <button class="btn small" onclick="openModal('modal-CHN03')">Voir plus</button>
+            <button class="btn small ghost" onclick="copyRef('CHN03')">Copier référence</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- CHN04 -->
+      <article class="card profile" data-search="CHN04 chinois mandarin teleoperateur prise rdv b2b prospection call center crm" id="CHN04">
+        <div class="head">
+          <span class="badge">Réf : CHN04</span>
+          <div class="role">Téléopérateur / Prise de RDV — Chinophone (Chinois)</div>
+          <div class="meta">Prospection • Prise de RDV • CRM • Closing • B2B</div>
+          <div class="kv">
+            <span class="tag cn">Chinois</span>
+            <span class="tag gold">Télévente</span>
+            <span class="tag blue">B2B</span>
+            <span class="tag">CRM</span>
+            <span class="tag red">Closing</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="details">
+            <b>Résumé :</b>
+            <ul>
+              <li>Prise de RDV / téléprospection avec script.</li>
+              <li>Suivi pipeline + relances + qualification.</li>
+              <li>Bonne résistance au stress, objectifs élevés.</li>
+            </ul>
+          </div>
+          <div class="actions">
+            <button class="btn small select" onclick="selectProfile('CHN04')">Sélectionner ce profil</button>
+            <button class="btn small" onclick="openModal('modal-CHN04')">Voir plus</button>
+            <button class="btn small ghost" onclick="copyRef('CHN04')">Copier référence</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- CHN05 -->
+      <article class="card profile" data-search="CHN05 chinois mandarin back office data saisie excel reporting facture" id="CHN05">
+        <div class="head">
+          <span class="badge">Réf : CHN05</span>
+          <div class="role">Back-office / Saisie / Reporting — Chinophone (Chinois)</div>
+          <div class="meta">Data • Saisie • Excel • Reporting • Organisation • Qualité</div>
+          <div class="kv">
+            <span class="tag cn">Chinois</span>
+            <span class="tag gold">Back-office</span>
+            <span class="tag blue">Excel</span>
+            <span class="tag">Contrôle</span>
+            <span class="tag red">Qualité</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="details">
+            <b>Résumé :</b>
+            <ul>
+              <li>Saisie et mise en forme de données + contrôle qualité.</li>
+              <li>Reporting quotidien/hebdo + suivi indicateurs.</li>
+              <li>Très rigoureux(se), rapide, autonome.</li>
+            </ul>
+          </div>
+          <div class="actions">
+            <button class="btn small select" onclick="selectProfile('CHN05')">Sélectionner ce profil</button>
+            <button class="btn small" onclick="openModal('modal-CHN05')">Voir plus</button>
+            <button class="btn small ghost" onclick="copyRef('CHN05')">Copier référence</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- CHN06 -->
+      <article class="card profile" data-search="CHN06 chinois mandarin commercial export import negotiation achats fournisseur" id="CHN06">
+        <div class="head">
+          <span class="badge">Réf : CHN06</span>
+          <div class="role">Commercial / Achats — Chine / Import-Export (Chinois)</div>
+          <div class="meta">Sourcing • Négociation • Achats • Fournisseurs • Logistique</div>
+          <div class="kv">
+            <span class="tag cn">Chinois</span>
+            <span class="tag gold">Négociation</span>
+            <span class="tag blue">Sourcing</span>
+            <span class="tag">Achats</span>
+            <span class="tag red">Logistique</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="details">
+            <b>Résumé :</b>
+            <ul>
+              <li>Communication fournisseurs Chine + négociation.</li>
+              <li>Suivi commandes, livraison, conformité documents.</li>
+              <li>Très orienté résultats, rigoureux et réactif.</li>
+            </ul>
+          </div>
+          <div class="actions">
+            <button class="btn small select" onclick="selectProfile('CHN06')">Sélectionner ce profil</button>
+            <button class="btn small" onclick="openModal('modal-CHN06')">Voir plus</button>
+            <button class="btn small ghost" onclick="copyRef('CHN06')">Copier référence</button>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- FOOTER NAV -->
+    <div class="footerNav">
+      <a class="btn" href="freelancer3.html">← Retour page 3</a>
+      <a class="btn red" href="https://madawork.com/contact.html" rel="noopener">Besoin d'informations ?</a>
+      <a class="btn primary" href="https://cv.madawork.com" rel="noopener">Accueil CV</a>
+    </div>
+  </div>
+
+  <!-- Floating buttons -->
+  <div class="waFloat">
+    <a class="wa" href="https://wa.me/261332943007" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <!-- WA icon -->
+      <svg width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path fill="white" d="M19.11 17.44c-.3-.15-1.74-.86-2.01-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.95 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.46-.88-.79-1.47-1.77-1.64-2.07-.17-.3-.02-.47.13-.62.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.48-.5-.67-.5l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.13 3.26 5.17 4.57.72.31 1.28.5 1.71.64.72.23 1.37.2 1.88.12.57-.08 1.74-.71 1.98-1.39.25-.67.25-1.25.17-1.39-.08-.13-.27-.2-.57-.35z"/>
+        <path fill="white" d="M16.04 3C9.4 3 4 8.4 4 15.04c0 2.12.55 4.12 1.51 5.86L4 29l8.33-1.49a12 12 0 0 0 3.71.58C22.68 28.09 28.09 22.68 28.09 16.04 28.09 9.4 22.68 3 16.04 3zm0 22.04c-1.18 0-2.33-.2-3.41-.6l-.77-.28-4.95.89.94-4.82-.32-.79A9.97 9.97 0 0 1 6.06 15.04C6.06 9.54 10.54 5.06 16.04 5.06s9.98 4.48 9.98 9.98-4.48 9.98-9.98 9.98z"/>
+      </svg>
+    </a>
+
+    <a class="ct" href="https://madawork.com/contact.html" target="_blank" rel="noopener" aria-label="Contact">
+      <!-- mail icon -->
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 6.5C4 5.67 4.67 5 5.5 5h13C19.33 5 20 5.67 20 6.5v11c0 .83-.67 1.5-1.5 1.5h-13C4.67 19 4 18.33 4 17.5v-11Z" stroke="white" stroke-width="2"/>
+        <path d="m6 8 6 5 6-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- MODALS -->
+  <div class="modal" id="modal-CHN01" aria-hidden="true">
+    <div class="modalBox" role="dialog" aria-modal="true">
+      <div class="modalHead">
+        <div>
+          <h2 class="modalTitle">Réf : CHN01 — Conseiller Client / Support SAV (Chinois)</h2>
+          <div class="modalSub">Chinois/Mandarin • Support • SAV • Téléconseil • Multicanal</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-CHN01')">✕ Fermer</button>
+      </div>
+      <div class="modalBody">
+        <div class="cvShell">
+          <div class="cvTop">
+            <div class="left">
+              <strong>Profil confidentiel — Madawork</strong>
+              <span>Pour obtenir les coordonnées / CV complet : utilisez la référence</span>
+            </div>
+            <div class="right">
+              <button class="btn select" onclick="selectProfile('CHN01')">Sélectionner ce profil</button>
+              <button class="btn ghost" onclick="copyRef('CHN01')">Copier référence</button>
+            </div>
+          </div>
+
+          <div class="cvGrid">
+            <div class="cvSide">
+              <div class="cvBlock">
+                <h3>FR — Points forts</h3>
+                <ul>
+                  <li>Support client multicanal (mail/chat/téléphone)</li>
+                  <li>SAV, réclamations, suivi tickets</li>
+                  <li>CRM + reporting + scripts qualité</li>
+                  <li><b>Langue :</b> Chinois/Mandarin</li>
+                </ul>
+              </div>
+
+              <div class="cvBlock">
+                <h3>EN — Highlights</h3>
+                <ul>
+                  <li>Multi-channel customer support (email/chat/phone)</li>
+                  <li>After-sales & complaint handling</li>
+                  <li>CRM workflow & performance reporting</li>
+                  <li><b>Language:</b> Chinese (Mandarin)</li>
+                </ul>
+              </div>
+
+              <div class="cvStamp">
+                <span class="stamp cn">Chinese / Mandarin</span>
+                <span class="stamp gold">High-end support</span>
+                <span class="stamp">Structured</span>
+              </div>
+            </div>
+
+            <div class="cvMain">
+              <div class="cvBlock">
+                <h3>FR — Expérience & missions</h3>
+                <p>Gestion de demandes clients, diagnostic, réponse structurée, escalade si nécessaire, suivi qualité et satisfaction.</p>
+              </div>
+
+              <div class="cvBlock">
+                <h3>EN — Experience & duties</h3>
+                <p>Handling customer requests, troubleshooting, structured answers, escalation when required, and satisfaction follow-up.</p>
+              </div>
+
+              <div class="cvBlock">
+                <h3>Outils / Tools</h3>
+                <ul>
+                  <li>CRM / Ticketing (process basé scripts)</li>
+                  <li>Google Workspace / Excel</li>
+                  <li>Chat support / Email templates</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Duplicate modals for each profile -->
+  <div class="modal" id="modal-CHN02" aria-hidden="true">
+    <div class="modalBox" role="dialog" aria-modal="true">
+      <div class="modalHead">
+        <div>
+          <h2 class="modalTitle">Réf : CHN02 — Assistante Administrative / Virtuelle (Chinois)</h2>
+          <div class="modalSub">Chinois/Mandarin • Admin • Planning • Dossiers • Excel</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-CHN02')">✕ Fermer</button>
+      </div>
+      <div class="modalBody">
+        <div class="cvShell">
+          <div class="cvTop">
+            <div class="left">
+              <strong>Profil confidentiel — Madawork</strong>
+              <span>Pour obtenir le CV complet : utilisez la référence</span>
+            </div>
+            <div class="right">
+              <button class="btn select" onclick="selectProfile('CHN02')">Sélectionner ce profil</button>
+              <button class="btn ghost" onclick="copyRef('CHN02')">Copier référence</button>
+            </div>
+          </div>
+          <div class="cvGrid">
+            <div class="cvSide">
+              <div class="cvBlock">
+                <h3>FR — Points forts</h3>
+                <ul>
+                  <li>Planning, RDV, gestion emails</li>
+                  <li>Classement dossiers et factures</li>
+                  <li>Rédaction messages pro</li>
+                  <li><b>Langue :</b> Chinois/Mandarin</li>
+                </ul>
+              </div>
+              <div class="cvBlock">
+                <h3>EN — Highlights</h3>
+                <ul>
+                  <li>Scheduling, meetings, email management</li>
+                  <li>Document organization & invoices</li>
+                  <li>Professional writing & follow-ups</li>
+                  <li><b>Language:</b> Chinese (Mandarin)</li>
+                </ul>
+              </div>
+              <div class="cvStamp">
+                <span class="stamp cn">Chinese / Mandarin</span>
+                <span class="stamp gold">Assistant</span>
+                <span class="stamp">Very organized</span>
+              </div>
+            </div>
+            <div class="cvMain">
+              <div class="cvBlock">
+                <h3>FR — Missions</h3>
+                <p>Support administratif quotidien, suivi procédures, gestion échéances, reporting simple et structuré.</p>
+              </div>
+              <div class="cvBlock">
+                <h3>EN — Duties</h3>
+                <p>Daily administration support, managing deadlines, procedures, and structured reporting.</p>
+              </div>
+              <div class="cvBlock">
+                <h3>Outils / Tools</h3>
+                <ul>
+                  <li>Google Workspace / Excel / Word</li>
+                  <li>Drive / Trello (si besoin)</li>
+                  <li>Templates email & scripts</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-CHN03" aria-hidden="true">
+    <div class="modalBox" role="dialog" aria-modal="true">
+      <div class="modalHead">
+        <div>
+          <h2 class="modalTitle">Réf : CHN03 — Interprète / Traducteur (Chinois)</h2>
+          <div class="modalSub">Chinois ⇄ FR/EN • Interprétation • Traduction • Copywriting</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-CHN03')">✕ Fermer</button>
+      </div>
+      <div class="modalBody">
+        <div class="cvShell">
+          <div class="cvTop">
+            <div class="left">
+              <strong>Profil confidentiel — Madawork</strong>
+              <span>CV complet sur demande via référence</span>
+            </div>
+            <div class="right">
+              <button class="btn select" onclick="selectProfile('CHN03')">Sélectionner ce profil</button>
+              <button class="btn ghost" onclick="copyRef('CHN03')">Copier référence</button>
+            </div>
+          </div>
+          <div class="cvGrid">
+            <div class="cvSide">
+              <div class="cvBlock">
+                <h3>FR — Compétences</h3>
+                <ul>
+                  <li>Interprétation terrain (visites, business)</li>
+                  <li>Traductions (docs, mails, messages)</li>
+                  <li>Rédaction / SEO / copywriting</li>
+                  <li><b>Langue :</b> Chinois</li>
+                </ul>
+              </div>
+              <div class="cvBlock">
+                <h3>EN — Skills</h3>
+                <ul>
+                  <li>On-site interpreting (business & tourism)</li>
+                  <li>Document & email translation</li>
+                  <li>Content writing / SEO copywriting</li>
+                  <li><b>Language:</b> Chinese</li>
+                </ul>
+              </div>
+              <div class="cvStamp">
+                <span class="stamp cn">Chinese</span>
+                <span class="stamp gold">Translator</span>
+                <span class="stamp">High level writing</span>
+              </div>
+            </div>
+            <div class="cvMain">
+              <div class="cvBlock">
+                <h3>FR — Domaines</h3>
+                <ul>
+                  <li>Tourisme / écotourisme</li>
+                  <li>Business meetings</li>
+                  <li>Réseaux sociaux / contenus</li>
+                </ul>
+              </div>
+              <div class="cvBlock">
+                <h3>EN — Fields</h3>
+                <ul>
+                  <li>Tourism & eco-tourism</li>
+                  <li>Business meetings</li>
+                  <li>Content & social media</li>
+                </ul>
+              </div>
+              <div class="cvBlock">
+                <h3>Outils / Tools</h3>
+                <ul>
+                  <li>Word / Excel / PowerPoint</li>
+                  <li>Google Docs / Drive</li>
+                  <li>Professional communication templates</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-CHN04" aria-hidden="true">
+    <div class="modalBox" role="dialog" aria-modal="true">
+      <div class="modalHead">
+        <div>
+          <h2 class="modalTitle">Réf : CHN04 — Téléopérateur / Prise de RDV (Chinois)</h2>
+          <div class="modalSub">Chinois • Prospection • RDV • CRM • Closing</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-CHN04')">✕ Fermer</button>
+      </div>
+      <div class="modalBody">
+        <div class="cvShell">
+          <div class="cvTop">
+            <div class="left">
+              <strong>Profil confidentiel — Madawork</strong>
+              <span>Utilisez la référence pour demander le CV complet</span>
+            </div>
+            <div class="right">
+              <button class="btn select" onclick="selectProfile('CHN04')">Sélectionner ce profil</button>
+              <button class="btn ghost" onclick="copyRef('CHN04')">Copier référence</button>
+            </div>
+          </div>
+          <div class="cvGrid">
+            <div class="cvSide">
+              <div class="cvBlock">
+                <h3>FR — Points forts</h3>
+                <ul>
+                  <li>Prospection + qualification + relance</li>
+                  <li>Prise de RDV + suivi pipeline</li>
+                  <li>Objectifs + closing</li>
+                  <li><b>Langue :</b> Chinois</li>
+                </ul>
+              </div>
+              <div class="cvBlock">
+                <h3>EN — Highlights</h3>
+                <ul>
+                  <li>Prospecting, lead qualification & follow-up</li>
+                  <li>Appointment setting & pipeline tracking</li>
+                  <li>High KPI / closing-oriented</li>
+                  <li><b>Language:</b> Chinese</li>
+                </ul>
+              </div>
+              <div class="cvStamp">
+                <span class="stamp cn">Chinese</span>
+                <span class="stamp gold">Appointment setting</span>
+                <span class="stamp">B2B</span>
+              </div>
+            </div>
+            <div class="cvMain">
+              <div class="cvBlock">
+                <h3>FR — Scripts & méthode</h3>
+                <p>Appels structurés, objections, relances, compte rendu, mise à jour CRM, synthèse quotidienne.</p>
+              </div>
+              <div class="cvBlock">
+                <h3>EN — Process</h3>
+                <p>Structured calls, objection handling, follow-ups, reporting, CRM updates, daily summary.</p>
+              </div>
+              <div class="cvBlock">
+                <h3>Outils / Tools</h3>
+                <ul>
+                  <li>CRM / Call scripts</li>
+                  <li>Excel + reporting</li>
+                  <li>Email follow-ups</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-CHN05" aria-hidden="true">
+    <div class="modalBox" role="dialog" aria-modal="true">
+      <div class="modalHead">
+        <div>
+          <h2 class="modalTitle">Réf : CHN05 — Back-office / Saisie / Reporting (Chinois)</h2>
+          <div class="modalSub">Chinois • Data • Excel • Contrôle • Qualité</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-CHN05')">✕ Fermer</button>
+      </div>
+      <div class="modalBody">
+        <div class="cvShell">
+          <div class="cvTop">
+            <div class="left">
+              <strong>Profil confidentiel — Madawork</strong>
+              <span>Référence requise pour débloquer CV complet</span>
+            </div>
+            <div class="right">
+              <button class="btn select" onclick="selectProfile('CHN05')">Sélectionner ce profil</button>
+              <button class="btn ghost" onclick="copyRef('CHN05')">Copier référence</button>
+            </div>
+          </div>
+          <div class="cvGrid">
+            <div class="cvSide">
+              <div class="cvBlock">
+                <h3>FR — Compétences</h3>
+                <ul>
+                  <li>Saisie rapide + contrôle</li>
+                  <li>Nettoyage données + tableaux</li>
+                  <li>Reporting structuré</li>
+                  <li><b>Langue :</b> Chinois</li>
+                </ul>
+              </div>
+              <div class="cvBlock">
+                <h3>EN — Skills</h3>
+                <ul>
+                  <li>Fast data entry + quality checks</li>
+                  <li>Data cleaning & Excel tables</li>
+                  <li>Structured reporting</li>
+                  <li><b>Language:</b> Chinese</li>
+                </ul>
+              </div>
+              <div class="cvStamp">
+                <span class="stamp cn">Chinese</span>
+                <span class="stamp gold">Back-office</span>
+                <span class="stamp">High accuracy</span>
+              </div>
+            </div>
+            <div class="cvMain">
+              <div class="cvBlock">
+                <h3>FR — Missions</h3>
+                <p>Mise à jour des fichiers, vérification cohérence, suivi KPI, classement administratif, routine qualité.</p>
+              </div>
+              <div class="cvBlock">
+                <h3>EN — Duties</h3>
+                <p>Updating files, consistency checks, KPI monitoring, administrative classification, quality routines.</p>
+              </div>
+              <div class="cvBlock">
+                <h3>Outils / Tools</h3>
+                <ul>
+                  <li>Excel / Google Sheets</li>
+                  <li>Drive / Docs</li>
+                  <li>Reporting templates</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-CHN06" aria-hidden="true">
+    <div class="modalBox" role="dialog" aria-modal="true">
+      <div class="modalHead">
+        <div>
+          <h2 class="modalTitle">Réf : CHN06 — Commercial / Achats Import-Export (Chinois)</h2>
+          <div class="modalSub">Chinois • Sourcing • Achats • Négociation • Logistique</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-CHN06')">✕ Fermer</button>
+      </div>
+      <div class="modalBody">
+        <div class="cvShell">
+          <div class="cvTop">
+            <div class="left">
+              <strong>Profil confidentiel — Madawork</strong>
+              <span>Référence indispensable pour activer le profil</span>
+            </div>
+            <div class="right">
+              <button class="btn select" onclick="selectProfile('CHN06')">Sélectionner ce profil</button>
+              <button class="btn ghost" onclick="copyRef('CHN06')">Copier référence</button>
+            </div>
+          </div>
+          <div class="cvGrid">
+            <div class="cvSide">
+              <div class="cvBlock">
+                <h3>FR — Compétences</h3>
+                <ul>
+                  <li>Sourcing fournisseurs Chine</li>
+                  <li>Négociation + suivi commandes</li>
+                  <li>Logistique + documents</li>
+                  <li><b>Langue :</b> Chinois</li>
+                </ul>
+              </div>
+              <div class="cvBlock">
+                <h3>EN — Skills</h3>
+                <ul>
+                  <li>Chinese supplier sourcing</li>
+                  <li>Negotiation & order follow-up</li>
+                  <li>Logistics & documents management</li>
+                  <li><b>Language:</b> Chinese</li>
+                </ul>
+              </div>
+              <div class="cvStamp">
+                <span class="stamp cn">Chinese</span>
+                <span class="stamp gold">Sourcing</span>
+                <span class="stamp">Negotiation</span>
+              </div>
+            </div>
+            <div class="cvMain">
+              <div class="cvBlock">
+                <h3>FR — Missions</h3>
+                <p>Recherche partenaires, comparaison offres, coordination livraison, suivi paiement et documents export/import.</p>
+              </div>
+              <div class="cvBlock">
+                <h3>EN — Duties</h3>
+                <p>Partner sourcing, offer comparison, delivery coordination, payment follow-up, export/import documents.</p>
+              </div>
+              <div class="cvBlock">
+                <h3>Outils / Tools</h3>
+                <ul>
+                  <li>Excel / Google Sheets</li>
+                  <li>Mailing / follow-up templates</li>
+                  <li>Tracking orders</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    function openModal(id){
+      const m=document.getElementById(id);
+      if(!m) return;
+      m.classList.add("active");
+      m.setAttribute("aria-hidden","false");
+    }
+    function closeModal(id){
+      const m=document.getElementById(id);
+      if(!m) return;
+      m.classList.remove("active");
+      m.setAttribute("aria-hidden","true");
+    }
+    window.addEventListener("click",(e)=>{
+      if(e.target.classList.contains("modal")){
+        e.target.classList.remove("active");
+        e.target.setAttribute("aria-hidden","true");
+      }
+    });
+    window.addEventListener("keydown",(e)=>{
+      if(e.key==="Escape"){
+        document.querySelectorAll(".modal.active").forEach(m=>{
+          m.classList.remove("active");
+          m.setAttribute("aria-hidden","true");
+        });
+      }
+    });
+
+    function copyRef(ref){
+      navigator.clipboard.writeText(ref).then(()=>{
+        toast("Référence copiée : " + ref);
+      }).catch(()=>{
+        prompt("Copiez la référence :", ref);
+      });
+    }
+
+    function selectProfile(ref){
+      toast("✅ Profil sélectionné : " + ref + " — Envoyez cette référence à Madawork.");
+    }
+
+    function applySearch(){
+      const q = (document.getElementById("q").value || "").toLowerCase().trim();
+      const cards = document.querySelectorAll(".profile");
+      let shown = 0;
+      cards.forEach(c=>{
+        const txt = (c.getAttribute("data-search") || "").toLowerCase();
+        const ok = !q || txt.includes(q);
+        c.style.display = ok ? "" : "none";
+        if(ok) shown++;
+      });
+      toast(shown + " profil(s) affiché(s)");
+    }
+
+    document.getElementById("q").addEventListener("input", ()=>{
+      applySearch();
+    });
+
+    function toast(msg){
+      let t = document.getElementById("toast");
+      if(!t){
+        t = document.createElement("div");
+        t.id="toast";
+        t.style.position="fixed";
+        t.style.left="50%";
+        t.style.bottom="20px";
+        t.style.transform="translateX(-50%)";
+        t.style.padding="12px 14px";
+        t.style.borderRadius="16px";
+        t.style.background="rgba(11,18,32,.92)";
+        t.style.color="#fff";
+        t.style.fontWeight="900";
+        t.style.zIndex="999999";
+        t.style.boxShadow="0 18px 50px rgba(0,0,0,.30)";
+        t.style.maxWidth="90vw";
+        t.style.textAlign="center";
+        document.body.appendChild(t);
+      }
+      t.textContent = msg;
+      t.style.opacity="1";
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(()=>{ t.style.opacity="0"; }, 2200);
+    }
+  </script>
+  <script>
+/* ===== SEARCH ===== */
+function applySearch(){
+  const q = (document.getElementById("q").value || "").trim().toLowerCase();
+  document.querySelectorAll(".profile").forEach(card=>{
+    const hay = (card.dataset.search || "").toLowerCase();
+    card.style.display = (!q || hay.includes(q)) ? "" : "none";
+  });
+}
+document.getElementById("q")?.addEventListener("keydown", (e)=>{
+  if(e.key === "Enter") applySearch();
+});
+
+/* ===== COPY REF ===== */
+function copyRef(ref){
+  navigator.clipboard.writeText(ref).then(()=>{
+    toast("Référence copiée : " + ref);
+  }).catch(()=>{
+    prompt("Copiez la référence :", ref);
+  });
+}
+
+/* ===== SELECT PROFILE ===== */
+function selectProfile(ref){
+  toast("Profil sélectionné ✅ (" + ref + ")");
+  copyRef(ref);
+}
+
+/* ===== MODALS ===== */
+function openModal(id){
+  const modal = document.getElementById(id);
+  if(!modal){ toast("Modal introuvable : " + id); return; }
+  modal.classList.add("active");
+}
+function closeModal(id){
+  const modal = document.getElementById(id);
+  if(!modal) return;
+  modal.classList.remove("active");
+}
+document.addEventListener("keydown",(e)=>{
+  if(e.key==="Escape"){
+    document.querySelectorAll(".modal.active").forEach(m=>m.classList.remove("active"));
+  }
+});
+
+/* ===== TOAST ===== */
+function toast(msg){
+  const t = document.getElementById("toast");
+  if(!t) return alert(msg);
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(window.__toastTimer);
+  window.__toastTimer = setTimeout(()=>t.classList.remove("show"), 2400);
+}
+</script>
+
+<div class="toast" id="toast">OK</div>
+</body>
+</html>

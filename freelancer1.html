@@ -1,0 +1,1337 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>cv.madawork.com — Profils Freelances (1)</title>
+  <meta name="description" content="cv.madawork.com : Profils freelances — Page 1. Télévente, assistanat, finance, développeurs, support." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="images/logomadawork.png" />
+  <meta name="theme-color" content="#1f4fd8" />
+
+  <style>
+    :root{
+      --bg:#f5f7ff;
+      --card:rgba(255,255,255,.92);
+      --stroke:rgba(15,23,42,.12);
+      --text:#0b1220;
+      --muted:rgba(11,18,32,.70);
+
+      --blue:#1f4fd8;
+      --red:#ff2d55;
+      --gold:#d4af37;
+
+      --shadow:0 16px 45px rgba(0,0,0,.12);
+      --r:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:var(--text);
+      background:
+        radial-gradient(900px 460px at 10% 0%, rgba(31,79,216,.14), transparent 60%),
+        radial-gradient(900px 460px at 90% 0%, rgba(255,45,85,.10), transparent 60%),
+        var(--bg);
+    }
+    a{color:inherit}
+    .wrap{max-width:1180px;margin:0 auto;padding:18px 14px 50px}
+
+    /* TOPBAR */
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:12px 14px;
+      background:rgba(255,255,255,.75);
+      border:1px solid var(--stroke);
+      border-radius:26px;
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(10px);
+      position:sticky; top:10px; z-index:50;
+    }
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand img{height:46px;width:auto}
+    .brand .txt{min-width:0}
+    .brand .txt .t{font-weight:950;letter-spacing:.2px}
+    .brand .txt .s{
+      font-size:13px;color:var(--muted);margin-top:2px;
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:52vw
+    }
+
+    .navbtns{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .btn{
+      appearance:none;border:1px solid var(--stroke);
+      padding:10px 14px;border-radius:14px;
+      background:#fff;color:var(--text);
+      font-weight:900;text-decoration:none;
+      display:inline-flex;align-items:center;gap:8px;
+      box-shadow:0 10px 24px rgba(0,0,0,.08);
+      transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 16px 28px rgba(0,0,0,.10);border-color:rgba(31,79,216,.25)}
+    .btn.primary{
+      border-color:rgba(212,175,55,.55);
+      background:linear-gradient(135deg, rgba(212,175,55,.22), #fff);
+    }
+    .btn.dark{
+      border-color:rgba(15,23,42,.22);
+      background:linear-gradient(135deg, rgba(11,18,32,.95), rgba(31,79,216,.75));
+      color:#fff;
+    }
+    .btn.red{
+      border-color:rgba(255,45,85,.35);
+      background:linear-gradient(135deg, rgba(255,45,85,.10), #fff);
+    }
+    .btn.ghost{
+      background:rgba(255,255,255,.70);
+    }
+
+    /* HERO */
+    .hero{
+      margin-top:16px;padding:18px;
+      border-radius:26px;border:1px solid var(--stroke);
+      background:var(--card);box-shadow:var(--shadow)
+    }
+    .hero h1{margin:0;font-size:20px;font-weight:1000}
+    .hero p{margin:8px 0 0;color:var(--muted);line-height:1.45}
+
+    /* Search */
+    .search{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap:10px;
+      align-items:center;
+    }
+    .search input{
+      width:100%;
+      padding:12px 14px;border-radius:16px;
+      border:1px solid rgba(15,23,42,.14);
+      background:rgba(255,255,255,.80);
+      outline:none;
+      font-weight:800;
+      box-shadow:0 10px 26px rgba(0,0,0,.06);
+    }
+    .hint{
+      margin:10px 0 0;
+      font-size:12px;
+      color:rgba(11,18,32,.66)
+    }
+
+    /* GRID / CARDS */
+    .grid{margin-top:16px;display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .card{
+      grid-column:span 6;
+      background:var(--card);
+      border:1px solid var(--stroke);
+      border-radius:26px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      display:flex;flex-direction:column;
+      min-height:260px;
+      position:relative;
+    }
+    .card .head{
+      padding:14px 14px 12px;
+      border-bottom:1px solid rgba(15,23,42,.08);
+      background:linear-gradient(135deg, rgba(31,79,216,.10), rgba(255,45,85,.06), rgba(212,175,55,.08));
+    }
+    .badge{
+      display:inline-flex;gap:8px;align-items:center;
+      font-weight:1000;font-size:12px;
+      padding:6px 10px;border-radius:999px;
+      border:1px solid rgba(212,175,55,.45);
+      background:rgba(212,175,55,.10);
+    }
+    .role{margin:10px 0 0;font-size:16px;font-weight:1000;line-height:1.25}
+    .meta{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+    .kv{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .tag{
+      display:inline-flex;align-items:center;gap:6px;
+      font-weight:900;font-size:12px;
+      padding:7px 10px;border-radius:999px;
+      border:1px solid rgba(15,23,42,.14);
+      background:rgba(255,255,255,.75);
+    }
+    .tag.gold{border-color:rgba(212,175,55,.55);background:rgba(212,175,55,.12)}
+    .tag.blue{border-color:rgba(31,79,216,.35);background:rgba(31,79,216,.08)}
+    .tag.red{border-color:rgba(255,45,85,.35);background:rgba(255,45,85,.06)}
+
+    .card .body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:10px;flex:1}
+    .details{
+      margin-top:2px;
+      padding:10px 12px;border-radius:16px;
+      border:1px solid rgba(15,23,42,.12);
+      background:rgba(255,255,255,.70);
+    }
+    .details ul{margin:10px 0 0;padding-left:18px}
+    .details li{margin:6px 0;color:rgba(11,18,32,.86);line-height:1.35}
+
+    .actions{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+    .small{padding:9px 12px;border-radius:12px;font-weight:1000}
+
+    /* Modal */
+    .modal{
+      position:fixed;inset:0;background:rgba(2,6,23,.62);
+      display:none;align-items:center;justify-content:center;
+      padding:18px;z-index:9999;
+    }
+    .modal.active{display:flex}
+    .modalBox{
+      width:min(1040px, 100%);
+      max-height:88vh;overflow:auto;
+      border-radius:26px;
+      background:rgba(255,255,255,.96);
+      border:1px solid rgba(255,255,255,.5);
+      box-shadow:0 30px 100px rgba(0,0,0,.35);
+    }
+    .modalHead{
+      padding:16px 18px;
+      display:flex;align-items:flex-start;justify-content:space-between;gap:14px;
+      border-bottom:1px solid rgba(15,23,42,.10);
+      background:linear-gradient(135deg, rgba(31,79,216,.12), rgba(255,45,85,.08), rgba(212,175,55,.10));
+    }
+    .modalTitle{margin:0;font-size:18px;font-weight:1000}
+    .modalSub{margin:6px 0 0;color:rgba(11,18,32,.70);font-size:13px}
+    .modalClose{
+      border:1px solid rgba(15,23,42,.15);
+      background:#fff;border-radius:14px;
+      padding:10px 12px;font-weight:1000;
+      cursor:pointer;
+    }
+    .modalBody{padding:14px 18px 18px}
+
+    .cvShell{
+      border-radius:22px;
+      border:1px solid rgba(15,23,42,.12);
+      overflow:hidden;
+      background:#fff;
+      box-shadow:0 12px 38px rgba(0,0,0,.08);
+    }
+
+    /* Fake "CV inside" layout (template) */
+    .cvTop{
+      padding:14px 16px;
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      background:linear-gradient(135deg, rgba(31,79,216,.12), rgba(212,175,55,.10), rgba(255,45,85,.06));
+      border-bottom:1px solid rgba(15,23,42,.10);
+    }
+    .cvTop .left strong{display:block;font-size:14px}
+    .cvTop .left span{display:block;margin-top:4px;color:rgba(11,18,32,.70);font-size:12px}
+    .cvTop .right{
+      display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end
+    }
+
+    .cvGrid{
+      display:grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      min-height:420px;
+    }
+    .cvSide{
+      padding:14px 14px;
+      border-right:1px solid rgba(15,23,42,.10);
+      background:rgba(245,247,255,.55);
+    }
+    .cvMain{
+      padding:14px 16px;
+      background:#fff;
+    }
+    .cvBlock{
+      margin-bottom:12px;
+      padding:11px 12px;
+      border:1px solid rgba(15,23,42,.10);
+      border-radius:16px;
+      background:rgba(255,255,255,.84);
+    }
+    .cvBlock h3{margin:0 0 8px;font-size:13px;font-weight:1000}
+    .cvBlock p{margin:0;color:rgba(11,18,32,.74);font-size:12.8px;line-height:1.4}
+    .cvBlock ul{margin:8px 0 0;padding-left:18px}
+    .cvBlock li{margin:6px 0;color:rgba(11,18,32,.86);font-size:12.8px;line-height:1.35}
+
+    .cvStamp{
+      margin-top:10px;
+      display:flex;gap:10px;flex-wrap:wrap;
+    }
+    .stamp{
+      font-weight:1000;font-size:12px;
+      padding:7px 10px;border-radius:999px;
+      border:1px solid rgba(15,23,42,.14);
+      background:rgba(255,255,255,.75);
+    }
+
+    /* Footer nav */
+    .footerNav{
+      margin-top:18px;
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      padding:14px;border-radius:26px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.72);
+      box-shadow:0 12px 34px rgba(0,0,0,.10);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Floating WA */
+    .waFloat{
+      position:fixed;right:16px;bottom:16px;z-index:99999;
+      display:flex;flex-direction:column;gap:10px;
+    }
+    .waFloat a{
+      width:56px;height:56px;border-radius:18px;
+      display:grid;place-items:center;
+      text-decoration:none;
+      box-shadow:0 18px 44px rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.35);
+      backdrop-filter: blur(8px);
+      transition:transform .12s ease;
+    }
+    .waFloat a:hover{transform:translateY(-2px)}
+    .wa{background:linear-gradient(135deg, #22c55e, #16a34a); color:#fff}
+    .ct{background:linear-gradient(135deg, rgba(11,18,32,.96), rgba(31,79,216,.70)); color:#fff}
+
+    @media (max-width:900px){
+      .card{grid-column:span 12}
+      .cvGrid{grid-template-columns:1fr}
+      .cvSide{border-right:none;border-bottom:1px solid rgba(15,23,42,.10)}
+    }
+    @media (max-width:640px){
+      .brand img{height:42px}
+      .btn{width:100%;justify-content:center}
+      .navbtns{width:100%}
+      .footerNav .btn{width:100%}
+      .brand .txt .s{max-width:88vw}
+      .search{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- TOP -->
+    <div class="topbar">
+      <div class="brand">
+        <img src="images/logomadawork.png" alt="Madawork">
+        <div class="txt">
+          <div class="t">cv.madawork.com</div>
+          <div class="s">Profils freelances — Page 1 (freelancer1)</div>
+        </div>
+      </div>
+
+      <div class="navbtns">
+  <a class="btn" href="index.html">Accueil</a>
+  <a class="btn" href="freelancer1.html">Cadres & Experts</a>
+  <a class="btn" href="freelancer2.html">Anglophones</a>
+  <a class="btn" href="freelancer3.html">Hispanophones</a>
+  <a class="btn primary" href="freelancer4.html">🇨🇳 Chinophones</a>
+</div>
+
+  <!-- ✅ AJOUT -->
+</div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Profils freelances — Page 1</h1>
+      <p>
+        Sélection de profils disponibles. Les identités sont volontairement masquées.
+        <b>Utilisez la référence</b> pour demander le CV complet.
+      </p>
+
+      <!-- search -->
+      <div class="search">
+        <input id="q" type="search" placeholder="Rechercher une référence ou un poste… (ex : DEV11, finance, assistante, fullstack)" />
+        <button class="btn dark" onclick="applySearch()">Rechercher</button>
+      </div>
+      <div class="hint">Astuce : tapez un mot-clé, une technologie ou une référence.</div>
+    </section>
+
+    <!-- GRID -->
+    <section class="grid" aria-label="Liste des profils" id="grid">
+
+      <!-- MIG-DIRFIN02 -->
+      <article class="card profile" data-search="MIG-DIRFIN02 finance daf audit comptabilite controle gestion" id="MIG-DIRFIN02">
+        <div class="head">
+          <span class="badge">Réf : MIG-DIRFIN02</span>
+          <div class="role">Directeur Administratif & Financier — Finance / Audit / Contrôle de gestion</div>
+          <div class="meta">Finance • Comptabilité • Budgets • ERP • Contrôle</div>
+          <div class="kv">
+            <span class="tag gold">Contrôle de gestion</span>
+            <span class="tag blue">Comptabilité</span>
+            <span class="tag">Audit</span>
+            <span class="tag">ERP</span>
+            <span class="tag red">Reporting</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="details">
+            <b>Résumé :</b>
+            <ul>
+              <li>Profil senior en finance & direction administrative.</li>
+              <li>Contrôle, budgets, reporting, optimisation.</li>
+              <li>Expérience DAF adjoint / RAF en entreprise.</li>
+            </ul>
+          </div>
+          <div class="actions">
+            <button class="btn small" onclick="openModal('modal-MIG-DIRFIN02')">Voir plus</button>
+            <button class="btn small ghost" onclick="copyRef('MIG-DIRFIN02')">Copier référence</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- DEV13BACK -->
+      <article class="card profile" data-search="DEV13BACK dev13 back fullstack developpeur flutter django react spring boot tailwind docker" id="DEV13BACK">
+        <div class="head">
+          <span class="badge">Réf : DEV13BACK</span>
+          <div class="role">Développeur Fullstack — Web & Mobile</div>
+          <div class="meta">Java • Spring Boot • ReactJS • Flutter/Django • CI/CD</div>
+          <div class="kv">
+            <span class="tag gold">Fullstack</span>
+            <span class="tag blue">Spring Boot</span>
+            <span class="tag blue">ReactJS</span>
+            <span class="tag">Flutter</span>
+            <span class="tag">Django</span>
+            <span class="tag red">Docker</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="details">
+            <b>Résumé :</b>
+            <ul>
+              <li>Dév Web & Mobile (projets Android, web, applications).</li>
+              <li>API REST, SPA, bases de données.</li>
+              <li>Intégration continue / déploiement.</li>
+            </ul>
+          </div>
+          <div class="actions">
+            <button class="btn small" onclick="openModal('modal-DEV13BACK')">Voir plus</button>
+            <button class="btn small ghost" onclick="copyRef('DEV13BACK')">Copier référence</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- DEV11 -->
+      <article class="card profile" data-search="DEV11 frontend developpeur react vue symfony asp.net js" id="DEV11">
+        <div class="head">
+          <span class="badge">Réf : DEV11</span>
+          <div class="role">Développeur Frontend — Web moderne / Applications</div>
+          <div class="meta">React • Vue • JavaScript • Symfony • API</div>
+          <div class="kv">
+            <span class="tag gold">Frontend</span>
+            <span class="tag blue">React</span>
+            <span class="tag blue">Vue</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag red">PostgreSQL</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="details">
+            <b>Résumé :</b>
+            <ul>
+              <li>Développement d’interfaces web responsives.</li>
+              <li>Projets : plateformes, applications, modules.</li>
+              <li>Bonne adaptabilité et productivité.</li>
+            </ul>
+          </div>
+          <div class="actions">
+            <button class="btn small" onclick="openModal('modal-DEV11')">Voir plus</button>
+            <button class="btn small ghost" onclick="copyRef('DEV11')">Copier référence</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- DIRFIN01 (LILLY) -->
+      <article class="card profile" data-search="DIRFIN01 lilly finance responsable administratif financier sav assistant virtuelle" id="DIRFIN01">
+        <div class="head">
+          <span class="badge">Réf : DIRFIN01</span>
+          <div class="role">Responsable Administratif & Financier — Assistante virtuelle Freelance</div>
+          <div class="meta">RH • Comptabilité • Logistique • SAV • Dossiers</div>
+          <div class="kv">
+            <span class="tag gold">RAF</span>
+            <span class="tag blue">RH</span>
+            <span class="tag">Comptabilité</span>
+            <span class="tag red">SAV</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="details">
+            <b>Résumé :</b>
+            <ul>
+              <li>Gestion administrative/financière complète.</li>
+              <li>SAV + support après-vente en freelance.</li>
+              <li>Suivi dossiers, contrats, factures.</li>
+            </ul>
+          </div>
+          <div class="actions">
+            <button class="btn small" onclick="openModal('modal-DIRFIN01')">Voir plus</button>
+            <button class="btn small ghost" onclick="copyRef('DIRFIN01')">Copier référence</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- DOM-ASSIST05 -->
+      <article class="card profile" data-search="DOM-ASSIST05 assistante virtuelle client rendez vous planning google trello calendly" id="DOM-ASSIST05">
+        <div class="head">
+          <span class="badge">Réf : DOM-ASSIST05</span>
+          <div class="role">Assistante Virtuelle — Relation client / RDV / Administratif</div>
+          <div class="meta">Gestion client • Planning • RDV • Tâches administratives</div>
+          <div class="kv">
+            <span class="tag gold">Assistante</span>
+            <span class="tag blue">Suite Google</span>
+            <span class="tag">Trello</span>
+            <span class="tag">Dropbox</span>
+            <span class="tag red">Calendly</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="details">
+            <b>Résumé :</b>
+            <ul>
+              <li>Organisation, suivi client, gestion des rendez-vous.</li>
+              <li>Expérience multi secteurs (assurance, médical, administratif).</li>
+              <li>Autonome, structurée, fiable.</li>
+            </ul>
+          </div>
+          <div class="actions">
+            <button class="btn small" onclick="openModal('modal-DOM-ASSIST05')">Voir plus</button>
+            <button class="btn small ghost" onclick="copyRef('DOM-ASSIST05')">Copier référence</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- TLASSIST02 -->
+      <article class="card profile" data-search="TLASSIST02 exploitation responsable administratif financier team leader commerce management" id="TLASSIST02">
+        <div class="head">
+          <span class="badge">Réf : TLASSIST02</span>
+          <div class="role">Responsable exploitation / Administration / Team leader</div>
+          <div class="meta">Gestion personnel • Admin/Finance • Suivi • Reporting</div>
+          <div class="kv">
+            <span class="tag gold">Management</span>
+            <span class="tag blue">Administration</span>
+            <span class="tag">Finance</span>
+            <span class="tag red">Encadrement</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="details">
+            <b>Résumé :</b>
+            <ul>
+              <li>Gestion du personnel et des opérations.</li>
+              <li>Expérience en administration et encadrement.</li>
+              <li>Suivi qualité, planning, et reporting.</li>
+            </ul>
+          </div>
+          <div class="actions">
+            <button class="btn small" onclick="openModal('modal-TLASSIST02')">Voir plus</button>
+            <button class="btn small ghost" onclick="copyRef('TLASSIST02')">Copier référence</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- TLASSIST03 -->
+      <article class="card profile" data-search="TLASSIST03 televente assurance coaching reclamation client formation agents" id="TLASSIST03">
+        <div class="head">
+          <span class="badge">Réf : TLASSIST03</span>
+          <div class="role">Télévente / Assurance — Coaching équipe / Support plateau</div>
+          <div class="meta">Téléconseil • Réclamations • Fidélisation • Coaching</div>
+          <div class="kv">
+            <span class="tag gold">Télévente</span>
+            <span class="tag blue">Assurance</span>
+            <span class="tag">Coaching</span>
+            <span class="tag red">Support plateau</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="details">
+            <b>Résumé :</b>
+            <ul>
+              <li>Solide expérience plateau télévente.</li>
+              <li>Coaching, suivi agents, stratégie & reporting.</li>
+              <li>Capacité à gérer objectifs qualitatifs et quantitatifs.</li>
+            </ul>
+          </div>
+          <div class="actions">
+            <button class="btn small" onclick="openModal('modal-TLASSIST03')">Voir plus</button>
+            <button class="btn small ghost" onclick="copyRef('TLASSIST03')">Copier référence</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- AUDIO-TLASS01 -->
+      <article class="card profile" data-search="AUDIO-TLASS01 audrey teleoperatrice finance comptabilite stage asena" id="AUDIO-TLASS01">
+        <div class="head">
+          <span class="badge">Réf : AUDIO-TLASS01</span>
+          <div class="role">Téléopératrice / Assistante administrative — Finance & Comptabilité</div>
+          <div class="meta">Bureautique • Comptabilité • Stage • Organisation</div>
+          <div class="kv">
+            <span class="tag gold">Téléopération</span>
+            <span class="tag blue">Finance</span>
+            <span class="tag">Sage</span>
+            <span class="tag red">Excel</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="details">
+            <b>Résumé :</b>
+            <ul>
+              <li>Formation en finance & comptabilité.</li>
+              <li>Stage + tâches administratives.</li>
+              <li>Sérieuse, sociable, esprit d’équipe.</li>
+            </ul>
+          </div>
+          <div class="actions">
+            <button class="btn small" onclick="openModal('modal-AUDIO-TLASS01')">Voir plus</button>
+            <button class="btn small ghost" onclick="copyRef('AUDIO-TLASS01')">Copier référence</button>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- FOOTER NAV -->
+    <div class="footerNav">
+      <a class="btn dark" href="https://cv.madawork.com" rel="noopener">← Retour vers cv.madawork.com</a>
+      <a class="btn primary" href="freelancer2.html">Suivant : freelancer2 →</a>
+    </div>
+
+  </div>
+
+  <!-- FLOATING -->
+  <div class="waFloat" aria-label="Actions rapides">
+    <a class="wa" href="https://wa.me/261346697478" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <!-- icon -->
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.44 0 .07 5.37.07 11.99c0 2.11.55 4.17 1.6 6l-1.7 6.21 6.36-1.67a12 12 0 0 0 5.73 1.46h.01c6.62 0 11.99-5.37 11.99-11.99 0-3.2-1.25-6.2-3.54-8.52ZM12.06 21.9h-.01a9.9 9.9 0 0 1-5.05-1.39l-.36-.22-3.78.99 1.01-3.68-.23-.38a9.9 9.9 0 1 1 8.42 4.68Zm5.78-7.42c-.32-.16-1.88-.93-2.17-1.04-.29-.11-.5-.16-.71.16-.21.32-.82 1.04-1 1.25-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.58-1.6-.95-.85-1.6-1.9-1.78-2.22-.18-.32-.02-.5.14-.66.14-.14.32-.37.48-.55.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.55-.08-.16-.71-1.72-.98-2.36-.26-.62-.52-.54-.71-.55h-.61c-.21 0-.55.08-.84.4-.29.32-1.1 1.07-1.1 2.61 0 1.54 1.13 3.03 1.29 3.24.16.21 2.22 3.39 5.37 4.75.75.32 1.33.51 1.78.65.75.24 1.43.21 1.97.13.6-.09 1.88-.77 2.14-1.51.26-.74.26-1.38.18-1.51-.08-.13-.29-.21-.61-.37Z" fill="white"/>
+      </svg>
+    </a>
+
+    <a class="ct" href="https://madawork.com/contact.html" target="_blank" rel="noopener" aria-label="Contact">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11Z" stroke="white" stroke-width="2"/>
+        <path d="M7 8h10M7 12h10M7 16h7" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- ================= MODALES / CV INTERIEUR ================= -->
+
+  <!-- Template note:
+    - Pas de nom
+    - Coordonnées masquées
+    - Boutons Débloquer -> message + Contact page
+  -->
+
+  <!-- MIG-DIRFIN02 -->
+  <div class="modal" id="modal-MIG-DIRFIN02" aria-hidden="true">
+    <div class="modalBox" role="dialog" aria-modal="true">
+      <div class="modalHead">
+        <div>
+          <h2 class="modalTitle">MIG-DIRFIN02 — Directeur Administratif & Financier</h2>
+          <div class="modalSub">Finance • Audit • Contrôle de gestion • Reporting</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-MIG-DIRFIN02')">Fermer ✕</button>
+      </div>
+      <div class="modalBody">
+
+        <div class="cvShell">
+          <div class="cvTop">
+            <div class="left">
+              <strong>CV (contenu masqué)</strong>
+              <span>Référence : <b>MIG-DIRFIN02</b> — DAF / Finance / Audit</span>
+            </div>
+            <div class="right">
+              <button class="btn small ghost" onclick="copyRef('MIG-DIRFIN02')">Copier référence</button>
+              <button class="btn small primary" onclick="unlockCoords('MIG-DIRFIN02')">Débloquer coordonnées</button>
+              <a class="btn small dark" href="https://madawork.com/contact.html" target="_blank" rel="noopener">Obtenir coordonnées</a>
+            </div>
+          </div>
+
+          <div class="cvGrid">
+            <div class="cvSide">
+              <div class="cvBlock">
+                <h3>Profil</h3>
+                <p>Spécialisé en Finance, contrôle comptable, contrôle de gestion, audit. Mise en place de systèmes, déploiement progiciel / gestion intégrée.</p>
+              </div>
+              <div class="cvBlock">
+                <h3>Langues</h3>
+                <div class="cvStamp">
+                  <span class="stamp">Malgache</span>
+                  <span class="stamp">Français</span>
+                  <span class="stamp">Anglais</span>
+                </div>
+              </div>
+              <div class="cvBlock">
+                <h3>Outils</h3>
+                <div class="cvStamp">
+                  <span class="stamp">Sage</span>
+                  <span class="stamp">Dynamics NAV</span>
+                  <span class="stamp">Excel VBA</span>
+                  <span class="stamp">PowerPivot</span>
+                  <span class="stamp">Access</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cvMain">
+              <div class="cvBlock">
+                <h3>Diplômes & Formations</h3>
+                <ul>
+                  <li>Diploma — Airline Financial Management</li>
+                  <li>Business Class Course (English Teaching Program)</li>
+                  <li>Master Administration / Comptabilité Finance (spécialité contrôle de gestion & audit opérationnel)</li>
+                  <li>Master Droit, Économie, Gestion (Mention Finance/Compta)</li>
+                </ul>
+              </div>
+
+              <div class="cvBlock">
+                <h3>Expériences</h3>
+                <ul>
+                  <li>Directeur Administratif & Financier adjoint — supervision comptable, budgets, prévisions</li>
+                  <li>Responsable Administratif & Financier — stratégie, trésorerie, reporting, analyses</li>
+                  <li>Responsable comptabilité financière — projet ERP Dynamics NAV</li>
+                </ul>
+              </div>
+
+              <div class="cvBlock" id="unlock-MIG-DIRFIN02" style="display:none">
+                <h3>Coordonnées</h3>
+                <p><b>Coordonnées disponibles sur demande.</b> Cliquez sur “Obtenir coordonnées”.</p>
+                <a class="btn small dark" href="https://madawork.com/contact.html" target="_blank" rel="noopener">Obtenir coordonnées</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- DEV13BACK -->
+  <div class="modal" id="modal-DEV13BACK" aria-hidden="true">
+    <div class="modalBox" role="dialog" aria-modal="true">
+      <div class="modalHead">
+        <div>
+          <h2 class="modalTitle">DEV13BACK — Développeur Fullstack</h2>
+          <div class="modalSub">Web & Mobile • ReactJS • Spring Boot • Flutter/Django</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-DEV13BACK')">Fermer ✕</button>
+      </div>
+      <div class="modalBody">
+
+        <div class="cvShell">
+          <div class="cvTop">
+            <div class="left">
+              <strong>CV (contenu masqué)</strong>
+              <span>Référence : <b>DEV13BACK</b> — Fullstack Web/Mobile</span>
+            </div>
+            <div class="right">
+              <button class="btn small ghost" onclick="copyRef('DEV13BACK')">Copier référence</button>
+              <button class="btn small primary" onclick="unlockCoords('DEV13BACK')">Débloquer coordonnées</button>
+              <a class="btn small dark" href="https://madawork.com/contact.html" target="_blank" rel="noopener">Obtenir coordonnées</a>
+            </div>
+          </div>
+
+          <div class="cvGrid">
+            <div class="cvSide">
+              <div class="cvBlock">
+                <h3>Profil</h3>
+                <p>Jeune diplômé en informatique, autonome, prêt à relever des défis avec sérieux.</p>
+              </div>
+              <div class="cvBlock">
+                <h3>Langues</h3>
+                <div class="cvStamp">
+                  <span class="stamp">Français</span>
+                  <span class="stamp">Anglais</span>
+                </div>
+              </div>
+              <div class="cvBlock">
+                <h3>Compétences</h3>
+                <div class="cvStamp">
+                  <span class="stamp">HTML/CSS</span>
+                  <span class="stamp">Java</span>
+                  <span class="stamp">JavaScript</span>
+                  <span class="stamp">PHP</span>
+                  <span class="stamp">Python</span>
+                  <span class="stamp">Dart</span>
+                  <span class="stamp">Docker</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cvMain">
+              <div class="cvBlock">
+                <h3>Expérience</h3>
+                <ul>
+                  <li>Stage développeur web & mobile — collecte de données, outil avec champs personnalisables</li>
+                  <li>Projet : Stream vidéo (Flutter/Django)</li>
+                  <li>Projet : Jeux 2D multijoueur Android</li>
+                </ul>
+              </div>
+
+              <div class="cvBlock">
+                <h3>Frameworks / Outils</h3>
+                <ul>
+                  <li>TailwindCSS, Spring Boot, ReactJS</li>
+                  <li>Flutter, Django</li>
+                  <li>CI/CD : GitHub, GitLab</li>
+                </ul>
+              </div>
+
+              <div class="cvBlock" id="unlock-DEV13BACK" style="display:none">
+                <h3>Coordonnées</h3>
+                <p><b>Coordonnées disponibles sur demande.</b> Cliquez sur “Obtenir coordonnées”.</p>
+                <a class="btn small dark" href="https://madawork.com/contact.html" target="_blank" rel="noopener">Obtenir coordonnées</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- DEV11 -->
+  <div class="modal" id="modal-DEV11" aria-hidden="true">
+    <div class="modalBox" role="dialog" aria-modal="true">
+      <div class="modalHead">
+        <div>
+          <h2 class="modalTitle">DEV11 — Développeur Frontend</h2>
+          <div class="modalSub">Interfaces modernes • Web apps • UI/UX</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-DEV11')">Fermer ✕</button>
+      </div>
+      <div class="modalBody">
+
+        <div class="cvShell">
+          <div class="cvTop">
+            <div class="left">
+              <strong>CV (contenu masqué)</strong>
+              <span>Référence : <b>DEV11</b> — Développeur Frontend</span>
+            </div>
+            <div class="right">
+              <button class="btn small ghost" onclick="copyRef('DEV11')">Copier référence</button>
+              <button class="btn small primary" onclick="unlockCoords('DEV11')">Débloquer coordonnées</button>
+              <a class="btn small dark" href="https://madawork.com/contact.html" target="_blank" rel="noopener">Obtenir coordonnées</a>
+            </div>
+          </div>
+
+          <div class="cvGrid">
+            <div class="cvSide">
+              <div class="cvBlock">
+                <h3>Compétences</h3>
+                <div class="cvStamp">
+                  <span class="stamp">React.js</span>
+                  <span class="stamp">Vue.js</span>
+                  <span class="stamp">Symfony</span>
+                  <span class="stamp">JS</span>
+                  <span class="stamp">SQL</span>
+                </div>
+              </div>
+              <div class="cvBlock">
+                <h3>Atouts</h3>
+                <ul>
+                  <li>Productivité</li>
+                  <li>Adaptabilité</li>
+                  <li>Écoute active</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cvMain">
+              <div class="cvBlock">
+                <h3>Projets</h3>
+                <ul>
+                  <li>Système de réservation (admin + gestion itinéraires)</li>
+                  <li>Plateforme de cryptomonnaie (backoffice)</li>
+                  <li>Réseau social (Dream Journal)</li>
+                  <li>Système de gestion de talents</li>
+                </ul>
+              </div>
+
+              <div class="cvBlock">
+                <h3>Stack</h3>
+                <ul>
+                  <li>Java (Spring), AngularJS, Bootstrap</li>
+                  <li>JS, Firebase, React Native</li>
+                  <li>PostgreSQL, Docker</li>
+                </ul>
+              </div>
+
+              <div class="cvBlock" id="unlock-DEV11" style="display:none">
+                <h3>Coordonnées</h3>
+                <p><b>Coordonnées disponibles sur demande.</b> Cliquez sur “Obtenir coordonnées”.</p>
+                <a class="btn small dark" href="https://madawork.com/contact.html" target="_blank" rel="noopener">Obtenir coordonnées</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- DIRFIN01 -->
+  <div class="modal" id="modal-DIRFIN01" aria-hidden="true">
+    <div class="modalBox" role="dialog" aria-modal="true">
+      <div class="modalHead">
+        <div>
+          <h2 class="modalTitle">DIRFIN01 — Responsable Administratif & Financier</h2>
+          <div class="modalSub">RAF • RH • Comptabilité • Logistique • SAV</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-DIRFIN01')">Fermer ✕</button>
+      </div>
+      <div class="modalBody">
+
+        <div class="cvShell">
+          <div class="cvTop">
+            <div class="left">
+              <strong>CV (contenu masqué)</strong>
+              <span>Référence : <b>DIRFIN01</b> — RAF + Assistante virtuelle</span>
+            </div>
+            <div class="right">
+              <button class="btn small ghost" onclick="copyRef('DIRFIN01')">Copier référence</button>
+              <button class="btn small primary" onclick="unlockCoords('DIRFIN01')">Débloquer coordonnées</button>
+              <a class="btn small dark" href="https://madawork.com/contact.html" target="_blank" rel="noopener">Obtenir coordonnées</a>
+            </div>
+          </div>
+
+          <div class="cvGrid">
+            <div class="cvSide">
+              <div class="cvBlock">
+                <h3>Expériences clés</h3>
+                <ul>
+                  <li>Responsable Admin & Financier (projet)</li>
+                  <li>Support après-vente / Assistante virtuelle</li>
+                  <li>Comptabilité / contrôle / logistique</li>
+                </ul>
+              </div>
+              <div class="cvBlock">
+                <h3>Points forts</h3>
+                <div class="cvStamp">
+                  <span class="stamp">Organisation</span>
+                  <span class="stamp">Autonomie</span>
+                  <span class="stamp">Fiabilité</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cvMain">
+              <div class="cvBlock">
+                <h3>Missions réalisées</h3>
+                <ul>
+                  <li>RH : contrats, paie, assurance santé</li>
+                  <li>Achats / prospection / commandes</li>
+                  <li>Comptabilité : saisies, rapprochements</li>
+                  <li>Contrôle caisse, paiement factures</li>
+                  <li>Inventaires et logistique</li>
+                </ul>
+              </div>
+
+              <div class="cvBlock" id="unlock-DIRFIN01" style="display:none">
+                <h3>Coordonnées</h3>
+                <p><b>Coordonnées disponibles sur demande.</b> Cliquez sur “Obtenir coordonnées”.</p>
+                <a class="btn small dark" href="https://madawork.com/contact.html" target="_blank" rel="noopener">Obtenir coordonnées</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- DOM-ASSIST05 -->
+  <div class="modal" id="modal-DOM-ASSIST05" aria-hidden="true">
+    <div class="modalBox" role="dialog" aria-modal="true">
+      <div class="modalHead">
+        <div>
+          <h2 class="modalTitle">DOM-ASSIST05 — Assistante Virtuelle</h2>
+          <div class="modalSub">Relation client • RDV • Admin • Organisation</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-DOM-ASSIST05')">Fermer ✕</button>
+      </div>
+      <div class="modalBody">
+
+        <div class="cvShell">
+          <div class="cvTop">
+            <div class="left">
+              <strong>CV (contenu masqué)</strong>
+              <span>Référence : <b>DOM-ASSIST05</b> — Assistante virtuelle</span>
+            </div>
+            <div class="right">
+              <button class="btn small ghost" onclick="copyRef('DOM-ASSIST05')">Copier référence</button>
+              <button class="btn small primary" onclick="unlockCoords('DOM-ASSIST05')">Débloquer coordonnées</button>
+              <a class="btn small dark" href="https://madawork.com/contact.html" target="_blank" rel="noopener">Obtenir coordonnées</a>
+            </div>
+          </div>
+
+          <div class="cvGrid">
+            <div class="cvSide">
+              <div class="cvBlock">
+                <h3>Compétences</h3>
+                <ul>
+                  <li>Relation client</li>
+                  <li>Gestion clientèle</li>
+                  <li>Planification RDV</li>
+                  <li>Tâches administratives</li>
+                </ul>
+              </div>
+              <div class="cvBlock">
+                <h3>Outils</h3>
+                <div class="cvStamp">
+                  <span class="stamp">Suite Google</span>
+                  <span class="stamp">Trello</span>
+                  <span class="stamp">Dropbox</span>
+                  <span class="stamp">Calendly</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cvMain">
+              <div class="cvBlock">
+                <h3>Expériences</h3>
+                <ul>
+                  <li>Télésecrétaire médicale</li>
+                  <li>Assistante virtuelle administrative</li>
+                  <li>Conseillère clientèle (assurances)</li>
+                  <li>Commerciale / stages administratifs</li>
+                </ul>
+              </div>
+
+              <div class="cvBlock" id="unlock-DOM-ASSIST05" style="display:none">
+                <h3>Coordonnées</h3>
+                <p><b>Coordonnées disponibles sur demande.</b> Cliquez sur “Obtenir coordonnées”.</p>
+                <a class="btn small dark" href="https://madawork.com/contact.html" target="_blank" rel="noopener">Obtenir coordonnées</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- TLASSIST02 -->
+  <div class="modal" id="modal-TLASSIST02" aria-hidden="true">
+    <div class="modalBox" role="dialog" aria-modal="true">
+      <div class="modalHead">
+        <div>
+          <h2 class="modalTitle">TLASSIST02 — Responsable Exploitation / Administration</h2>
+          <div class="modalSub">Management • Admin/Finance • Encadrement</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-TLASSIST02')">Fermer ✕</button>
+      </div>
+      <div class="modalBody">
+
+        <div class="cvShell">
+          <div class="cvTop">
+            <div class="left">
+              <strong>CV (contenu masqué)</strong>
+              <span>Référence : <b>TLASSIST02</b> — Exploitation / Admin</span>
+            </div>
+            <div class="right">
+              <button class="btn small ghost" onclick="copyRef('TLASSIST02')">Copier référence</button>
+              <button class="btn small primary" onclick="unlockCoords('TLASSIST02')">Débloquer coordonnées</button>
+              <a class="btn small dark" href="https://madawork.com/contact.html" target="_blank" rel="noopener">Obtenir coordonnées</a>
+            </div>
+          </div>
+
+          <div class="cvGrid">
+            <div class="cvSide">
+              <div class="cvBlock">
+                <h3>Diplômes</h3>
+                <ul>
+                  <li>Master 2 Management & Commerce International</li>
+                  <li>DTS Commerce & Administration des affaires</li>
+                </ul>
+              </div>
+              <div class="cvBlock">
+                <h3>Langues</h3>
+                <div class="cvStamp">
+                  <span class="stamp">Malgache</span>
+                  <span class="stamp">Français</span>
+                  <span class="stamp">Anglais (notion)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cvMain">
+              <div class="cvBlock">
+                <h3>Expériences</h3>
+                <ul>
+                  <li>Responsable d’exploitation (école)</li>
+                  <li>Responsable administratif et financier</li>
+                  <li>Team leader : formation recrues / suivi qualité / planning</li>
+                </ul>
+              </div>
+
+              <div class="cvBlock" id="unlock-TLASSIST02" style="display:none">
+                <h3>Coordonnées</h3>
+                <p><b>Coordonnées disponibles sur demande.</b> Cliquez sur “Obtenir coordonnées”.</p>
+                <a class="btn small dark" href="https://madawork.com/contact.html" target="_blank" rel="noopener">Obtenir coordonnées</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- TLASSIST03 -->
+  <div class="modal" id="modal-TLASSIST03" aria-hidden="true">
+    <div class="modalBox" role="dialog" aria-modal="true">
+      <div class="modalHead">
+        <div>
+          <h2 class="modalTitle">TLASSIST03 — Télévente / Assurance</h2>
+          <div class="modalSub">Coaching équipe • Réclamation client • Support plateau</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-TLASSIST03')">Fermer ✕</button>
+      </div>
+      <div class="modalBody">
+
+        <div class="cvShell">
+          <div class="cvTop">
+            <div class="left">
+              <strong>CV (contenu masqué)</strong>
+              <span>Référence : <b>TLASSIST03</b> — Télévente/Assurance</span>
+            </div>
+            <div class="right">
+              <button class="btn small ghost" onclick="copyRef('TLASSIST03')">Copier référence</button>
+              <button class="btn small primary" onclick="unlockCoords('TLASSIST03')">Débloquer coordonnées</button>
+              <a class="btn small dark" href="https://madawork.com/contact.html" target="_blank" rel="noopener">Obtenir coordonnées</a>
+            </div>
+          </div>
+
+          <div class="cvGrid">
+            <div class="cvSide">
+              <div class="cvBlock">
+                <h3>Qualités</h3>
+                <ul>
+                  <li>Sérieuse</li>
+                  <li>Active</li>
+                  <li>Réactive</li>
+                  <li>Responsable</li>
+                </ul>
+              </div>
+              <div class="cvBlock">
+                <h3>Informatique</h3>
+                <div class="cvStamp">
+                  <span class="stamp">Word</span>
+                  <span class="stamp">Excel</span>
+                  <span class="stamp">PowerPoint</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cvMain">
+              <div class="cvBlock">
+                <h3>Expériences</h3>
+                <ul>
+                  <li>Téléconseillère / télévendeuse assurance</li>
+                  <li>Coaching nouveaux agents</li>
+                  <li>Support technique plateau</li>
+                  <li>Compte rendu journalier, suivi objectifs</li>
+                </ul>
+              </div>
+
+              <div class="cvBlock" id="unlock-TLASSIST03" style="display:none">
+                <h3>Coordonnées</h3>
+                <p><b>Coordonnées disponibles sur demande.</b> Cliquez sur “Obtenir coordonnées”.</p>
+                <a class="btn small dark" href="https://madawork.com/contact.html" target="_blank" rel="noopener">Obtenir coordonnées</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- AUDIO-TLASS01 -->
+  <div class="modal" id="modal-AUDIO-TLASS01" aria-hidden="true">
+    <div class="modalBox" role="dialog" aria-modal="true">
+      <div class="modalHead">
+        <div>
+          <h2 class="modalTitle">AUDIO-TLASS01 — Téléopératrice / Assistante administrative</h2>
+          <div class="modalSub">Finance • Comptabilité • Bureautique</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-AUDIO-TLASS01')">Fermer ✕</button>
+      </div>
+      <div class="modalBody">
+
+        <div class="cvShell">
+          <div class="cvTop">
+            <div class="left">
+              <strong>CV (contenu masqué)</strong>
+              <span>Référence : <b>AUDIO-TLASS01</b> — Téléopération / Finance</span>
+            </div>
+            <div class="right">
+              <button class="btn small ghost" onclick="copyRef('AUDIO-TLASS01')">Copier référence</button>
+              <button class="btn small primary" onclick="unlockCoords('AUDIO-TLASS01')">Débloquer coordonnées</button>
+              <a class="btn small dark" href="https://madawork.com/contact.html" target="_blank" rel="noopener">Obtenir coordonnées</a>
+            </div>
+          </div>
+
+          <div class="cvGrid">
+            <div class="cvSide">
+              <div class="cvBlock">
+                <h3>Formation</h3>
+                <ul>
+                  <li>Technicien supérieur finance & comptabilité</li>
+                  <li>Formation téléopératrice</li>
+                </ul>
+              </div>
+              <div class="cvBlock">
+                <h3>Langues</h3>
+                <div class="cvStamp">
+                  <span class="stamp">Malgache</span>
+                  <span class="stamp">Français</span>
+                  <span class="stamp">Anglais</span>
+                </div>
+              </div>
+              <div class="cvBlock">
+                <h3>Informatique</h3>
+                <div class="cvStamp">
+                  <span class="stamp">Word</span>
+                  <span class="stamp">Excel</span>
+                  <span class="stamp">Access</span>
+                  <span class="stamp">PowerPoint</span>
+                  <span class="stamp">Sage</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cvMain">
+              <div class="cvBlock">
+                <h3>Expérience</h3>
+                <ul>
+                  <li>Stage : assistance traitements budget / administration</li>
+                  <li>Travail en équipe, écoute active, sérieux</li>
+                </ul>
+              </div>
+
+              <div class="cvBlock" id="unlock-AUDIO-TLASS01" style="display:none">
+                <h3>Coordonnées</h3>
+                <p><b>Coordonnées disponibles sur demande.</b> Cliquez sur “Obtenir coordonnées”.</p>
+                <a class="btn small dark" href="https://madawork.com/contact.html" target="_blank" rel="noopener">Obtenir coordonnées</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    function openModal(id){
+      const m = document.getElementById(id);
+      if(!m) return;
+      m.classList.add('active');
+      m.setAttribute('aria-hidden','false');
+      document.body.style.overflow="hidden";
+    }
+    function closeModal(id){
+      const m = document.getElementById(id);
+      if(!m) return;
+      m.classList.remove('active');
+      m.setAttribute('aria-hidden','true');
+      document.body.style.overflow="";
+    }
+
+    // click outside closes modal
+    document.addEventListener('click', (e)=>{
+      document.querySelectorAll('.modal.active').forEach(m=>{
+        if(e.target === m){
+          m.classList.remove('active');
+          document.body.style.overflow="";
+        }
+      });
+    });
+
+    // ESC closes
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape'){
+        document.querySelectorAll('.modal.active').forEach(m=>m.classList.remove('active'));
+        document.body.style.overflow="";
+      }
+    });
+
+    function copyRef(ref){
+      navigator.clipboard.writeText(ref).then(()=>{
+        toast("Référence copiée : " + ref);
+      }).catch(()=>{
+        prompt("Copiez la référence :", ref);
+      });
+    }
+
+    function unlockCoords(ref){
+      const box = document.getElementById("unlock-" + ref);
+      if(box){
+        box.style.display = "block";
+        box.scrollIntoView({behavior:"smooth", block:"center"});
+        toast("Coordonnées : disponibles sur demande (réf. " + ref + ")");
+      }
+    }
+
+    function applySearch(){
+      const q = (document.getElementById('q').value || "").trim().toLowerCase();
+      const items = document.querySelectorAll('.profile');
+      let shown = 0;
+
+      items.forEach(it=>{
+        const hay = (it.getAttribute('data-search') || "").toLowerCase() + " " + it.id.toLowerCase();
+        const ok = !q || hay.includes(q);
+        it.style.display = ok ? "" : "none";
+        if(ok) shown++;
+      });
+
+      if(q && shown === 1){
+        const one = [...items].find(x => x.style.display !== "none");
+        if(one) one.scrollIntoView({behavior:"smooth", block:"start"});
+      }
+      toast(shown + " profil(s) trouvé(s)");
+    }
+
+    // Enter key triggers search
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const inp = document.getElementById('q');
+      if(inp){
+        inp.addEventListener('keydown', (e)=>{
+          if(e.key === 'Enter'){ applySearch(); }
+        });
+      }
+    });
+
+    // Toast
+    let toastTimer = null;
+    function toast(msg){
+      let t = document.getElementById('toast');
+      if(!t){
+        t = document.createElement('div');
+        t.id = "toast";
+        t.style.position = "fixed";
+        t.style.left = "50%";
+        t.style.bottom = "88px";
+        t.style.transform = "translateX(-50%)";
+        t.style.padding = "10px 14px";
+        t.style.borderRadius = "16px";
+        t.style.fontWeight = "900";
+        t.style.fontSize = "13px";
+        t.style.zIndex = "999999";
+        t.style.color = "#fff";
+        t.style.border = "1px solid rgba(255,255,255,.18)";
+        t.style.boxShadow = "0 18px 44px rgba(0,0,0,.22)";
+        t.style.background = "linear-gradient(135deg, rgba(11,18,32,.96), rgba(31,79,216,.65))";
+        document.body.appendChild(t);
+      }
+      t.textContent = msg;
+      t.style.opacity = "1";
+      if(toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(()=>{ t.style.opacity="0"; }, 2200);
+    }
+  </script>
+</body>
+</html>

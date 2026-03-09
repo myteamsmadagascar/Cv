@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Madawork — Page en cours de maintenance</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#1f4fd8" />
+  <link rel="icon" href="images/logomadawork.png" />
+
+  <style>
+    :root{
+      --bg1:#ffffff;
+      --bg2:#f3f8ff;
+      --card:rgba(255,255,255,.86);
+      --stroke:rgba(15,23,42,.12);
+      --text:#0b1220;
+      --muted:rgba(11,18,32,.70);
+
+      --blue:#1f4fd8;
+      --sky:#49c6ff;
+      --red:#ff2d55;
+      --gold:#d4af37;
+
+      --shadow:0 18px 70px rgba(15,23,42,.12);
+      --r:26px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:var(--text);
+      background:
+        radial-gradient(900px 520px at 15% 10%, rgba(73,198,255,.22), transparent 65%),
+        radial-gradient(900px 520px at 85% 20%, rgba(255,45,85,.18), transparent 60%),
+        radial-gradient(1100px 700px at 50% 100%, rgba(31,79,216,.14), transparent 60%),
+        linear-gradient(180deg,var(--bg1),var(--bg2));
+      min-height:100vh;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:18px 14px 70px}
+
+    .glass{
+      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.62));
+      border:1px solid var(--stroke);
+      border-radius:var(--r);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow), 0 0 0 1px rgba(255,255,255,.35) inset;
+    }
+
+    /* Topbar */
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:12px 14px;
+      position:sticky; top:10px; z-index:50;
+    }
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand img{height:44px;width:auto;object-fit:contain}
+    .brand .txt{min-width:0}
+    .brand .t{font-weight:1000;letter-spacing:-.2px}
+    .brand .s{
+      margin-top:2px;
+      font-size:12px;
+      color:var(--muted);
+      font-weight:850;
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+      max-width:55vw;
+    }
+
+    .nav{
+      display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;
+    }
+
+    .btn{
+      border:1px solid rgba(15,23,42,.12);
+      background:rgba(255,255,255,.86);
+      padding:10px 12px;border-radius:16px;
+      font-weight:1000;font-size:13px;
+      box-shadow:0 10px 26px rgba(0,0,0,.06);
+      transition:transform .12s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{
+      border-color:rgba(212,175,55,.55);
+      background:linear-gradient(135deg, rgba(212,175,55,.22), rgba(255,255,255,.92));
+    }
+    .btn.dark{
+      color:#fff;
+      border-color:rgba(15,23,42,.22);
+      background:linear-gradient(135deg, rgba(11,18,32,.96), rgba(31,79,216,.75));
+    }
+
+    /* Maintenance card */
+    .hero{
+      margin-top:14px;
+      padding:22px 18px;
+      overflow:hidden;
+      position:relative;
+    }
+    .hero:before{
+      content:"";
+      position:absolute; inset:-120px;
+      background:
+        radial-gradient(closest-side at 12% 18%, rgba(73,198,255,.30), transparent 62%),
+        radial-gradient(closest-side at 86% 18%, rgba(255,45,85,.22), transparent 62%),
+        radial-gradient(closest-side at 50% 90%, rgba(31,79,216,.18), transparent 70%);
+      filter: blur(2px);
+    }
+    .hero > *{position:relative;z-index:2}
+
+    .chip{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:8px 12px;border-radius:999px;
+      border:1px solid rgba(212,175,55,.50);
+      background:rgba(212,175,55,.10);
+      font-weight:1000;font-size:12px;
+      width:max-content;
+    }
+
+    h1{
+      margin:14px 0 0;
+      font-size:26px;
+      font-weight:1000;
+      letter-spacing:-.3px;
+    }
+    .sub{
+      margin:10px 0 0;
+      color:var(--muted);
+      font-weight:850;
+      line-height:1.55;
+      max-width:860px;
+    }
+
+    .box{
+      margin-top:16px;
+      padding:14px 14px;
+      border-radius:20px;
+      border:1px solid rgba(15,23,42,.12);
+      background:rgba(255,255,255,.78);
+      font-weight:900;
+      color:rgba(11,18,32,.82);
+    }
+
+    .actions{
+      margin-top:16px;
+      display:flex;gap:10px;flex-wrap:wrap;
+    }
+    .actions a{flex:1;min-width:220px;text-align:center}
+
+    /* Footer */
+    .footer{
+      margin-top:14px;
+      text-align:center;
+      color:var(--muted);
+      font-weight:850;
+      font-size:12px;
+    }
+
+    /* Floating WhatsApp */
+    .floatWA{
+      position:fixed;
+      left:16px;
+      bottom:16px;
+      z-index:9999;
+      width:56px;height:56px;border-radius:50%;
+      display:grid;place-items:center;
+      background:#25D366;
+      border:1px solid rgba(255,255,255,.55);
+      box-shadow:0 18px 55px rgba(15,23,42,.25);
+      transition:transform .12s ease;
+    }
+    .floatWA:hover{transform:translateY(-2px)}
+    .floatWA svg{width:28px;height:28px;fill:#fff}
+
+    @media (max-width:680px){
+      .btn{width:100%;text-align:center}
+      .nav{width:100%}
+      .topbar{flex-wrap:wrap}
+      .brand .s{max-width:88vw}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="topbar glass">
+      <div class="brand">
+        <img src="images/logomadawork.png" alt="Madawork" onerror="this.style.display='none'">
+        <div class="txt">
+          <div class="t">cv.madawork.com</div>
+          <div class="s">Page en cours de maintenance</div>
+        </div>
+      </div>
+
+      <div class="nav">
+        <a class="btn" href="index.html">← Retour Index</a>
+        <a class="btn primary" href="#" onclick="history.back();return false;">← Page précédente</a>
+        <a class="btn dark" href="freelancer6.html">Suivant →</a>
+      </div>
+    </div>
+
+    <section class="hero glass">
+      <div class="chip">🛠️ Mise à jour en cours — Madawork</div>
+
+      <h1>Page en cours de maintenance</h1>
+      <p class="sub">
+        Cette rubrique est actuellement en préparation.<br>
+        Les profils seront ajoutés très prochainement sur cette page (mise à jour progressive).
+      </p>
+
+      <div class="box">
+        ✅ Vous pouvez déjà parcourir les autres pages de profils disponibles sur cv.madawork.com.<br>
+        ✅ Si vous avez un besoin urgent (équipe / talents), contactez-nous via WhatsApp.
+      </div>
+
+      <div class="actions">
+        <a class="btn primary" href="index.html">Voir toutes les catégories</a>
+        <a class="btn" href="https://madawork.com/contact.html" target="_blank" rel="noopener">Besoin d'informations ?</a>
+      </div>
+
+      <div class="footer">
+        © Madawork — cv.madawork.com
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ✅ WhatsApp flottant : 0332943007 -->
+  <a class="floatWA" href="https://wa.me/261332943007" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.42c-.27-.14-1.6-.79-1.84-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.14-1.12-.41-2.13-1.31-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.41.11-.55.12-.12.27-.31.41-.46.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.52-.44-.45-.61-.46h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3 0 1.36.99 2.67 1.13 2.85.14.18 1.95 2.98 4.72 4.18.66.28 1.17.45 1.57.58.66.21 1.26.18 1.73.11.53-.08 1.6-.65 1.83-1.27.23-.62.23-1.15.16-1.27-.07-.12-.25-.2-.52-.34zM16.03 3C9.38 3 4 8.29 4 14.8c0 2.29.68 4.41 1.85 6.2L4 29l8.2-1.72c1.72.93 3.7 1.46 5.83 1.46 6.65 0 12.03-5.29 12.03-11.8C30.06 8.29 22.68 3 16.03 3z"/>
+    </svg>
+  </a>
+
+</body>
+</html>

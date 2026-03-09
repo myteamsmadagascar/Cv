@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>MadaWork - Deposer mon profil</title>
+<meta name="description" content="Depot de profil professionnel MadaWork avec paiement et verification." />
+<meta name="theme-color" content="#ff2d55"/>
+
+<style>
+:root{
+  --bg1:#ffffff;
+  --bg2:#f3f8ff;
+  --card:rgba(255,255,255,.85);
+  --stroke:rgba(15,23,42,.12);
+  --text:#0b1220;
+  --muted:rgba(11,18,32,.70);
+
+  --blue:#1f4fd8;
+  --sky:#49c6ff;
+  --red:#ff2d55;
+
+  --shadow:0 18px 70px rgba(15,23,42,.12);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  color:var(--text);
+  background:
+    radial-gradient(900px 520px at 15% 10%, rgba(255,45,85,.16), transparent 65%),
+    radial-gradient(900px 520px at 85% 20%, rgba(73,198,255,.18), transparent 60%),
+    radial-gradient(1100px 700px at 50% 100%, rgba(31,79,216,.14), transparent 60%),
+    linear-gradient(180deg,var(--bg1),var(--bg2));
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:18px}
+
+.glass{
+  background:linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.62));
+  border:1px solid var(--stroke);
+  border-radius:22px;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow), 0 0 0 1px rgba(255,255,255,.35) inset;
+}
+
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px 16px;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:42px;width:auto;object-fit:contain}
+.brand h1{margin:0;font-size:16px}
+.brand p{margin:2px 0 0;font-size:12px;color:var(--muted)}
+
+.hero{margin-top:14px;padding:18px;overflow:hidden;position:relative}
+.hero:before{
+  content:"";position:absolute;inset:-120px;
+  background:
+    radial-gradient(closest-side at 20% 20%, rgba(255,45,85,.24), transparent 62%),
+    radial-gradient(closest-side at 80% 30%, rgba(73,198,255,.20), transparent 62%),
+    radial-gradient(closest-side at 55% 80%, rgba(31,79,216,.16), transparent 70%);
+  filter: blur(2px);
+}
+.hero>*{position:relative;z-index:2}
+h2{margin:0;font-size:24px;letter-spacing:-.3px}
+.sub{margin:8px 0 0;color:var(--muted);line-height:1.55}
+
+.grid{
+  margin-top:14px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px;
+}
+@media(max-width:980px){.grid{grid-template-columns:1fr}}
+
+.card{padding:16px}
+label{display:block;font-weight:900;font-size:12px;margin:10px 0 6px;color:rgba(11,18,32,.80);text-transform:uppercase;letter-spacing:.7px}
+input,select,textarea{
+  width:100%;
+  padding:12px 14px;
+  border-radius:16px;
+  border:1px solid rgba(15,23,42,.14);
+  background:#fff;
+  outline:none;
+  font-weight:700;
+}
+textarea{min-height:110px;resize:vertical}
+
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:520px){.row2{grid-template-columns:1fr}}
+
+.pill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 10px;border-radius:999px;
+  border:1px solid rgba(15,23,42,.12);
+  background:rgba(255,255,255,.80);
+  font-weight:950;font-size:12px;
+}
+.dot{width:10px;height:10px;border-radius:99px;background:var(--red);box-shadow:0 0 0 6px rgba(255,45,85,.10)}
+
+.btnRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.btn{
+  flex:1;
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:13px 14px;border-radius:16px;
+  border:1px solid rgba(15,23,42,.12);
+  font-weight:950;
+  background:linear-gradient(135deg, rgba(255,45,85,.22), rgba(73,198,255,.10), rgba(31,79,216,.12));
+  cursor:pointer;
+}
+.btn2{
+  flex:1;
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:13px 14px;border-radius:16px;
+  border:1px solid rgba(15,23,42,.12);
+  font-weight:950;
+  background:rgba(255,255,255,.90);
+}
+.note{margin-top:10px;color:var(--muted);font-size:12px;line-height:1.5}
+
+.total{
+  padding:14px;border-radius:18px;border:1px dashed rgba(255,45,85,.40);
+  background:rgba(255,45,85,.06);
+  font-weight:950;
+}
+.total b{color:var(--red)}
+small{color:var(--muted)}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <div class="topbar glass">
+    <div class="brand">
+      <img src="images/logo.png" alt="MadaWork" onerror="this.style.display='none'">
+      <div>
+        <h1>Depot de profil - MadaWork</h1>
+        <p>Formulaire public + paiement + badge</p>
+      </div>
+    </div>
+    <a class="pill" href="index.html"><span class="dot"></span> Retour aux profils</a>
+  </div>
+
+  <section class="hero glass">
+    <h2>Deposer mon profil</h2>
+    <p class="sub">
+      Completez le formulaire puis effectuez le paiement. Votre profil sera publie manuellement apres verification.
+    </p>
+  </section>
+
+  <form class="grid" action="https://formsubmit.co/madawork.plateforme@gmail.com" method="POST" enctype="multipart/form-data">
+
+    <!-- FormSubmit settings -->
+    <input type="hidden" name="_subject" value="NOUVEAU PROFIL - MadaWork (Depot CV)" />
+    <input type="hidden" name="_captcha" value="false" />
+    <input type="hidden" name="_next" value="https://cv.madawork.com/merci.html" />
+
+    <!-- LEFT -->
+    <div class="card glass">
+
+      <div class="pill"><span class="dot"></span> Pack + Paiement automatique</div>
+
+      <label>Choisir votre formule</label>
+      <select id="pack" name="Formule / Pack" required>
+        <option value="">- Choisir -</option>
+        <option value="1an_50000">1 an - 50 000 Ar (Premium + coordonnees affichees)</option>
+        <option value="3mois_20000">3 mois - 20 000 Ar (Premium + coordonnees affichees)</option>
+        <option value="1an_10000">1 an - 10 000 Ar (coordonnees non affichees)</option>
+        <option value="debloquer_5000">Debloquer coordonnees (visiteur) - 5 000 Ar</option>
+      <option value="debloquer_5000">Debloquer CV (visiteur) - 5 000 Ar</option>
+     <option value="debloquer_5000">Debloquer audio (visiteur) - 5 000 Ar</option>
+     <option value="debloquer_5000">Debloquer coordonnees , CV, Audio(visiteur) - 15000 Ar</option>
+   <option value="debloquer_5000">Debloquer coordonnees (visiteur) - 5 000 Ar</option>
+           <option value="autres">autre ( prix à définir à la caisse)</option>
+      </select>
+
+      <div class="row2">
+        <div>
+          <label>Badge verifie</label>
+          <select name="Badge verifie">
+            <option value="non">Non</option>
+            <option value="oui">Oui (premium)</option>
+          </select>
+        </div>
+        <div>
+          <label>Badge confirme</label>
+          <select name="Badge confirme">
+            <option value="non">Non</option>
+            <option value="oui">Oui (test ou certificat)</option>
+          </select>
+        </div>
+      </div>
+
+      <label>Categorie</label>
+      <select name="Categorie" required>
+        <option value="">- Choisir -</option>
+        <option value="assurance">Assurance / Souscription</option>
+        <option value="administration">Administration / Assistante</option>
+        <option value="offshore">Offshore / Back-office</option>
+        <option value="televente">Televente / Teleconseil</option>
+        <option value="dev">Developpement / IT</option>
+        <option value="design">Design / Graphisme</option>
+        <option value="marketing">Marketing digital</option>
+      </select>
+
+      <div class="row2">
+        <div>
+          <label>Nom</label>
+          <input name="Nom" required placeholder="Ex : Rakoto" />
+        </div>
+        <div>
+          <label>Prenom</label>
+          <input name="Prenom" required placeholder="Ex : Hery" />
+        </div>
+      </div>
+
+      <label>Metier / Titre du profil</label>
+      <input name="Titre" required placeholder="Ex : Teleprospectrice a domicile / Gestionnaire assurance" />
+
+      <label>Competences principales</label>
+      <textarea name="Competences" placeholder="Ex : assurance, souscription, excel, relation client, televente..."></textarea>
+
+      <div class="row2">
+        <div>
+          <label>Ville</label>
+          <input name="Ville" placeholder="Ex : Antananarivo" />
+        </div>
+        <div>
+          <label>Disponibilite</label>
+          <select name="Disponibilite">
+            <option value="disponible_suite">Disponible de suite</option>
+            <option value="sous_préavis">Selon offres</option>
+            <option value="plein_temps">Plein temps</option>
+            <option value="mi_temps">Mi-temps</option>
+            <option value="selon_mission">Selon mission</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="card glass">
+
+      <div class="pill"><span class="dot"></span> Coordonnees + Pieces jointes</div>
+
+      <label>WhatsApp / Telephone</label>
+      <input name="Telephone" placeholder="+261 ..." />
+
+      <label>Email</label>
+      <input type="email" name="Email" placeholder="exemple@gmail.com" />
+
+      <label>Piece jointe CV (PDF / image)</label>
+      <input type="file" name="CV" accept=".pdf,.jpg,.jpeg,.png" />
+
+      <label>Audio (presentation agent)</label>
+      <input type="file" name="Audio" accept=".mp3,.wav,.m4a,.aac" />
+
+      <label>Si le profil doit etre debloque (option 10 000 Ar)</label>
+      <textarea name="Profil a debloquer" placeholder="Ecrire ici les elements a masquer : telephone, email, CV, audio, etc."></textarea>
+
+      <div class="total">
+        Total a payer : <b><span id="total">0</span> Ar</b>
+        <br><small>(auto selon la formule)</small>
+      </div>
+
+      <label>Numero pour paiement</label>
+      <select name="Numero paiement" required>
+        <option value="">- Choisir -</option>
+        <option value="0346697478">034 66 974 78 - Finiavana Naomi-NISI</option>
+        <option value="0332943007">033 29 430 07 - Finiavana Naomi Nisi</option>
+        <option value="0326096449">032 60 964 49 - Finiavana Naomi Nisi</option>
+      </select>
+
+      <div class="row2">
+        <div>
+          <label>Reference transaction</label>
+          <input name="Reference transaction" required placeholder="Ex : Mvola / Orange Money / Airtel Money" />
+        </div>
+        <div>
+          <label>Montant envoye</label>
+          <input id="montant" name="Montant envoye" required placeholder="Ex : 20000" />
+        </div>
+      </div>
+
+      <label>Numero envoyeur</label>
+      <input name="Numero envoyeur" required placeholder="Ex : 034 xx xxx xx" />
+
+      <div class="btnRow">
+        <button class="btn" type="submit">Finaliser et deposer mon profil</button>
+        <a class="btn2" href="index.html">Retour</a>
+      </div>
+
+      <div class="note">
+        Apres dépôts, votre profil est verifie puis publie sur cv.madawork.com
+       
+      </div>
+
+    </div>
+
+  </form>
+
+</div>
+
+<script>
+function packPrice(v){
+  if(v==="1an_50000") return 50000;
+  if(v==="3mois_20000") return 20000;
+  if(v==="1an_10000") return 10000;
+  if(v==="debloquer_5000") return 5000;
+  return 0;
+}
+function updateTotal(){
+  var pack = document.getElementById("pack").value;
+  var price = packPrice(pack);
+  document.getElementById("total").innerText = price;
+  document.getElementById("montant").value = price ? String(price) : "";
+}
+document.getElementById("pack").addEventListener("change", updateTotal);
+updateTotal();
+</script>
+<script src="retour.js"></script>
+
+</body>
+</html>

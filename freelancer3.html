@@ -1,0 +1,935 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>cv.madawork.com — Profils hispanophones (Page 3)</title>
+  <meta name="description" content="cv.madawork.com : Profils hispanophones — Page 3. Télévente, support, bilingue FR/ES, service client, B2B." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="images/logomadawork.png" />
+  <meta name="theme-color" content="#1f4fd8" />
+
+  <style>
+    :root{
+      --bg:#f5f7ff;
+      --card:rgba(255,255,255,.92);
+      --stroke:rgba(15,23,42,.12);
+      --text:#0b1220;
+      --muted:rgba(11,18,32,.70);
+
+      --blue:#1f4fd8;
+      --red:#ff2d55;
+      --gold:#d4af37;
+
+      --shadow:0 16px 45px rgba(0,0,0,.12);
+      --r:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:var(--text);
+      background:
+        radial-gradient(900px 460px at 10% 0%, rgba(31,79,216,.14), transparent 60%),
+        radial-gradient(900px 460px at 90% 0%, rgba(255,45,85,.10), transparent 60%),
+        var(--bg);
+    }
+    a{color:inherit}
+    .wrap{max-width:1180px;margin:0 auto;padding:18px 14px 56px}
+
+    /* TOPBAR */
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:12px 14px;
+      background:rgba(255,255,255,.75);
+      border:1px solid var(--stroke);
+      border-radius:26px;
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(10px);
+      position:sticky; top:10px; z-index:50;
+    }
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand img{height:46px;width:auto}
+    .brand .txt{min-width:0}
+    .brand .txt .t{font-weight:950;letter-spacing:.2px}
+    .brand .txt .s{
+      font-size:13px;color:var(--muted);margin-top:2px;
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:52vw
+    }
+
+    .navbtns{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .btn{
+      appearance:none;border:1px solid var(--stroke);
+      padding:10px 14px;border-radius:14px;
+      background:#fff;color:var(--text);
+      font-weight:900;text-decoration:none;
+      display:inline-flex;align-items:center;gap:8px;
+      box-shadow:0 10px 24px rgba(0,0,0,.08);
+      transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 16px 28px rgba(0,0,0,.10);border-color:rgba(31,79,216,.25)}
+    .btn.primary{
+      border-color:rgba(212,175,55,.55);
+      background:linear-gradient(135deg, rgba(212,175,55,.22), #fff);
+    }
+    .btn.dark{
+      border-color:rgba(15,23,42,.22);
+      background:linear-gradient(135deg, rgba(11,18,32,.95), rgba(31,79,216,.75));
+      color:#fff;
+    }
+    .btn.red{
+      border-color:rgba(255,45,85,.35);
+      background:linear-gradient(135deg, rgba(255,45,85,.10), #fff);
+    }
+    .btn.ghost{
+      background:rgba(255,255,255,.70);
+    }
+    .btn.gold{
+      border-color:rgba(212,175,55,.70);
+      background:linear-gradient(135deg, rgba(212,175,55,.34), #fff);
+    }
+    .small{padding:9px 12px;border-radius:12px;font-weight:1000}
+
+    /* HERO */
+    .hero{
+      margin-top:16px;padding:18px;
+      border-radius:26px;border:1px solid var(--stroke);
+      background:var(--card);box-shadow:var(--shadow)
+    }
+    .hero h1{margin:0;font-size:20px;font-weight:1000}
+    .hero p{margin:8px 0 0;color:var(--muted);line-height:1.55}
+
+    /* Search */
+    .search{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap:10px;
+      align-items:center;
+    }
+    .search input{
+      width:100%;
+      padding:12px 14px;border-radius:16px;
+      border:1px solid rgba(15,23,42,.14);
+      background:rgba(255,255,255,.80);
+      outline:none;
+      font-weight:800;
+      box-shadow:0 10px 26px rgba(0,0,0,.06);
+    }
+    .hint{
+      margin:10px 0 0;
+      font-size:12px;
+      color:rgba(11,18,32,.66)
+    }
+
+    /* GRID / CARDS */
+    .grid{margin-top:16px;display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .card{
+      grid-column:span 6;
+      background:var(--card);
+      border:1px solid var(--stroke);
+      border-radius:26px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      display:flex;flex-direction:column;
+      min-height:260px;
+      position:relative;
+    }
+    .card .head{
+      padding:14px 14px 12px;
+      border-bottom:1px solid rgba(15,23,42,.08);
+      background:linear-gradient(135deg, rgba(31,79,216,.10), rgba(255,45,85,.06), rgba(212,175,55,.08));
+    }
+    .badge{
+      display:inline-flex;gap:8px;align-items:center;
+      font-weight:1000;font-size:12px;
+      padding:6px 10px;border-radius:999px;
+      border:1px solid rgba(212,175,55,.45);
+      background:rgba(212,175,55,.10);
+    }
+    .role{margin:10px 0 0;font-size:16px;font-weight:1000;line-height:1.25}
+    .meta{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+    .kv{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .tag{
+      display:inline-flex;align-items:center;gap:6px;
+      font-weight:900;font-size:12px;
+      padding:7px 10px;border-radius:999px;
+      border:1px solid rgba(15,23,42,.14);
+      background:rgba(255,255,255,.75);
+    }
+    .tag.gold{border-color:rgba(212,175,55,.55);background:rgba(212,175,55,.12)}
+    .tag.blue{border-color:rgba(31,79,216,.35);background:rgba(31,79,216,.08)}
+    .tag.red{border-color:rgba(255,45,85,.35);background:rgba(255,45,85,.06)}
+
+    .card .body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:10px;flex:1}
+    .details{
+      margin-top:2px;
+      padding:10px 12px;border-radius:16px;
+      border:1px solid rgba(15,23,42,.12);
+      background:rgba(255,255,255,.70);
+    }
+    .details ul{margin:10px 0 0;padding-left:18px}
+    .details li{margin:6px 0;color:rgba(11,18,32,.86);line-height:1.35}
+    .details .sub{
+      margin-top:9px;
+      font-size:12px;
+      color:rgba(11,18,32,.70);
+      line-height:1.4;
+    }
+    .actions{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+
+    /* Modal */
+    .modal{
+      position:fixed;inset:0;background:rgba(2,6,23,.62);
+      display:none;align-items:center;justify-content:center;
+      padding:18px;z-index:9999;
+    }
+    .modal.active{display:flex}
+    .modalBox{
+      width:min(1040px, 100%);
+      max-height:88vh;overflow:auto;
+      border-radius:26px;
+      background:rgba(255,255,255,.96);
+      border:1px solid rgba(255,255,255,.5);
+      box-shadow:0 30px 100px rgba(0,0,0,.35);
+    }
+    .modalHead{
+      padding:16px 18px;
+      display:flex;align-items:flex-start;justify-content:space-between;gap:14px;
+      border-bottom:1px solid rgba(15,23,42,.10);
+      background:linear-gradient(135deg, rgba(31,79,216,.12), rgba(255,45,85,.08), rgba(212,175,55,.10));
+    }
+    .modalTitle{margin:0;font-size:18px;font-weight:1000}
+    .modalSub{margin:6px 0 0;color:rgba(11,18,32,.70);font-size:13px}
+    .modalClose{
+      border:1px solid rgba(15,23,42,.15);
+      background:#fff;border-radius:14px;
+      padding:10px 12px;font-weight:1000;
+      cursor:pointer;
+    }
+    .modalBody{padding:14px 18px 18px}
+
+    .cvShell{
+      border-radius:22px;
+      border:1px solid rgba(15,23,42,.12);
+      overflow:hidden;
+      background:#fff;
+      box-shadow:0 12px 38px rgba(0,0,0,.08);
+    }
+    .cvTop{
+      padding:14px 16px;
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      background:linear-gradient(135deg, rgba(31,79,216,.12), rgba(212,175,55,.10), rgba(255,45,85,.06));
+      border-bottom:1px solid rgba(15,23,42,.10);
+    }
+    .cvTop .left strong{display:block;font-size:14px}
+    .cvTop .left span{display:block;margin-top:4px;color:rgba(11,18,32,.70);font-size:12px}
+    .cvTop .right{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .cvGrid{
+      display:grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      min-height:420px;
+    }
+    .cvSide{
+      padding:14px 14px;
+      border-right:1px solid rgba(15,23,42,.10);
+      background:rgba(245,247,255,.55);
+    }
+    .cvMain{
+      padding:14px 16px;
+      background:#fff;
+    }
+    .cvBlock{
+      margin-bottom:12px;
+      padding:11px 12px;
+      border:1px solid rgba(15,23,42,.10);
+      border-radius:16px;
+      background:rgba(255,255,255,.84);
+    }
+    .cvBlock h3{margin:0 0 8px;font-size:13px;font-weight:1000}
+    .cvBlock p{margin:0;color:rgba(11,18,32,.74);font-size:12.8px;line-height:1.4}
+    .cvBlock ul{margin:8px 0 0;padding-left:18px}
+    .cvBlock li{margin:6px 0;color:rgba(11,18,32,.86);font-size:12.8px;line-height:1.35}
+    .cvStamp{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap}
+    .stamp{
+      font-weight:1000;font-size:12px;
+      padding:7px 10px;border-radius:999px;
+      border:1px solid rgba(15,23,42,.14);
+      background:rgba(255,255,255,.75);
+    }
+
+    /* Footer nav */
+    .footerNav{
+      margin-top:18px;
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      padding:14px;border-radius:26px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.72);
+      box-shadow:0 12px 34px rgba(0,0,0,.10);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Floating WA */
+    .waFloat{
+      position:fixed;right:16px;bottom:16px;z-index:99999;
+      display:flex;flex-direction:column;gap:10px;
+    }
+    .waFloat a{
+      width:56px;height:56px;border-radius:18px;
+      display:grid;place-items:center;
+      text-decoration:none;
+      box-shadow:0 18px 44px rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.35);
+      backdrop-filter: blur(8px);
+      transition:transform .12s ease;
+    }
+    .waFloat a:hover{transform:translateY(-2px)}
+    .wa{background:linear-gradient(135deg, #22c55e, #16a34a); color:#fff}
+    .ct{background:linear-gradient(135deg, rgba(11,18,32,.96), rgba(31,79,216,.70)); color:#fff}
+
+    .toast{
+      position:fixed;left:50%;bottom:16px;transform:translateX(-50%);
+      background:rgba(11,18,32,.92);color:#fff;
+      padding:10px 12px;border-radius:14px;
+      font-weight:900;font-size:13px;
+      box-shadow:0 16px 40px rgba(0,0,0,.22);
+      opacity:0;pointer-events:none;transition:.2s;
+      z-index:999999;
+    }
+    .toast.show{opacity:1;bottom:20px}
+
+    @media (max-width:900px){
+      .card{grid-column:span 12}
+      .cvGrid{grid-template-columns:1fr}
+      .cvSide{border-right:none;border-bottom:1px solid rgba(15,23,42,.10)}
+    }
+    @media (max-width:640px){
+      .brand img{height:42px}
+      .btn{width:100%;justify-content:center}
+      .navbtns{width:100%}
+      .footerNav .btn{width:100%}
+      .brand .txt .s{max-width:88vw}
+      .search{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- TOP -->
+    <div class="topbar">
+      <div class="brand">
+        <img src="images/logomadawork.png" alt="Madawork">
+        <div class="txt">
+          <div class="t">cv.madawork.com</div>
+          <div class="s">Profils hispanophones — Page 3 (freelancer3)</div>
+        </div>
+      </div>
+
+      <div class="navbtns">
+        <a class="btn" href="freelancer2.html" rel="noopener">← Précédent</a>
+        <a class="btn primary" href="freelancer4.html">Suivant →</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Nos agents hispanophones — Page 3</h1>
+
+      <p>
+        <b>Cette page contient des profils du Centre de traitement Madawork.</b><br>
+        Sélection de profils disponibles. Les identités sont volontairement masquées.
+        <b>Utilisez la référence</b> pour demander le CV complet.
+      </p>
+
+      <div class="search">
+        <input id="q" type="search" placeholder="Rechercher une référence, une compétence, un secteur… (ex : ES01, televente, support, B2B)" />
+        <button class="btn dark" onclick="applySearch()">Rechercher</button>
+      </div>
+      <div class="hint">FR/EN : tapez un mot-clé (support, appointment setting, cold call, sav, assurance…).</div>
+    </section>
+
+    <!-- GRID -->
+    <section class="grid" aria-label="Liste des profils" id="grid">
+
+      <!-- ES01 -->
+      <article class="card profile" data-search="ES01 hispanophone espagnol francais anglais b2b rendez vous agenda email teleprospection appointment setting" id="ES01">
+        <div class="head">
+          <span class="badge">Réf : ES01</span>
+          <div class="role">Téléprospectrice / Appointment Setter — Franco-Hispanophone (B2B)</div>
+          <div class="meta">RDV • Email • Agenda • Prospection • SAV</div>
+          <div class="kv">
+            <span class="tag gold">Hispanophone</span>
+            <span class="tag blue">B2B</span>
+            <span class="tag">RDV</span>
+            <span class="tag">Email</span>
+            <span class="tag red">SAV</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="details">
+            <b>Résumé (FR) :</b>
+            <ul>
+              <li>Prospection B2B + prise de rendez-vous.</li>
+              <li>Gestion email / agenda / suivi client.</li>
+              <li>Bonne aisance relationnelle et organisation.</li>
+            </ul>
+            <div class="sub">
+              <b>Summary (EN):</b> B2B appointment setting, email & calendar management, customer follow-up, organized and client-oriented.
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn small" onclick="openModal('modal-ES01')">Voir plus</button>
+            <button class="btn small ghost" onclick="copyRef('ES01')">Copier référence</button>
+            <button class="btn small gold" onclick="selectProfile('ES01')">Sélectionner ce profil</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ES02 -->
+      <article class="card profile" data-search="ES02 bilingue franco espagnol support client service apres vente boutique en ligne commandes fournisseurs" id="ES02">
+        <div class="head">
+          <span class="badge">Réf : ES02</span>
+          <div class="role">Conseiller Client — Bilingue FR / ES (E-commerce / SAV)</div>
+          <div class="meta">Support • Commandes • Suivi • Fournisseurs • SAV</div>
+          <div class="kv">
+            <span class="tag gold">FR/ES</span>
+            <span class="tag blue">Support</span>
+            <span class="tag">E-commerce</span>
+            <span class="tag">Suivi</span>
+            <span class="tag red">SAV</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="details">
+            <b>Résumé (FR) :</b>
+            <ul>
+              <li>Gestion d’une boutique 100% en ligne.</li>
+              <li>Conseil client + prise et suivi de commandes.</li>
+              <li>Relance fournisseurs Espagne + service après-vente.</li>
+            </ul>
+            <div class="sub">
+              <b>Summary (EN):</b> Customer support (FR/ES), order processing & tracking, after-sales service, supplier communication (Spain).
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn small" onclick="openModal('modal-ES02')">Voir plus</button>
+            <button class="btn small ghost" onclick="copyRef('ES02')">Copier référence</button>
+            <button class="btn small gold" onclick="selectProfile('ES02')">Sélectionner ce profil</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ES03 -->
+      <article class="card profile" data-search="ES03 teleoperatrice bilingue modération web coaching reformulation gestion clients documentation technique" id="ES03">
+        <div class="head">
+          <span class="badge">Réf : ES03</span>
+          <div class="role">Téléopératrice Bilingue FR/ES — Support client & Modération</div>
+          <div class="meta">Call center • Reformulation • Dossiers • Qualité</div>
+          <div class="kv">
+            <span class="tag gold">Téléopératrice</span>
+            <span class="tag blue">Support Client</span>
+            <span class="tag">Modération</span>
+            <span class="tag">Documentation</span>
+            <span class="tag red">Qualité</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="details">
+            <b>Résumé (FR) :</b>
+            <ul>
+              <li>Excellente élocution + gestion situations tendues.</li>
+              <li>Suivi fichier client + traçabilité.</li>
+              <li>Amélioration continue & documentation technique.</li>
+            </ul>
+            <div class="sub">
+              <b>Summary (EN):</b> Bilingual phone agent (FR/ES), calm in stressful situations, CRM updates, quality-driven documentation & continuous improvement.
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn small" onclick="openModal('modal-ES03')">Voir plus</button>
+            <button class="btn small ghost" onclick="copyRef('ES03')">Copier référence</button>
+            <button class="btn small gold" onclick="selectProfile('ES03')">Sélectionner ce profil</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ES04 -->
+      <article class="card profile" data-search="ES04 interprète traduction espagnol francais guide tourisme coordination multilingue" id="ES04">
+        <div class="head">
+          <span class="badge">Réf : ES04</span>
+          <div class="role">Interprète / Traductrice FR-ES — Coordination & relation client</div>
+          <div class="meta">Traduction • Interprétation • Relation client • Organisation</div>
+          <div class="kv">
+            <span class="tag gold">Interprète</span>
+            <span class="tag blue">FR/ES</span>
+            <span class="tag">Traduction</span>
+            <span class="tag">Coordination</span>
+            <span class="tag red">Communication</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="details">
+            <b>Résumé (FR) :</b>
+            <ul>
+              <li>Interprétation & traduction en contexte professionnel.</li>
+              <li>Relation client + coordination multi tâches.</li>
+              <li>Excellente organisation et communication.</li>
+            </ul>
+            <div class="sub">
+              <b>Summary (EN):</b> French-Spanish interpreting/translation, strong communication, coordination, client relationship and organization skills.
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn small" onclick="openModal('modal-ES04')">Voir plus</button>
+            <button class="btn small ghost" onclick="copyRef('ES04')">Copier référence</button>
+            <button class="btn small gold" onclick="selectProfile('ES04')">Sélectionner ce profil</button>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- FOOTER NAV -->
+    <div class="footerNav">
+      <a class="btn" href="freelancer2.html">← Page précédente</a>
+      <a class="btn primary" href="freelancer4.html">Page suivante →</a>
+      <a class="btn ghost" href="https://madawork.com/contact.html" target="_blank" rel="noopener">Besoin d'informations ?</a>
+    </div>
+
+  </div>
+
+  <!-- Floating buttons -->
+  <div class="waFloat">
+    <a class="wa" href="https://wa.me/261332943007" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <!-- icon -->
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M20.52 3.48A11.9 11.9 0 0 0 12.02 0C5.4 0 .06 5.34.06 11.94c0 2.1.54 4.14 1.56 5.94L0 24l6.3-1.62a11.9 11.9 0 0 0 5.7 1.44h.02c6.6 0 11.94-5.34 11.94-11.94 0-3.2-1.24-6.2-3.44-8.4Z" fill="white" opacity=".22"/>
+        <path d="M12.02 21.96h-.02a10.03 10.03 0 0 1-5.1-1.4l-.36-.22-3.74.96.98-3.64-.24-.38a10.02 10.02 0 0 1-1.54-5.34C2 6.42 6.48 1.98 12.02 1.98c2.66 0 5.16 1.04 7.04 2.92a9.9 9.9 0 0 1 2.92 7.04c0 5.54-4.44 10.02-9.96 10.02Z" fill="white"/>
+        <path d="M17.6 14.7c-.3-.16-1.78-.88-2.06-.98-.28-.1-.48-.16-.68.16-.2.3-.78.98-.96 1.18-.18.2-.36.22-.66.06-1.78-.88-2.94-1.56-4.12-3.54-.3-.52.3-.48.86-1.6.1-.2.06-.36-.02-.52-.08-.16-.68-1.64-.94-2.26-.24-.58-.5-.5-.68-.5h-.58c-.2 0-.52.08-.8.36-.28.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.86 1.2 3.06.14.2 2.08 3.18 5.04 4.46.7.3 1.24.48 1.66.62.7.22 1.34.18 1.84.12.56-.08 1.78-.72 2.02-1.42.24-.7.24-1.3.18-1.42-.06-.12-.26-.18-.56-.34Z" fill="#16a34a"/>
+      </svg>
+    </a>
+
+    <a class="ct" href="https://madawork.com/contact.html" target="_blank" rel="noopener" aria-label="Contact">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M4 4h16v12H5.17L4 17.17V4Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+        <path d="m4 6 8 6 8-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="toast" id="toast">Copié ✅</div>
+
+  <!-- MODALS -->
+
+  <!-- ES01 modal -->
+  <div class="modal" id="modal-ES01" role="dialog" aria-modal="true" aria-label="Profil ES01">
+    <div class="modalBox">
+      <div class="modalHead">
+        <div>
+          <h3 class="modalTitle">Réf : ES01 — Téléprospectrice / Appointment Setter (FR/ES)</h3>
+          <div class="modalSub">B2B • RDV • Email • Agenda • Suivi</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-ES01')">Fermer ✕</button>
+      </div>
+      <div class="modalBody">
+        <div class="cvShell">
+          <div class="cvTop">
+            <div class="left">
+              <strong>Titre de poste</strong>
+              <span>Appointment Setter / Teleprospecting — FR/ES</span>
+            </div>
+            <div class="right">
+              <button class="btn small ghost" onclick="copyRef('ES01')">Copier référence</button>
+              <button class="btn small gold" onclick="selectProfile('ES01')">Sélectionner ce profil</button>
+            </div>
+          </div>
+
+          <div class="cvGrid">
+            <div class="cvSide">
+              <div class="cvBlock">
+                <h3>Compétences (FR)</h3>
+                <ul>
+                  <li>Prise de rendez-vous B2B</li>
+                  <li>Gestion email / agenda</li>
+                  <li>Organisation & priorités</li>
+                </ul>
+              </div>
+              <div class="cvBlock">
+                <h3>Skills (EN)</h3>
+                <ul>
+                  <li>B2B appointment setting</li>
+                  <li>Email & calendar management</li>
+                  <li>Structured, reliable</li>
+                </ul>
+              </div>
+              <div class="cvStamp">
+                <span class="stamp">Español: Excelente</span>
+                <span class="stamp">Français: Excellent</span>
+                <span class="stamp">English: Good</span>
+              </div>
+            </div>
+
+            <div class="cvMain">
+              <div class="cvBlock">
+                <h3>Expérience (FR)</h3>
+                <ul>
+                  <li>Téléprospection hispanophone (Freelance)</li>
+                  <li>Conseil client bilingue FR/ES + SAV</li>
+                  <li>Coordination & suivi des commandes</li>
+                </ul>
+              </div>
+              <div class="cvBlock">
+                <h3>Experience (EN)</h3>
+                <ul>
+                  <li>Spanish-speaking teleprospecting (freelance)</li>
+                  <li>Bilingual support FR/ES + after-sales service</li>
+                  <li>Customer follow-up, suppliers contact</li>
+                </ul>
+              </div>
+              <div class="cvBlock">
+                <h3>Comment utiliser ce profil</h3>
+                <p>
+                  Cliquez sur <b>“Sélectionner ce profil”</b> pour demander une démonstration ou
+                  constituer une équipe haut de gamme. La référence suffit.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ES02 modal -->
+  <div class="modal" id="modal-ES02" role="dialog" aria-modal="true" aria-label="Profil ES02">
+    <div class="modalBox">
+      <div class="modalHead">
+        <div>
+          <h3 class="modalTitle">Réf : ES02 — Conseiller Client (FR/ES) / E-commerce</h3>
+          <div class="modalSub">Support • Commandes • Fournisseurs • SAV</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-ES02')">Fermer ✕</button>
+      </div>
+      <div class="modalBody">
+        <div class="cvShell">
+          <div class="cvTop">
+            <div class="left">
+              <strong>Titre de poste</strong>
+              <span>Customer Advisor — French/Spanish (E-commerce)</span>
+            </div>
+            <div class="right">
+              <button class="btn small ghost" onclick="copyRef('ES02')">Copier référence</button>
+              <button class="btn small gold" onclick="selectProfile('ES02')">Sélectionner ce profil</button>
+            </div>
+          </div>
+
+          <div class="cvGrid">
+            <div class="cvSide">
+              <div class="cvBlock">
+                <h3>Compétences clés</h3>
+                <ul>
+                  <li>Support client bilingue</li>
+                  <li>Commandes / Suivi / SAV</li>
+                  <li>Gestion multi-tâches</li>
+                </ul>
+              </div>
+              <div class="cvBlock">
+                <h3>Key skills</h3>
+                <ul>
+                  <li>Bilingual customer support</li>
+                  <li>Order management & tracking</li>
+                  <li>After-sales service</li>
+                </ul>
+              </div>
+              <div class="cvStamp">
+                <span class="stamp">Español</span>
+                <span class="stamp">FR/ES</span>
+                <span class="stamp">SAV</span>
+              </div>
+            </div>
+
+            <div class="cvMain">
+              <div class="cvBlock">
+                <h3>Résumé</h3>
+                <p>
+                  Profil idéal pour entreprises e-commerce / service client.
+                  Très bonne expérience de suivi commandes et gestion SAV.
+                </p>
+              </div>
+              <div class="cvBlock">
+                <h3>Best fit</h3>
+                <p>
+                  Perfect for E-commerce brands needing Spanish/French support,
+                  logistics follow-up, orders and customer retention.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ES03 modal -->
+  <div class="modal" id="modal-ES03" role="dialog" aria-modal="true" aria-label="Profil ES03">
+    <div class="modalBox">
+      <div class="modalHead">
+        <div>
+          <h3 class="modalTitle">Réf : ES03 — Téléopératrice bilingue FR/ES (Support & Modération)</h3>
+          <div class="modalSub">CRM • Qualité • Reformulation • Support</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-ES03')">Fermer ✕</button>
+      </div>
+      <div class="modalBody">
+        <div class="cvShell">
+          <div class="cvTop">
+            <div class="left">
+              <strong>Titre de poste</strong>
+              <span>Bilingual Phone Agent — FR/ES (Support & Moderation)</span>
+            </div>
+            <div class="right">
+              <button class="btn small ghost" onclick="copyRef('ES03')">Copier référence</button>
+              <button class="btn small gold" onclick="selectProfile('ES03')">Sélectionner ce profil</button>
+            </div>
+          </div>
+
+          <div class="cvGrid">
+            <div class="cvSide">
+              <div class="cvBlock">
+                <h3>Points forts (FR)</h3>
+                <ul>
+                  <li>Excellente élocution</li>
+                  <li>Gestion stress & conflits</li>
+                  <li>Traçabilité / CRM</li>
+                </ul>
+              </div>
+              <div class="cvBlock">
+                <h3>Strengths (EN)</h3>
+                <ul>
+                  <li>Great communication</li>
+                  <li>Calm in tense situations</li>
+                  <li>CRM / traceability</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cvMain">
+              <div class="cvBlock">
+                <h3>Mission type</h3>
+                <ul>
+                  <li>Inbound / outbound customer service</li>
+                  <li>Quality control & escalation</li>
+                  <li>Web moderation Spanish</li>
+                </ul>
+              </div>
+              <div class="cvBlock">
+                <h3>Notes</h3>
+                <p>
+                  Profil parfait pour <b>assurance, énergie, support SAV</b> et plateformes.
+                  Niveau FR/ES élevé.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ES04 modal -->
+  <div class="modal" id="modal-ES04" role="dialog" aria-modal="true" aria-label="Profil ES04">
+    <div class="modalBox">
+      <div class="modalHead">
+        <div>
+          <h3 class="modalTitle">Réf : ES04 — Interprète / Traductrice FR-ES</h3>
+          <div class="modalSub">Interprétation • Traduction • Communication</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-ES04')">Fermer ✕</button>
+      </div>
+      <div class="modalBody">
+        <div class="cvShell">
+          <div class="cvTop">
+            <div class="left">
+              <strong>Titre de poste</strong>
+              <span>Interpreter / Translator — FR/ES</span>
+            </div>
+            <div class="right">
+              <button class="btn small ghost" onclick="copyRef('ES04')">Copier référence</button>
+              <button class="btn small gold" onclick="selectProfile('ES04')">Sélectionner ce profil</button>
+            </div>
+          </div>
+
+          <div class="cvGrid">
+            <div class="cvSide">
+              <div class="cvBlock">
+                <h3>Compétences</h3>
+                <ul>
+                  <li>Traduction documents / emails</li>
+                  <li>Interprétation</li>
+                  <li>Communication pro</li>
+                </ul>
+              </div>
+              <div class="cvBlock">
+                <h3>Skills</h3>
+                <ul>
+                  <li>Translation (docs/emails)</li>
+                  <li>Live interpretation</li>
+                  <li>Professional communication</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cvMain">
+              <div class="cvBlock">
+                <h3>Utilisation</h3>
+                <p>
+                  Idéal pour réunions, calls, relation clients Espagne/Amérique latine,
+                  coordination et support.
+                </p>
+              </div>
+              <div class="cvBlock">
+                <h3>Best fit</h3>
+                <p>
+                  Great for meetings, calls, bilingual coordination, international customer relationship.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function normalize(str){
+      return (str||"")
+        .toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+        .trim();
+    }
+
+    function applySearch(){
+      const q = normalize(document.getElementById("q").value);
+      const cards = document.querySelectorAll(".profile");
+      let shown = 0;
+
+      cards.forEach(c=>{
+        const hay = normalize(c.getAttribute("data-search") || "");
+        const ok = !q || hay.includes(q);
+        c.style.display = ok ? "" : "none";
+        if(ok) shown++;
+      });
+
+      toastMsg(shown + " profil(s) trouvé(s)");
+    }
+
+    document.getElementById("q").addEventListener("keydown", (e)=>{
+      if(e.key === "Enter"){ applySearch(); }
+    });
+
+    function openModal(id){
+      const m = document.getElementById(id);
+      if(!m) return;
+      m.classList.add("active");
+    }
+    function closeModal(id){
+      const m = document.getElementById(id);
+      if(!m) return;
+      m.classList.remove("active");
+    }
+    document.querySelectorAll(".modal").forEach(m=>{
+      m.addEventListener("click", (e)=>{
+        if(e.target === m) m.classList.remove("active");
+      });
+    });
+
+    function copyRef(ref){
+      navigator.clipboard.writeText(ref).then(()=>{
+        toastMsg("Référence copiée : " + ref);
+      }).catch(()=>{
+        toastMsg("Impossible de copier. Réf : " + ref);
+      });
+    }
+
+    function selectProfile(ref){
+      // Ici tu peux brancher un Google Form si tu veux
+      // ex : window.open("https://docs.google.com/forms/d/e/XXXX/viewform?usp=pp_url&entry.123="+encodeURIComponent(ref), "_blank");
+      toastMsg("Profil sélectionné : " + ref);
+    }
+
+    function toastMsg(msg){
+      const t = document.getElementById("toast");
+      t.textContent = msg;
+      t.classList.add("show");
+      setTimeout(()=>t.classList.remove("show"), 2200);
+    }
+  </script>
+  <script>
+/* ===== SEARCH ===== */
+function applySearch(){
+  const q = (document.getElementById("q").value || "").trim().toLowerCase();
+  document.querySelectorAll(".profile").forEach(card=>{
+    const hay = (card.dataset.search || "").toLowerCase();
+    card.style.display = (!q || hay.includes(q)) ? "" : "none";
+  });
+}
+document.getElementById("q")?.addEventListener("keydown", (e)=>{
+  if(e.key === "Enter") applySearch();
+});
+
+/* ===== COPY REF ===== */
+function copyRef(ref){
+  navigator.clipboard.writeText(ref).then(()=>{
+    toast("Référence copiée : " + ref);
+  }).catch(()=>{
+    prompt("Copiez la référence :", ref);
+  });
+}
+
+/* ===== SELECT PROFILE ===== */
+function selectProfile(ref){
+  toast("Profil sélectionné ✅ (" + ref + ")");
+  copyRef(ref);
+}
+
+/* ===== MODAL OPEN / CLOSE ===== */
+function openModal(id){
+  const modal = document.getElementById(id);
+  if(!modal){ alert("Modal introuvable : " + id); return; }
+  modal.classList.add("active");
+}
+function closeModal(id){
+  const modal = document.getElementById(id);
+  if(!modal) return;
+  modal.classList.remove("active");
+}
+document.addEventListener("keydown",(e)=>{
+  if(e.key==="Escape"){
+    document.querySelectorAll(".modal.active").forEach(m=>m.classList.remove("active"));
+  }
+});
+
+/* ===== TOAST ===== */
+function toast(msg){
+  const t = document.getElementById("toast");
+  if(!t) return alert(msg);
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(window.__toastTimer);
+  window.__toastTimer = setTimeout(()=>t.classList.remove("show"), 2400);
+}
+</script>
+
+<div class="toast" id="toast">OK</div>
+</body>
+</html>

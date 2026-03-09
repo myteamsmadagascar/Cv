@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>cv.madawork.com — Profils Freelances (1)</title>
+  <meta name="description" content="cv.madawork.com : Profils freelances. Page 1 : Consultant SI / Développeur, Technicien Support Informatique." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="images/logomadawork.png" />
+  <meta name="theme-color" content="#1f4fd8" />
+
+  <style>
+    :root{
+      --bg:#f5f7ff;
+      --card:rgba(255,255,255,.92);
+      --stroke:rgba(15,23,42,.12);
+      --text:#0b1220;
+      --muted:rgba(11,18,32,.70);
+
+      --blue:#1f4fd8;
+      --red:#ff2d55;
+      --gold:#d4af37;
+
+      --shadow:0 16px 45px rgba(0,0,0,.12);
+      --r:22px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:var(--text);
+      background:
+        radial-gradient(900px 460px at 10% 0%, rgba(31,79,216,.14), transparent 60%),
+        radial-gradient(900px 460px at 90% 0%, rgba(255,45,85,.10), transparent 60%),
+        var(--bg);
+    }
+
+    .wrap{max-width:1180px;margin:0 auto;padding:18px 14px 40px}
+
+    /* TOPBAR */
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:12px 14px;
+      background:rgba(255,255,255,.75);
+      border:1px solid var(--stroke);
+      border-radius:26px;
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(10px);
+      position:sticky; top:10px; z-index:50;
+    }
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand img{height:46px;width:auto}
+    .brand .txt{min-width:0}
+    .brand .txt .t{font-weight:950;letter-spacing:.2px}
+    .brand .txt .s{font-size:13px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:52vw}
+
+    .navbtns{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .btn{
+      appearance:none;border:1px solid var(--stroke);
+      padding:10px 14px;border-radius:14px;
+      background:#fff;color:var(--text);
+      font-weight:900;text-decoration:none;
+      display:inline-flex;align-items:center;gap:8px;
+      box-shadow:0 10px 24px rgba(0,0,0,.08);
+      transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 16px 28px rgba(0,0,0,.10);border-color:rgba(31,79,216,.25)}
+    .btn.primary{
+      border-color:rgba(212,175,55,.55);
+      background:linear-gradient(135deg, rgba(212,175,55,.22), #fff);
+    }
+    .btn.dark{
+      border-color:rgba(15,23,42,.22);
+      background:linear-gradient(135deg, rgba(11,18,32,.95), rgba(31,79,216,.75));
+      color:#fff;
+    }
+
+    /* HERO */
+    .hero{
+      margin-top:16px;padding:18px;
+      border-radius:26px;border:1px solid var(--stroke);
+      background:var(--card);box-shadow:var(--shadow)
+    }
+    .hero h1{margin:0;font-size:20px;font-weight:1000}
+    .hero p{margin:8px 0 0;color:var(--muted);line-height:1.45}
+
+    /* GRID / CARDS */
+    .grid{margin-top:16px;display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .card{
+      grid-column:span 6;
+      background:var(--card);
+      border:1px solid var(--stroke);
+      border-radius:26px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      display:flex;flex-direction:column;
+      min-height:260px;
+    }
+    .card .head{
+      padding:14px 14px 12px;
+      border-bottom:1px solid rgba(15,23,42,.08);
+      background:linear-gradient(135deg, rgba(31,79,216,.10), rgba(255,45,85,.06), rgba(212,175,55,.08));
+    }
+    .badge{
+      display:inline-flex;gap:8px;align-items:center;
+      font-weight:1000;font-size:12px;
+      padding:6px 10px;border-radius:999px;
+      border:1px solid rgba(212,175,55,.45);
+      background:rgba(212,175,55,.10);
+    }
+    .role{margin:10px 0 0;font-size:16px;font-weight:1000}
+    .meta{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+    .kv{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .tag{
+      display:inline-flex;align-items:center;gap:6px;
+      font-weight:900;font-size:12px;
+      padding:7px 10px;border-radius:999px;
+      border:1px solid rgba(15,23,42,.14);
+      background:rgba(255,255,255,.75);
+    }
+    .tag.gold{border-color:rgba(212,175,55,.55);background:rgba(212,175,55,.12)}
+    .tag.blue{border-color:rgba(31,79,216,.35);background:rgba(31,79,216,.08)}
+    .tag.red{border-color:rgba(255,45,85,.35);background:rgba(255,45,85,.06)}
+
+    .card .body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:10px;flex:1}
+    .details{
+      margin-top:2px;
+      padding:10px 12px;border-radius:16px;
+      border:1px solid rgba(15,23,42,.12);
+      background:rgba(255,255,255,.70);
+    }
+    .details ul{margin:10px 0 0;padding-left:18px}
+    .details li{margin:6px 0;color:rgba(11,18,32,.86);line-height:1.35}
+
+    .actions{margin-top:auto;display:flex;gap:10px;flex-wrap:wrap}
+    .small{padding:9px 12px;border-radius:12px;font-weight:1000}
+
+    /* Modal */
+    .modal{
+      position:fixed;inset:0;background:rgba(2,6,23,.62);
+      display:none;align-items:center;justify-content:center;
+      padding:18px;z-index:9999;
+    }
+    .modal.active{display:flex}
+    .modalBox{
+      width:min(980px, 100%);
+      max-height:88vh;overflow:auto;
+      border-radius:26px;
+      background:rgba(255,255,255,.95);
+      border:1px solid rgba(255,255,255,.5);
+      box-shadow:0 30px 100px rgba(0,0,0,.35);
+    }
+    .modalHead{
+      padding:16px 18px;
+      display:flex;align-items:flex-start;justify-content:space-between;gap:14px;
+      border-bottom:1px solid rgba(15,23,42,.10);
+      background:linear-gradient(135deg, rgba(31,79,216,.12), rgba(255,45,85,.08), rgba(212,175,55,.10));
+    }
+    .modalTitle{margin:0;font-size:18px;font-weight:1000}
+    .modalSub{margin:6px 0 0;color:rgba(11,18,32,.70);font-size:13px}
+    .modalBody{padding:14px 18px 18px}
+    .modalClose{
+      border:1px solid rgba(15,23,42,.15);
+      background:#fff;border-radius:14px;
+      padding:10px 12px;font-weight:1000;
+      cursor:pointer;
+    }
+
+    .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
+    .box{
+      border:1px solid rgba(15,23,42,.12);
+      background:rgba(255,255,255,.80);
+      border-radius:18px;
+      padding:12px 12px;
+    }
+    .box h3{margin:0 0 8px;font-size:14px;font-weight:1000}
+    .box p{margin:0;color:rgba(11,18,32,.75);font-size:13px;line-height:1.4}
+    .box ul{margin:8px 0 0;padding-left:18px}
+    .box li{margin:6px 0}
+
+    /* Footer nav */
+    .footerNav{
+      margin-top:18px;
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      padding:14px;border-radius:26px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.72);
+      box-shadow:0 12px 34px rgba(0,0,0,.10);
+      backdrop-filter: blur(10px);
+    }
+
+    @media (max-width:900px){
+      .card{grid-column:span 12}
+    }
+    @media (max-width:640px){
+      .brand img{height:42px}
+      .btn{width:100%;justify-content:center}
+      .navbtns{width:100%}
+      .footerNav .btn{width:100%}
+      .brand .txt .s{max-width:88vw}
+      .cols{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- TOP -->
+    <div class="topbar">
+      <div class="brand">
+        <img src="images/logomadawork.png" alt="Madawork">
+        <div class="txt">
+          <div class="t">cv.madawork.com</div>
+          <div class="s">Profils freelances — Page 1 (freelancer1)</div>
+        </div>
+      </div>
+
+      <div class="navbtns">
+        <a class="btn" href="https://cv.madawork.com" rel="noopener">← Retour</a>
+        <a class="btn primary" href="freelancer2.html">Suivant →</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Profils freelances — Page 1</h1>
+      <p>2 profils détaillés disponibles : <b>DEV14SF</b> et <b>TECHINF01</b>. Cliquez sur <b>Voir plus</b> pour le détail complet.</p>
+    </section>
+
+    <!-- GRID -->
+    <section class="grid" aria-label="Liste des profils">
+
+      <!-- =============== DEV14SF =============== -->
+      <article class="card" id="DEV14SF">
+        <div class="head">
+          <span class="badge">Réf : DEV14SF</span>
+          <div class="role">Consultant en Systèmes d’Informations (7 ans d’expérience)</div>
+          <div class="meta">Consultance • Développement • SI • Mobile • Web</div>
+
+          <div class="kv">
+            <span class="tag gold">Java</span>
+            <span class="tag">Odoo</span>
+            <span class="tag">CodeIgniter</span>
+            <span class="tag blue">HTML/CSS</span>
+            <span class="tag blue">Bootstrap/Angular</span>
+            <span class="tag">React Native</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Oracle</span>
+            <span class="tag red">Web services</span>
+            <span class="tag">Android</span>
+          </div>
+        </div>
+
+        <div class="body">
+          <div class="details">
+            <b>Résumé :</b>
+            <ul>
+              <li>Consultant SI avec 7 ans d’expérience (développement web & mobile).</li>
+              <li>Expérience projets publics/financés (tableau de bord national, suivi projets).</li>
+              <li>Développement CRM, applications mobiles, intégration solutions (USSD, MVola).</li>
+            </ul>
+          </div>
+
+          <div class="actions">
+            <button class="btn small" onclick="openModal('modal-DEV14SF')">Voir plus</button>
+            
+            
+          </div>
+        </div>
+      </article>
+
+      <!-- =============== TECHINF01 =============== -->
+      <article class="card" id="TECHINF01">
+        <div class="head">
+          <span class="badge">Réf : TECHINF01</span>
+          <div class="role">Technicien Support Informatique / Systèmes & Réseaux</div>
+          <div class="meta">Linux • Windows Server • Proxmox • GLPI • Sécurité</div>
+
+          <div class="kv">
+            <span class="tag gold">Linux</span>
+            <span class="tag blue">Windows Server</span>
+            <span class="tag blue">Proxmox</span>
+            <span class="tag">GLPI</span>
+            <span class="tag">TCP/IP</span>
+            <span class="tag">DNS</span>
+            <span class="tag">DHCP</span>
+            <span class="tag">VLAN</span>
+            <span class="tag">VPN</span>
+            <span class="tag red">PfSense</span>
+            <span class="tag">Prometheus</span>
+            <span class="tag">Grafana</span>
+          </div>
+        </div>
+
+        <div class="body">
+          <div class="details">
+            <b>Résumé :</b>
+            <ul>
+              <li>Support, administration Linux/Windows Server, gestion parc et ticketing.</li>
+              <li>Déploiement GLPI, supervision réseau, sécurité, Active Directory.</li>
+              <li>Expérience réelle en entreprise (Megaprint, ARTEC).</li>
+            </ul>
+          </div>
+
+          <div class="actions">
+            <button class="btn small" onclick="openModal('modal-TECHINF01')">Voir plus</button>
+            
+            
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- FOOTER NAV -->
+    <div class="footerNav">
+      <a class="btn dark" href="https://cv.madawork.com" rel="noopener">← Retour vers cv.madawork.com</a>
+      <a class="btn primary" href="freelancer2.html">Suivant : freelancer2 →</a>
+    </div>
+
+  </div>
+
+  <!-- ================= MODALES ================= -->
+
+  <!-- MODAL DEV14SF -->
+  <div class="modal" id="modal-DEV14SF" aria-hidden="true">
+    <div class="modalBox" role="dialog" aria-modal="true">
+      <div class="modalHead">
+        <div>
+          <h2 class="modalTitle">DEV14SF — Consultant en Systèmes d’Informations</h2>
+          <div class="modalSub">7 ans d’expérience • Web/Mobile • SI • Bases de données</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-DEV14SF')">Fermer ✕</button>
+      </div>
+      <div class="modalBody">
+        <div class="cols">
+          <div class="box">
+            <h3>Parcours professionnel</h3>
+            <ul>
+              <li><b>A2MI (EI)</b> — Propriétaire (Déc. 2021 → Maintenant) : Consultance en informatique</li>
+              <li><b>OSCIFF</b> — Consultant Expert SI (Août 2019 → Sept 2021) : Tableau de bord national centralisé</li>
+              <li><b>Consultant individuel</b> (Déc. 2017 → Août 2019) : appli mobile gestion commandes, CRM, sites WordPress</li>
+              <li><b>TELMA</b> — Intégrateur Application (Déc. 2015 → Juil. 2017) : codes USSD et app MVola</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Formation</h3>
+            <ul>
+              <li>Université de Nice Sophia Antipolis (France) — Master MBD (2016–2017)</li>
+              <li>IT Université Andoharanofotsy — Master 1 informatique (2015–2016)</li>
+            </ul>
+            <h3 style="margin-top:12px">Langues</h3>
+            <ul>
+              <li>Malgache : langue maternelle</li>
+              <li>Français</li>
+              <li>Anglais</li>
+            </ul>
+            <h3 style="margin-top:12px">Compétences</h3>
+            <ul>
+              <li>Java, Odoo, CodeIgniter</li>
+              <li>HTML/CSS, Bootstrap/Angular</li>
+              <li>React Native, Android</li>
+              <li>MySQL, PostgreSQL, Oracle</li>
+              <li>Web services</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL TECHINF01 -->
+  <div class="modal" id="modal-TECHINF01" aria-hidden="true">
+    <div class="modalBox" role="dialog" aria-modal="true">
+      <div class="modalHead">
+        <div>
+          <h2 class="modalTitle">TECHINF01 — Technicien Support Informatique (Systèmes & Réseaux)</h2>
+          <div class="modalSub">Linux • Windows Server • Proxmox • GLPI • Supervision • Sécurité</div>
+        </div>
+        <button class="modalClose" onclick="closeModal('modal-TECHINF01')">Fermer ✕</button>
+      </div>
+      <div class="modalBody">
+        <div class="cols">
+          <div class="box">
+            <h3>Expérience professionnelle</h3>
+            <ul>
+              <li><b>Technicien Support Informatique</b> — Megaprint Madagascar (Avril 2025 → Présent)</li>
+              <li>Administration Linux & Windows Server (Proxmox)</li>
+              <li>Installation/maintenance postes & serveurs</li>
+              <li>Gestion équipements réseau : routeurs, commutateurs, pare-feu</li>
+              <li>Déploiement & administration GLPI</li>
+              <li>Support utilisateurs & maintenance</li>
+            </ul>
+            <ul style="margin-top:10px">
+              <li><b>Stage Administrateur Système & Réseau</b> — Megaprint (Déc. 2024 → Mar. 2025)</li>
+              <li>Filtrage web : Squid / SquidGuard sur PfSense</li>
+              <li>Supervision réseau : Prometheus + Grafana</li>
+              <li>Active Directory & gestion droits</li>
+              <li>Sécurité système</li>
+            </ul>
+            <ul style="margin-top:10px">
+              <li><b>Technicien Réseaux Stagiaire</b> — ARTEC (Mai 2023 → Août 2023)</li>
+              <li>VLAN avec PfSense, portail captif</li>
+              <li>pfBlockerNG, supervision NtopNG</li>
+              <li>Installation/configuration OS</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Formation</h3>
+            <ul>
+              <li>Master Ingénierie 2 — Systèmes Électronique & Informatique (2024 → Présent)</li>
+              <li>Licence Ingénierie — Physique des Signaux & Systèmes (2022 → 2023)</li>
+            </ul>
+
+            <h3 style="margin-top:12px">Compétences</h3>
+            <ul>
+              <li>Admin Linux & Windows Server</li>
+              <li>TCP/IP, DNS, DHCP, VLAN, VPN</li>
+              <li>Pare-feu : PfSense, OPNsense</li>
+              <li>Virtualisation : Proxmox, VMware</li>
+              <li>Supervision : Prometheus, Grafana, NtopNG</li>
+              <li>Gestion parc & ticketing : GLPI</li>
+              <li>Sécurité réseau, accès, sauvegarde</li>
+            </ul>
+
+            <h3 style="margin-top:12px">Langues</h3>
+            <ul>
+              <li>Français : Moyen</li>
+              <li>Anglais : Basique</li>
+              <li>Malgache : Maternel</li>
+            </ul>
+
+            <h3 style="margin-top:12px">Certifications</h3>
+            <ul>
+              <li>Computer Communications and Networks — Saylor Academy (2025)</li>
+              <li>Informatique Bureautique — Orange Digital Center (2024)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    function openModal(id){
+      const m = document.getElementById(id);
+      if(!m) return;
+      m.classList.add('active');
+      m.setAttribute('aria-hidden','false');
+    }
+    function closeModal(id){
+      const m = document.getElementById(id);
+      if(!m) return;
+      m.classList.remove('active');
+      m.setAttribute('aria-hidden','true');
+    }
+
+    // click outside closes modal
+    document.addEventListener('click', (e)=>{
+      document.querySelectorAll('.modal.active').forEach(m=>{
+        if(e.target === m){ m.classList.remove('active'); }
+      });
+    });
+
+    // ESC closes
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape'){
+        document.querySelectorAll('.modal.active').forEach(m=>m.classList.remove('active'));
+      }
+    });
+  </script>
+</body>
+</html>

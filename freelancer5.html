@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>cv.madawork.com — Profils & Talents (Page 5)</title>
+<meta name="description" content="cv.madawork.com : Profils professionnels MadaWork — Page 5." />
+<meta name="theme-color" content="#1f4fd8" />
+<link rel="icon" href="images/logomadawork.png" />
+
+<style>
+:root{
+  --bg1:#ffffff; --bg2:#f3f8ff;
+  --card:rgba(255,255,255,.88);
+  --stroke:rgba(15,23,42,.12);
+  --text:#0b1220;
+  --muted:rgba(11,18,32,.70);
+  --blue:#1f4fd8;
+  --sky:#49c6ff;
+  --red:#ff2d55;
+  --gold:#d4af37;
+  --shadow:0 18px 70px rgba(15,23,42,.12);
+  --r:24px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  color:var(--text);
+  background:
+    radial-gradient(900px 520px at 15% 10%, rgba(73,198,255,.22), transparent 65%),
+    radial-gradient(900px 520px at 85% 20%, rgba(255,45,85,.18), transparent 60%),
+    radial-gradient(1100px 700px at 50% 100%, rgba(31,79,216,.14), transparent 60%),
+    linear-gradient(180deg,var(--bg1),var(--bg2));
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:18px}
+
+.glass{
+  background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.64));
+  border:1px solid var(--stroke);
+  border-radius:var(--r);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow), 0 0 0 1px rgba(255,255,255,.35) inset;
+}
+
+/* TOPBAR */
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px 16px;
+  position:sticky;top:10px;z-index:50;
+}
+.brand{display:flex;align-items:center;gap:12px;min-width:240px;}
+.brand img{height:46px;width:auto;object-fit:contain;filter: drop-shadow(0 12px 28px rgba(31,79,216,.22));}
+.brand h1{margin:0;font-size:16px;font-weight:1000;letter-spacing:-.2px}
+.brand p{margin:2px 0 0;font-size:12px;color:var(--muted);font-weight:850}
+
+/* NAV DESKTOP */
+.navDesktop{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;align-items:center}
+.navDesktop a{
+  padding:10px 12px;border-radius:16px;
+  border:1px solid rgba(15,23,42,.12);
+  background:rgba(255,255,255,.78);
+  font-weight:950;font-size:13px;
+  transition:.15s;
+}
+.navDesktop a:hover{transform:translateY(-1px)}
+.btnPrimary{
+  border-color:rgba(212,175,55,.55)!important;
+  background:linear-gradient(135deg, rgba(212,175,55,.22), rgba(255,255,255,.85))!important;
+}
+
+/* MENU MOBILE */
+.mobBtn{
+  display:none;
+  width:46px;height:46px;border-radius:16px;
+  border:1px solid rgba(15,23,42,.12);
+  background:rgba(255,255,255,.85);
+  box-shadow:0 10px 24px rgba(15,23,42,.10);
+  cursor:pointer;
+}
+.mobBtn span{display:block;width:18px;height:2px;background:#0b1220;margin:5px auto;border-radius:2px;}
+.mobPanel{display:none;position:fixed; inset:0;background:rgba(2,6,23,.45);z-index:9999;}
+.mobPanel.active{display:block}
+.mobCard{
+  position:absolute; right:14px; top:14px; left:14px;
+  border-radius:26px;
+  background:rgba(255,255,255,.96);
+  border:1px solid rgba(255,255,255,.55);
+  box-shadow:0 30px 100px rgba(0,0,0,.30);
+  overflow:hidden;
+}
+.mobHead{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 14px;border-bottom:1px solid rgba(15,23,42,.08);
+  background:linear-gradient(135deg, rgba(31,79,216,.10), rgba(255,45,85,.06), rgba(212,175,55,.10));
+}
+.mobHead b{font-weight:1000}
+.mobClose{border:1px solid rgba(15,23,42,.14);background:#fff;padding:10px 12px;border-radius:14px;font-weight:1000;cursor:pointer;}
+.mobLinks{padding:12px;display:grid; gap:10px;}
+.mobLinks a{
+  padding:12px 12px;border-radius:18px;
+  border:1px solid rgba(15,23,42,.10);
+  background:#fff;
+  font-weight:950;
+}
+.mobLinks a.gold{
+  border-color:rgba(212,175,55,.55);
+  background:linear-gradient(135deg, rgba(212,175,55,.22), rgba(255,255,255,.95));
+}
+
+/* HERO */
+.hero{margin-top:14px;padding:18px;position:relative;overflow:hidden;}
+.hero:before{
+  content:""; position:absolute; inset:-120px;
+  background:
+    radial-gradient(closest-side at 12% 18%, rgba(73,198,255,.24), transparent 62%),
+    radial-gradient(closest-side at 86% 18%, rgba(255,45,85,.16), transparent 62%),
+    radial-gradient(closest-side at 50% 90%, rgba(31,79,216,.14), transparent 70%);
+  filter: blur(2px);
+}
+.hero>*{position:relative;z-index:2}
+.hTitle{margin:0;font-size:26px;letter-spacing:-.3px;font-weight:1000}
+.hSub{margin:8px 0 0;color:var(--muted);line-height:1.55;max-width:980px;font-weight:800}
+.smartHolder{margin-top:14px}
+
+/* GRID */
+.grid{margin-top:22px;display:grid;gap:14px;grid-template-columns:repeat(12,1fr);}
+.card{
+  grid-column:span 4;
+  border:1px solid rgba(15,23,42,.12);
+  border-radius:22px;
+  background:rgba(255,255,255,.90);
+  box-shadow:0 18px 55px rgba(15,23,42,.10);
+  overflow:hidden;
+}
+@media(max-width:980px){.card{grid-column:span 6}}
+@media(max-width:680px){.card{grid-column:span 12}}
+.cover{
+  height:120px;
+  background:
+    radial-gradient(600px 220px at 20% 30%, rgba(73,198,255,.55), transparent 60%),
+    radial-gradient(600px 220px at 85% 40%, rgba(255,45,85,.42), transparent 62%),
+    radial-gradient(600px 220px at 50% 100%, rgba(31,79,216,.36), transparent 70%),
+    linear-gradient(135deg, rgba(31,79,216,.18), rgba(255,45,85,.12));
+}
+.pBody{padding:14px}
+.placeholder{
+  color:rgba(11,18,32,.70);
+  font-weight:900;
+  line-height:1.6;
+}
+.placeholder .big{font-size:18px;font-weight:1000;color:rgba(11,18,32,.92)}
+.badge{
+  display:inline-block;
+  margin-top:10px;
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid rgba(15,23,42,.12);
+  background:rgba(255,255,255,.92);
+  font-weight:950;
+  font-size:12px;
+}
+
+/* NEXT BAR (toujours visible mobile) */
+.nextBar{
+  position:sticky;
+  bottom:12px;
+  margin-top:18px;
+  padding:12px;
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  z-index:60;
+}
+.bigPrev,.bigNext{
+  display:flex;flex-direction:column;gap:4px;
+  padding:12px 14px;border-radius:18px;
+  border:1px solid rgba(15,23,42,.12);
+  background:rgba(255,255,255,.92);
+  font-weight:1000;
+  min-width:210px;
+  text-align:center;
+}
+.bigNext{
+  background:linear-gradient(135deg, rgba(255,45,85,.14), rgba(73,198,255,.12), rgba(31,79,216,.10));
+}
+.bigPrev small,.bigNext small{font-weight:850;color:rgba(11,18,32,.65);font-size:12px}
+@media(max-width:520px){
+  .bigPrev,.bigNext{min-width:0;flex:1}
+}
+
+/* footer */
+.footer{margin:16px 0 8px;text-align:center;color:var(--muted);font-size:12px;font-weight:850}
+
+/* floating buttons */
+.floatWA{
+  position:fixed; left:16px; bottom:16px; z-index:9999;
+  width:56px;height:56px;border-radius:50%;
+  display:grid;place-items:center;
+  background:#25D366;border:1px solid rgba(255,255,255,.55);
+  box-shadow:0 18px 55px rgba(15,23,42,.25);
+}
+.floatWA svg{width:28px;height:28px;fill:#fff}
+.floatProfil{
+  position:fixed; right:16px; bottom:16px; z-index:9999;
+  display:flex; align-items:center; gap:10px;
+  padding:12px 14px;
+  border-radius:999px;
+  background:linear-gradient(135deg, rgba(255,45,85,1), rgba(73,198,255,1));
+  color:#fff;font-weight:1000;font-size:14px;
+  border:1px solid rgba(255,255,255,.35);
+  box-shadow:0 18px 55px rgba(15,23,42,.25);
+}
+.floatProfil .plus{
+  width:34px;height:34px;border-radius:50%;
+  display:grid;place-items:center;
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.35);
+  font-size:20px;line-height:1;
+}
+@media(max-width:560px){
+  .floatProfil{right:12px;bottom:12px;padding:11px 12px;}
+  .floatProfil span.txt{display:none;}
+  .floatWA{left:12px;bottom:12px;width:54px;height:54px;}
+}
+
+/* RESPONSIVE NAV */
+@media(max-width:920px){
+  .navDesktop{display:none}
+  .mobBtn{display:grid;place-items:center}
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <!-- TOPBAR -->
+  <div class="topbar glass">
+    <div class="brand">
+      <img src="images/logomadawork.png" alt="MadaWork" onerror="this.style.display='none'">
+      <div>
+        <h1>cv.madawork.com</h1>
+        <p>Talents MadaWork — profils professionnels par catégories</p>
+      </div>
+    </div>
+
+    <!-- NAV DESKTOP -->
+    <div class="navDesktop">
+      <a href="index.html">Accueil</a>
+      <a href="https://portail.madawork.com">Poster annonces</a>
+      <a href="freelancer1.html" class="btnPrimary">Cadres & Experts</a>
+      <a href="freelancer2.html" class="btnPrimary">Anglophones</a>
+      <a href="freelancer3.html" class="btnPrimary">Hispanophones</a>
+      <a href="freelancer4.html" class="btnPrimary">Chinophones</a>
+      <a href="freelancer5.html" class="btnPrimary">Italianophones</a>
+      <a href="freelancer6.html" class="btnPrimary">Germanophones</a>
+      <a href="freelancer7.html" class="btnPrimary">Back-office / Support IT</a>
+      <a href="freelancer8.html" class="btnPrimary">Télépros chevronnés</a>
+      <a href="freelancer9.html" class="btnPrimary">Assistants virtuels</a>
+      <a href="freelancer10.html" class="btnPrimary">Infographistes / Designers</a>
+      <a href="https://madawork.com/contact.html">Contact</a>
+    </div>
+
+    <!-- MOBILE HAMBURGER -->
+    <button class="mobBtn" onclick="openMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- MOBILE PANEL -->
+  <div class="mobPanel" id="mobPanel" onclick="if(event.target.id==='mobPanel'){closeMenu()}">
+    <div class="mobCard">
+      <div class="mobHead">
+        <b>Menu profils (cv.madawork.com)</b>
+        <button class="mobClose" onclick="closeMenu()">Fermer ✕</button>
+      </div>
+      <div class="mobLinks">
+        <a href="index.html">Accueil</a>
+        <a class="gold" href="freelancer1.html">Cadres financiers & développeurs (freelancer1)</a>
+        <a class="gold" href="freelancer2.html">Agents anglophones (freelancer2)</a>
+        <a class="gold" href="freelancer3.html">Agents hispanophones (freelancer3)</a>
+        <a class="gold" href="freelancer4.html">Agents chinophones (freelancer4)</a>
+        <a class="gold" href="freelancer5.html">Agents italianophones (freelancer5)</a>
+        <a class="gold" href="freelancer6.html">Agents germanophones (freelancer6)</a>
+        <a class="gold" href="freelancer7.html">Back-office / Support IT (freelancer7)</a>
+        <a class="gold" href="freelancer8.html">Télépros chevronnés (freelancer8)</a>
+        <a class="gold" href="freelancer9.html">Assistants virtuels (freelancer9)</a>
+        <a class="gold" href="freelancer10.html">Infographistes / Designers (freelancer10)</a>
+        <a href="https://madawork.com/contact.html">Contact</a>
+        <a href="https://madawork.com">Madawork.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero glass">
+    <h2 class="hTitle">Nos profils italianophones 🇮🇹</h2>
+    <p class="hSub">
+      Page 5 — Espace dédié aux profils parlant italien.
+      Vous pourrez ajouter les cartes profils plus tard (photos, compétences, boutons, etc.).
+    </p>
+
+    <!-- SmartSearch -->
+    <div class="smartHolder" data-smartsearch></div>
+  </section>
+
+  <!-- GRID (PLACEHOLDER) -->
+  <div class="grid" id="profils">
+    <article class="card">
+      <div class="cover"></div>
+      <div class="pBody placeholder">
+        <div class="big">Zone profils — Italianophones</div>
+        Ajoutez ici vos profils (cartes) quand vous voulez.
+        <div class="badge">✅ Prêt pour insertion profils</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="cover"></div>
+      <div class="pBody placeholder">
+        <div class="big">Astuce</div>
+        Copiez une carte profil depuis index.html puis remplacez seulement :
+        <br>• photo
+        <br>• nom
+        <br>• poste
+        <br>• tags langues
+        <br>• liens (Voir profil / Coordonnées / Sélectionner)
+        <div class="badge">Ultra rapide</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="cover"></div>
+      <div class="pBody placeholder">
+        <div class="big">Bouton</div>
+        Sur chaque profil, vous pourrez ajouter :
+        <br><b>Sélectionner ce profil</b>
+        <div class="badge">CTA entreprise</div>
+      </div>
+    </article>
+  </div>
+
+  <!-- ✅ PREV / NEXT -->
+  <div class="nextBar glass">
+    <a class="bigPrev" href="freelancer4.html">
+      ⬅️ Précédent
+      <small>Profils chinophones (Page 4)</small>
+    </a>
+    <a class="bigNext" href="freelancer6.html">
+      ➡️ Suivant
+      <small>Profils germanophones (Page 6)</small>
+    </a>
+  </div>
+
+  <div class="footer">© MadaWork — cv.madawork.com</div>
+</div>
+
+<!-- ✅ WhatsApp flottant -->
+<a class="floatWA" href="https://wa.me/261332943007" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M19.11 17.42c-.27-.14-1.6-.79-1.84-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.14-1.12-.41-2.13-1.31-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.41.11-.55.12-.12.27-.31.41-.46.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.52-.44-.45-.61-.46h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3 0 1.36.99 2.67 1.13 2.85.14.18 1.95 2.98 4.72 4.18.66.28 1.17.45 1.57.58.66.21 1.26.18 1.73.11.53-.08 1.6-.65 1.83-1.27.23-.62.23-1.15.16-1.27-.07-.12-.25-.2-.52-.34zM16.03 3C9.38 3 4 8.29 4 14.8c0 2.29.68 4.41 1.85 6.2L4 29l8.2-1.72c1.72.93 3.7 1.46 5.83 1.46 6.65 0 12.03-5.29 12.03-11.8C30.06 8.29 22.68 3 16.03 3z"/>
+  </svg>
+</a>
+
+<!-- ✅ Poster un profil -->
+<a class="floatProfil" href="https://portail.madawork.com" target="_blank" rel="noopener">
+  <span class="plus">＋</span>
+  <span class="txt">Poster un profil</span>
+</a>
+
+<script>
+function openMenu(){ document.getElementById('mobPanel').classList.add('active'); }
+function closeMenu(){ document.getElementById('mobPanel').classList.remove('active'); }
+</script>
+
+<script src="search.js"></script>
+</body>
+</html>

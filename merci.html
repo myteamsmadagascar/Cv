@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>MadaWork - Merci</title>
+<meta name="theme-color" content="#ff2d55" />
+<style>
+:root{
+  --bg1:#ffffff;
+  --bg2:#f3f8ff;
+  --card:rgba(255,255,255,.84);
+  --stroke:rgba(15,23,42,.12);
+  --text:#0b1220;
+  --muted:rgba(11,18,32,.70);
+
+  --blue:#1f4fd8;
+  --sky:#49c6ff;
+  --red:#ff2d55;
+
+  --shadow:0 18px 70px rgba(15,23,42,.12);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  color:var(--text);
+  background:
+    radial-gradient(900px 520px at 15% 10%, rgba(73,198,255,.25), transparent 65%),
+    radial-gradient(900px 520px at 85% 20%, rgba(255,45,85,.18), transparent 60%),
+    radial-gradient(1100px 700px at 50% 100%, rgba(31,79,216,.14), transparent 60%),
+    linear-gradient(180deg,var(--bg1),var(--bg2));
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:980px;margin:0 auto;padding:18px}
+
+.glass{
+  background:linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.60));
+  border:1px solid var(--stroke);
+  border-radius:22px;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow), 0 0 0 1px rgba(255,255,255,.35) inset;
+}
+
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px 16px;
+  position:sticky;top:10px;z-index:50;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{
+  height:46px;width:auto;object-fit:contain;
+  filter: drop-shadow(0 12px 28px rgba(31,79,216,.22));
+}
+.brand .t1{margin:0;font-weight:950;font-size:14px}
+.brand .t2{margin:2px 0 0;color:var(--muted);font-size:12px;font-weight:800}
+
+.nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.nav a{
+  padding:10px 12px;border-radius:16px;
+  border:1px solid rgba(15,23,42,.12);
+  background:rgba(255,255,255,.78);
+  font-weight:950;font-size:13px;
+}
+@media(max-width:900px){.nav{display:none}}
+
+.hero{
+  margin-top:14px;
+  padding:22px;
+  position:relative;
+  overflow:hidden;
+}
+.hero:before{
+  content:"";
+  position:absolute;inset:-140px;
+  background:
+    radial-gradient(closest-side at 15% 25%, rgba(255,45,85,.18), transparent 62%),
+    radial-gradient(closest-side at 75% 20%, rgba(73,198,255,.26), transparent 62%),
+    radial-gradient(closest-side at 55% 88%, rgba(31,79,216,.18), transparent 70%);
+  filter: blur(3px);
+}
+.hero > *{position:relative;z-index:2}
+
+.badge{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:10px 12px;border-radius:999px;
+  border:1px solid rgba(15,23,42,.12);
+  background:rgba(255,255,255,.82);
+  font-weight:950;
+  font-size:12px;
+}
+.dot{
+  width:12px;height:12px;border-radius:99px;
+  background:var(--red);
+  box-shadow:0 0 0 7px rgba(255,45,85,.14);
+}
+h1{margin:14px 0 0;font-size:28px;letter-spacing:-.4px}
+p{margin:10px 0 0;color:var(--muted);font-weight:800;line-height:1.6}
+
+.quote{
+  margin-top:14px;
+  padding:14px 16px;border-radius:18px;
+  border:1px solid rgba(255,45,85,.18);
+  background:linear-gradient(135deg, rgba(255,45,85,.08), rgba(73,198,255,.08), rgba(31,79,216,.06));
+  font-weight:950;
+  color:rgba(11,18,32,.90);
+}
+
+.btns{
+  margin-top:16px;
+  display:grid;gap:12px;
+  grid-template-columns:repeat(3,1fr);
+}
+@media(max-width:720px){.btns{grid-template-columns:1fr}}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:13px 14px;border-radius:18px;
+  border:1px solid rgba(15,23,42,.12);
+  font-weight:950;
+  background:linear-gradient(135deg, rgba(255,45,85,.16), rgba(73,198,255,.12), rgba(31,79,216,.12));
+  box-shadow:0 14px 35px rgba(255,45,85,.08);
+  transition:transform .15s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn2{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:13px 14px;border-radius:18px;
+  border:1px solid rgba(15,23,42,.12);
+  font-weight:950;
+  background:rgba(255,255,255,.92);
+  transition:transform .15s ease;
+}
+.btn2:hover{transform:translateY(-1px)}
+
+.footer{
+  margin:16px 0 8px;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:800;
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <!-- TOPBAR -->
+  <div class="topbar glass">
+    <div class="brand">
+      <img src="images/logomadawork.png" alt="MadaWork" onerror="this.style.display='none'">
+      <div>
+        <p class="t1">MadaWork - Profils & Talents</p>
+        <p class="t2">cv.madawork.com</p>
+      </div>
+    </div>
+
+    <div class="nav">
+      <a href="https://cv.madawork.com">Profils</a>
+      <a href="https://portail.madawork.com">Portail</a>
+      <a href="https://madawork.com">Formation</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero glass">
+    <div class="badge"><span class="dot"></span> Envoi valide</div>
+    <h1>Merci, votre demande a bien ete envoyee.</h1>
+    <p>
+      Notre equipe va traiter votre profil / demande dans les plus brefs delais.
+      Vous pouvez revenir a tout moment pour consulter les profils et les talents disponibles.
+    </p>
+
+   Merci de compter entre 24h à 48h ouvrees pour la publication de votre profil 
+
+    <div class="btns">
+      <a class="btn" href="https://cv.madawork.com">Retour aux profils</a>
+      <a class="btn2" href="https://portail.madawork.com">Poster une annonce</a>
+      <a class="btn2" href="https://madawork.com">Suivre une formation</a>
+    </div>
+  </section>
+
+  <div class="footer">
+    © MadaWork - cv.madawork.com - Merci
+  </div>
+
+</div>
+</body>
+</html>

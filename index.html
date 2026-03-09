@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>cv.madawork.com — Profils & Talents</title>
+<meta name="description" content="cv.madawork.com : Bibliothèque de profils professionnels MadaWork. Recherche intelligente, profils par catégories, accès rapide." />
+<meta name="theme-color" content="#1f4fd8" />
+<link rel="icon" href="logomadawork.png" />
+
+<style>
+:root{
+  --bg1:#ffffff;
+  --bg2:#f3f8ff;
+  --card:rgba(255,255,255,.86);
+  --stroke:rgba(15,23,42,.12);
+  --text:#0b1220;
+  --muted:rgba(11,18,32,.70);
+
+  --blue:#1f4fd8;
+  --sky:#49c6ff;
+  --red:#ff2d55;
+  --gold:#d4af37;
+
+  --shadow:0 18px 70px rgba(15,23,42,.12);
+  --r:24px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  color:var(--text);
+  background:
+    radial-gradient(900px 520px at 15% 10%, rgba(73,198,255,.22), transparent 65%),
+    radial-gradient(900px 520px at 85% 20%, rgba(255,45,85,.18), transparent 60%),
+    radial-gradient(1100px 700px at 50% 100%, rgba(31,79,216,.14), transparent 60%),
+    linear-gradient(180deg,var(--bg1),var(--bg2));
+}
+
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:18px}
+
+/* GLASS */
+.glass{
+  background:linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.62));
+  border:1px solid var(--stroke);
+  border-radius:var(--r);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow), 0 0 0 1px rgba(255,255,255,.35) inset;
+}
+
+/* TOPBAR */
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px 16px;
+  position:sticky;top:10px;z-index:50;
+}
+.brand{display:flex;align-items:center;gap:12px;min-width:240px;}
+.brand img{
+  height:46px;width:auto;object-fit:contain;
+  filter: drop-shadow(0 12px 28px rgba(31,79,216,.22));
+}
+.brand h1{margin:0;font-size:16px;font-weight:1000;letter-spacing:-.2px}
+.brand p{margin:2px 0 0;font-size:12px;color:var(--muted);font-weight:850}
+
+/* NAV DESKTOP */
+.navDesktop{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;align-items:center}
+.navDesktop a{
+  padding:10px 12px;border-radius:16px;
+  border:1px solid rgba(15,23,42,.12);
+  background:rgba(255,255,255,.78);
+  font-weight:950;font-size:13px;
+  transition:.15s;
+}
+.navDesktop a:hover{transform:translateY(-1px)}
+
+.btnPrimary{
+  border-color:rgba(212,175,55,.55)!important;
+  background:linear-gradient(135deg, rgba(212,175,55,.22), rgba(255,255,255,.85))!important;
+}
+
+/* MENU MOBILE */
+.mobBtn{
+  display:none;
+  width:46px;height:46px;border-radius:16px;
+  border:1px solid rgba(15,23,42,.12);
+  background:rgba(255,255,255,.85);
+  box-shadow:0 10px 24px rgba(15,23,42,.10);
+  cursor:pointer;
+}
+.mobBtn span{
+  display:block;width:18px;height:2px;background:#0b1220;margin:5px auto;border-radius:2px;
+}
+
+.mobPanel{
+  display:none;
+  position:fixed; inset:0;
+  background:rgba(2,6,23,.45);
+  z-index:9999;
+}
+.mobPanel.active{display:block}
+
+.mobCard{
+  position:absolute; right:14px; top:14px; left:14px;
+  border-radius:26px;
+  background:rgba(255,255,255,.96);
+  border:1px solid rgba(255,255,255,.55);
+  box-shadow:0 30px 100px rgba(0,0,0,.30);
+  overflow:hidden;
+}
+.mobHead{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 14px;border-bottom:1px solid rgba(15,23,42,.08);
+  background:linear-gradient(135deg, rgba(31,79,216,.10), rgba(255,45,85,.06), rgba(212,175,55,.10));
+}
+.mobHead b{font-weight:1000}
+.mobClose{
+  border:1px solid rgba(15,23,42,.14);
+  background:#fff;padding:10px 12px;border-radius:14px;font-weight:1000;
+  cursor:pointer;
+}
+.mobLinks{
+  padding:12px;
+  display:grid; gap:10px;
+}
+.mobLinks a{
+  padding:12px 12px;
+  border-radius:18px;
+  border:1px solid rgba(15,23,42,.10);
+  background:#fff;
+  font-weight:950;
+}
+.mobLinks a.gold{
+  border-color:rgba(212,175,55,.55);
+  background:linear-gradient(135deg, rgba(212,175,55,.22), rgba(255,255,255,.95));
+}
+
+/* HERO */
+.hero{
+  margin-top:14px;
+  padding:18px;
+  position:relative;
+  overflow:hidden;
+}
+.hero:before{
+  content:"";
+  position:absolute;inset:-120px;
+  background:
+    radial-gradient(closest-side at 12% 18%, rgba(73,198,255,.24), transparent 62%),
+    radial-gradient(closest-side at 86% 18%, rgba(255,45,85,.16), transparent 62%),
+    radial-gradient(closest-side at 50% 90%, rgba(31,79,216,.14), transparent 70%);
+  filter: blur(2px);
+}
+.hero > *{position:relative;z-index:2}
+.hTitle{margin:0;font-size:26px;letter-spacing:-.3px;font-weight:1000}
+.hSub{margin:8px 0 0;color:var(--muted);line-height:1.55;max-width:980px;font-weight:800}
+.smartHolder{margin-top:14px}
+
+/* Tools / filters */
+.tools{
+  margin-top:12px;
+  display:grid;gap:12px;
+  grid-template-columns: 1fr .9fr;
+}
+@media(max-width:920px){.tools{grid-template-columns:1fr}}
+.filters{
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+  padding:12px;border-radius:20px;border:1px solid rgba(15,23,42,.12);
+  background:rgba(255,255,255,.82);
+}
+.filters select{
+  flex:1;min-width:220px;
+  padding:12px 14px;border-radius:16px;
+  border:1px solid rgba(15,23,42,.12);
+  background:#fff;
+  font-weight:950;
+  outline:none;
+}
+
+.btn{
+  padding:12px 14px;border-radius:16px;
+  border:1px solid rgba(15,23,42,.12);
+  font-weight:1000;
+  background:linear-gradient(135deg, rgba(255,45,85,.16), rgba(73,198,255,.12), rgba(31,79,216,.12));
+  cursor:pointer;
+  box-shadow:0 14px 30px rgba(255,45,85,.08);
+  display:inline-block;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn2{
+  padding:12px 14px;border-radius:16px;
+  border:1px solid rgba(15,23,42,.12);
+  font-weight:1000;
+  background:rgba(255,255,255,.92);
+  cursor:pointer;
+  display:inline-block;
+}
+.btn2:hover{transform:translateY(-1px)}
+
+/* GRID */
+.grid{
+  margin-top:22px;
+  display:grid;gap:14px;
+  grid-template-columns:repeat(12,1fr);
+}
+.card{
+  grid-column:span 4;
+  border:1px solid rgba(15,23,42,.12);
+  border-radius:22px;
+  background:rgba(255,255,255,.88);
+  box-shadow:0 18px 55px rgba(15,23,42,.10);
+  overflow:hidden;
+  transition:transform .15s ease;
+}
+.card:hover{transform:translateY(-2px)}
+@media(max-width:980px){.card{grid-column:span 6}}
+@media(max-width:680px){.card{grid-column:span 12}}
+
+.cover{
+  height:120px;
+  background:
+    radial-gradient(600px 220px at 20% 30%, rgba(73,198,255,.55), transparent 60%),
+    radial-gradient(600px 220px at 85% 40%, rgba(255,45,85,.42), transparent 62%),
+    radial-gradient(600px 220px at 50% 100%, rgba(31,79,216,.36), transparent 70%),
+    linear-gradient(135deg, rgba(31,79,216,.18), rgba(255,45,85,.12));
+}
+
+.pBody{padding:14px}
+.row{display:flex;gap:12px;align-items:center;}
+.avatar{
+  width:72px;height:72px;border-radius:18px;
+  border:2px solid rgba(255,45,85,.35);
+  object-fit:cover;object-position:center top;
+  background:#e9f3ff;
+  margin-top:-28px;
+  box-shadow:0 18px 55px rgba(15,23,42,.14);
+}
+.name{font-weight:1000;margin:0;font-size:16px;letter-spacing:-.2px}
+.job{margin:4px 0 0;color:var(--muted);font-weight:900;font-size:12px;line-height:1.35}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.tag{
+  padding:7px 9px;border-radius:999px;
+  border:1px solid rgba(15,23,42,.12);
+  background:rgba(255,255,255,.92);
+  font-weight:950;font-size:12px;
+}
+.meta{margin-top:10px;color:var(--muted);font-weight:850;font-size:12px;line-height:1.5}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;align-items:stretch;}
+.actions a{
+  flex:1;
+  text-align:center;
+  padding:11px 12px;border-radius:16px;
+  border:1px solid rgba(15,23,42,.12);
+  font-weight:1000;
+  background:linear-gradient(135deg, rgba(255,45,85,.10), rgba(73,198,255,.10));
+}
+.actions a.secondary{background:rgba(255,255,255,.95);}
+
+/* coords click */
+.coords{flex:1;min-width:180px}
+.coords > summary{
+  list-style:none;
+  text-align:center;
+  padding:11px 12px;border-radius:16px;
+  border:1px solid rgba(15,23,42,.12);
+  font-weight:1000;
+  background:rgba(255,255,255,.92);
+  cursor:pointer;
+  user-select:none;
+}
+.coords > summary::-webkit-details-marker{display:none}
+.coords[open] > summary{background:linear-gradient(135deg, rgba(255,45,85,.10), rgba(73,198,255,.10))}
+.coordsBody{
+  margin-top:10px;
+  padding:10px 12px;
+  border-radius:16px;
+  border:1px solid rgba(15,23,42,.10);
+  background:rgba(255,255,255,.92);
+  color:var(--text);
+  font-weight:900;
+  font-size:12px;
+  line-height:1.55;
+}
+.coordsBody a{
+  display:inline-block;
+  margin-top:8px;
+  padding:9px 10px;
+  border-radius:14px;
+  border:1px solid rgba(15,23,42,.12);
+  background:rgba(255,255,255,.92);
+  font-weight:1000;
+}
+
+/* NEXT BUTTON */
+.nextBar{
+  margin-top:18px;
+  padding:14px;
+  display:flex;justify-content:center;gap:12px;flex-wrap:wrap;
+}
+.bigNext{
+  width:min(520px, 100%);
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:14px 16px;border-radius:20px;
+  border:1px solid rgba(212,175,55,.55);
+  font-weight:1000;
+  background:linear-gradient(135deg, rgba(11,18,32,.95), rgba(31,79,216,.70));
+  color:#fff;
+  box-shadow:0 18px 55px rgba(15,23,42,.18);
+}
+.bigNext:hover{transform:translateY(-2px)}
+.bigNext small{opacity:.85;font-weight:900}
+
+/* footer */
+.footer{margin:16px 0 8px;text-align:center;color:var(--muted);font-size:12px;font-weight:850}
+
+/* floating buttons */
+.floatWA{
+  position:fixed; left:16px; bottom:16px; z-index:9999;
+  width:56px;height:56px;border-radius:50%;
+  display:grid;place-items:center;
+  background:#25D366;
+  border:1px solid rgba(255,255,255,.55);
+  box-shadow:0 18px 55px rgba(15,23,42,.25);
+}
+.floatWA svg{width:28px;height:28px;fill:#fff}
+.floatWA:hover{transform:translateY(-2px)}
+
+.floatProfil{
+  position:fixed; right:16px; bottom:16px; z-index:9999;
+  display:flex; align-items:center; gap:10px;
+  padding:12px 14px;
+  border-radius:999px;
+  background:linear-gradient(135deg, rgba(255,45,85,1), rgba(73,198,255,1));
+  color:#fff;
+  font-weight:1000;
+  font-size:14px;
+  border:1px solid rgba(255,255,255,.35);
+  box-shadow:0 18px 55px rgba(15,23,42,.25);
+}
+.floatProfil:hover{transform:translateY(-2px)}
+.floatProfil .plus{
+  width:34px;height:34px;border-radius:50%;
+  display:grid;place-items:center;
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.35);
+  font-size:20px;
+  line-height:1;
+}
+@media(max-width:560px){
+  .floatProfil{right:12px;bottom:12px;padding:11px 12px;}
+  .floatProfil span.txt{display:none;}
+  .floatWA{left:12px;bottom:12px;width:54px;height:54px;}
+}
+
+/* SmartSearch */
+.ssWrap{
+  display:flex; gap:10px; align-items:center;
+  padding:10px;
+  border-radius:18px;
+  border:1px solid rgba(15,23,42,.12);
+  background:rgba(255,255,255,.86);
+  position:relative;
+}
+.ssIcon{
+  width:42px;height:42px;border-radius:14px;
+  display:grid;place-items:center;
+  font-weight:1000;
+  background:linear-gradient(135deg, rgba(255,45,85,.16), rgba(73,198,255,.14));
+  border:1px solid rgba(15,23,42,.10);
+}
+#ssInput{
+  flex:1;
+  padding:12px 14px;border-radius:16px;
+  border:1px solid rgba(15,23,42,.12);
+  outline:none;
+  background:#fff;
+  font-weight:900;
+}
+#ssBtn{
+  padding:12px 14px;border-radius:16px;
+  border:1px solid rgba(15,23,42,.12);
+  font-weight:1000;
+  background:linear-gradient(135deg, rgba(255,45,85,.16), rgba(73,198,255,.12), rgba(31,79,216,.12));
+  cursor:pointer;
+}
+.ssResults{
+  position:absolute; left:0; right:0; top:calc(100% + 10px);
+  border-radius:18px;
+  border:1px solid rgba(15,23,42,.12);
+  background:rgba(255,255,255,.96);
+  box-shadow:0 24px 80px rgba(15,23,42,.16);
+  overflow:hidden;
+  display:none;
+  z-index:9999;
+}
+.ssItem{display:block;padding:12px 12px;border-bottom:1px solid rgba(15,23,42,.08)}
+.ssItem:hover{background:linear-gradient(135deg, rgba(255,45,85,.10), rgba(73,198,255,.10))}
+.ssItem b{display:block;font-weight:1000}
+.ssItem span{display:block;color:rgba(11,18,32,.65);font-weight:850;font-size:12px;margin-top:3px}
+.ssEmpty{padding:14px;font-weight:900;color:rgba(11,18,32,.65)}
+
+@media(max-width:920px){
+  .navDesktop{display:none}
+  .mobBtn{display:grid;place-items:center}
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <!-- TOPBAR -->
+  <div class="topbar glass">
+    <div class="brand">
+      <img src="logomadawork.png" alt="MadaWork" onerror="this.style.display='none'">
+      <div>
+        <h1>cv.madawork.com</h1>
+        <p>Talents MadaWork — profils professionnels par catégories</p>
+      </div>
+    </div>
+
+    <!-- NAV DESKTOP -->
+    <div class="navDesktop">
+      <a href="https://portail.madawork.com">Poster annonces</a>
+      <a href="#profils">Profils</a>
+      <a href="freelancer1.html" class="btnPrimary">Cadres & Experts</a>
+      <a href="freelancer2.html" class="btnPrimary">Anglophones</a>
+      <a href="freelancer3.html" class="btnPrimary">Hispanophones</a>
+      <a href="freelancer4.html" class="btnPrimary">Chinophones</a>
+      <a href="freelancer5.html" class="btnPrimary">Italianophones</a>
+      <a href="freelancer6.html" class="btnPrimary">Germanophones</a>
+      <a href="freelancer7.html" class="btnPrimary">Back-office / Support IT</a>
+      <a href="freelancer8.html" class="btnPrimary">Télépros chevronnés</a>
+      <a href="freelancer9.html" class="btnPrimary">Assistants virtuels</a>
+      <a href="freelancer10.html" class="btnPrimary">Infographistes / Designers</a>
+      <a href="offredemploi.html">Offres d’emploi</a>
+      <a href="https://madawork.com/contact.html">Contact</a>
+      <a href="https://madawork.com">Madawork.com</a>
+    </div>
+
+    <!-- MOBILE HAMBURGER -->
+    <button class="mobBtn" onclick="openMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- MOBILE PANEL -->
+  <div class="mobPanel" id="mobPanel" onclick="if(event.target.id==='mobPanel'){closeMenu()}">
+    <div class="mobCard">
+      <div class="mobHead">
+        <b>Menu profils (cv.madawork.com)</b>
+        <button class="mobClose" onclick="closeMenu()">Fermer ✕</button>
+      </div>
+      <div class="mobLinks">
+        <a href="https://portail.madawork.com">Poster annonces</a>
+        <a href="#profils" onclick="closeMenu()">Voir les profils</a>
+
+        <a class="gold" href="freelancer1.html">Cadres financiers & développeurs (freelance1)</a>
+        <a class="gold" href="freelancer2.html">Agents anglophones (freelance2)</a>
+        <a class="gold" href="freelancer3.html">Agents hispanophones (freelance3)</a>
+        <a class="gold" href="freelancer4.html">Agents chinophones (freelance4)</a>
+        <a class="gold" href="freelancer5.html">Agents italianophones (freelance5)</a>
+        <a class="gold" href="freelancer6.html">Agents germanophones (freelance6)</a>
+        <a class="gold" href="freelancer7.html">Back-office / Support IT (freelance7)</a>
+        <a class="gold" href="freelancer8.html">Télépros chevronnés (freelance8)</a>
+        <a class="gold" href="freelancer9.html">Assistants virtuels (freelance9)</a>
+        <a class="gold" href="freelancer10.html">Infographistes / Designers (freelance10)</a>
+
+        <a href="offredemploi.html">Offres d’emploi</a>
+        <a href="https://madawork.com/contact.html">Contact</a>
+        <a href="https://madawork.com">Madawork.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero glass">
+    <h2 class="hTitle">Bibliothèque de profils professionnels</h2>
+    <p class="hSub">
+      Recherchez des profils de qualité : offshore, administration, télévente, service client, web, marketing…
+      Cliquez sur un profil pour accéder au détail. Une recherche intelligente est disponible sur tout le site.
+    </p>
+
+    <div class="smartHolder" data-smartsearch></div>
+
+    <div class="tools">
+      <div class="filters">
+        <select id="cat">
+          <option value="">- Toutes catégories -</option>
+          <option value="direction">Direction / Offshore</option>
+          <option value="assurance">Assurance / Souscription</option>
+          <option value="telepros">Télévente / Télépros</option>
+          <option value="backoffice">Back Office / Service clients</option>
+          <option value="dev">Developpement / IT</option>
+        </select>
+        <button class="btn" onclick="applyCat()">Filtrer</button>
+        <button class="btn2" onclick="resetCat()">Tout afficher</button>
+      </div>
+
+      <div class="filters">
+        <a class="btn" href="https://madawork.com">Suivre une formation</a>
+        <a class="btn2" href="https://portail.madawork.com">Poster une annonce / mission</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRID PROFILES -->
+  <div class="grid" id="profils">
+
+    <!-- NAOMI -->
+    <article class="card" data-cat="direction">
+      <div class="cover"></div>
+      <div class="pBody">
+        <div class="row">
+          <img class="avatar" src="nao.png" alt="Naomi" onerror="this.style.display='none'">
+          <div>
+            <p class="name">Naomi Nisi</p>
+            <p class="job">Consultante Offshore / BPO • Directrice d'entreprises</p>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag">Profil officiel</span>
+          <span class="tag">Offshore</span>
+          <span class="tag">BPO</span>
+          <span class="tag">Formation</span>
+        </div>
+        <div class="meta">
+          Solutions BPO clé en main, création & déploiement de centres offshore, équipes à distance performantes.
+        </div>
+        <div class="actions">
+          <a href="profil-offshore-naomi.html">Voir profil</a>
+          <a class="secondary" href="mailto:naomi.nisi@madagascarteletravail.com">Contacter</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- BOUTON SUIVANT -->
+  <div class="nextBar glass">
+    <a class="bigNext" href="freelancer1.html">
+      <span>➡️ Suivant</span>
+      <small>(Cadres / Experts / Developpeurs / Financiers)</small>
+    </a>
+  </div>
+
+  <div class="footer">
+    © MadaWork — cv.madawork.com • Profils & Talents
+  </div>
+
+</div>
+
+<a class="floatWA" href="https://wa.me/261346697478" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M19.11 17.42c-.27-.14-1.6-.79-1.84-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.14-1.12-.41-2.13-1.31-.79-.7-1.32-1.56-1.47-1.83-.15-.27-.02-.41.11-.55.12-.12.27-.31.41-.46.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.52-.44-.45-.61-.46h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3 0 1.36.99 2.67 1.13 2.85.14.18 1.95 2.98 4.72 4.18.66.28 1.17.45 1.57.58.66.21 1.26.18 1.73.11.53-.08 1.6-.65 1.83-1.27.23-.62.23-1.15.16-1.27-.07-.12-.25-.2-.52-.34zM16.03 3C9.38 3 4 8.29 4 14.8c0 2.29.68 4.41 1.85 6.2L4 29l8.2-1.72c1.72.93 3.7 1.46 5.83 1.46 6.65 0 12.03-5.29 12.03-11.8C30.06 8.29 22.68 3 16.03 3z"/>
+  </svg>
+</a>
+
+<a class="floatProfil" href="https://cv.madawork.com/deposer-profil" target="_blank" rel="noopener">
+  <span class="plus">＋</span>
+  <span class="txt">Poster un profil</span>
+</a>
+
+<script src="search.js"></script>
+<script>
+function locked(){
+  alert("Accès Premium : CV complet à débloquer ✅");
+}
+function openMenu(){
+  document.getElementById('mobPanel').classList.add('active');
+}
+function closeMenu(){
+  document.getElementById('mobPanel').classList.remove('active');
+}
+
+function applyCat(){
+  const cat = (document.getElementById("cat").value || "").trim();
+  document.querySelectorAll(".card").forEach(c => {
+    const ccat = c.getAttribute("data-cat") || "";
+    c.style.display = (!cat || ccat === cat) ? "" : "none";
+  });
+  location.hash = "#profils";
+}
+
+function resetCat(){
+  document.getElementById("cat").value = "";
+  document.querySelectorAll(".card").forEach(c => c.style.display = "");
+}
+</script>
+</body>
+</html>
